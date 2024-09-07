@@ -34,6 +34,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            //html color
+            BackColor = ColorTranslator.FromHtml("#932bd9");
             ClientSize = new Size(800, 450);
             Name = "Administador";
             Text = "Administrador";
