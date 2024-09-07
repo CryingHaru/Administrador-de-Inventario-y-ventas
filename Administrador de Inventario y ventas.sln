@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Administrador de Inventario y ventas", "Administrador de Inventario y ventas.csproj", "{677EE2C9-97A6-418C-BAA3-013DA20EE7F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{677EE2C9-97A6-418C-BAA3-013DA20EE7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{677EE2C9-97A6-418C-BAA3-013DA20EE7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{677EE2C9-97A6-418C-BAA3-013DA20EE7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{677EE2C9-97A6-418C-BAA3-013DA20EE7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E204BDF-1B11-487B-994B-2FC5ED037EB7}
+	EndGlobalSection
+EndGlobal
