@@ -28,20 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            label1 = new Label();
+            close = new Button();
             SuspendLayout();
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanel1.Location = new Point(12, 72);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(199, 207);
+            flowLayoutPanel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Roboto", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(84, 33);
+            label1.TabIndex = 1;
+            label1.Text = "Menú";
+            // 
+            // close
+            // 
+            close.AutoSize = true;
+            close.FlatStyle = FlatStyle.System;
+            close.Location = new Point(785, 9);
+            close.Name = "close";
+            close.Size = new Size(27, 24);
+            close.TabIndex = 2;
+            close.Text = "x";
+            close.UseVisualStyleBackColor = true;
+            close.Click += close_Click;
             // 
             // Administador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            //html color
-            BackColor = ColorTranslator.FromHtml("#932bd9");
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(255, 255, 255);
+            ClientSize = new Size(819, 439);
+            Controls.Add(close);
+            Controls.Add(label1);
+            Controls.Add(flowLayoutPanel1);
             Name = "Administador";
             Text = "Administrador";
+            WindowState = FormWindowState.Maximized;
+            Load += Administador_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label label1;
+        private Button close;
     }
 }
