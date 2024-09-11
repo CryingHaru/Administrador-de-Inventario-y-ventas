@@ -7,7 +7,7 @@ namespace Administrador_de_Inventario_y_ventas
         /// </summary>
         [STAThread]
         static void Main()
-        {//prueba de sonido
+        {//prueba de sonidoa
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
