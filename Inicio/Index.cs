@@ -1,4 +1,4 @@
-namespace Administrador_de_Inventario_y_ventas
+namespace AVI
 {
     public partial class Administador : Form
     {

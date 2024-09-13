@@ -1,8 +1,9 @@
 //conector db
 using Microsoft.Data.SqlClient;
-namespace Administrador_de_Inventario_y_ventas { 
+using System.Data;
+namespace AVI { 
 //import sql server library
-    class Conectordb
+    public class Conectordb
     {
         protected string SQLcomando = "";
         SqlConnection ConnectSQL = new SqlConnection();
@@ -10,7 +11,7 @@ namespace Administrador_de_Inventario_y_ventas {
         SqlDataAdapter Adapter = new SqlDataAdapter();
         private void Conectar()
         {
-            ConnectSQL = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=TiendaOnline;Integrated Security=True");
+            ConnectSQL = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ferreteriadb;Integrated Security=True; TrustServerCertificate=True;");
             try
             {
                 ConnectSQL.Open();

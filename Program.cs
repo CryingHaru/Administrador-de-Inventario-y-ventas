@@ -1,4 +1,4 @@
-namespace Administrador_de_Inventario_y_ventas
+namespace AVI
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace Administrador_de_Inventario_y_ventas
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Administador());
+            Application.Run(new Productos_list());
         }
     }
 }
