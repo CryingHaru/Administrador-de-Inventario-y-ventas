@@ -65,7 +65,7 @@
             rjButton1.ImageSize = new Size(20, 20);
             rjButton1.Location = new Point(23, 42);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(87, 70);
+            rjButton1.Size = new Size(80, 35);
             rjButton1.TabIndex = 2;
             rjButton1.Text = "File uploader(for test)";
             rjButton1.TextColor = Color.White;
@@ -83,6 +83,7 @@
             Controls.Add(flowLayoutPanel1);
             Name = "Productos_list";
             Text = "Productos";
+            WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
             PerformLayout();
         }

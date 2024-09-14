@@ -32,5 +32,16 @@ namespace AVI
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //barcode reader
+            MessageBox.Show("Iniciando escaneo de código de barras...");
+            BarcodeScannerWatcher barcodeScannerWatcher = new BarcodeScannerWatcher();
+            barcodeScannerWatcher.StartWatchingAsync().Wait();
+            MessageBox.Show("Código de barras detectado: " + barcodeScannerWatcher.Readed);
+
+
+
+        }
     }
 }

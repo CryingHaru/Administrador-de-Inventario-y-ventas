@@ -53,11 +53,16 @@ namespace AVI
                 }
 
                 //image size 
-                button.ImageSize = new Size(80, 90);
+                button.ImageSize = new Size(100, 100);
                 button.ImageAlign = ContentAlignment.TopCenter;
                 button.TextAlign = ContentAlignment.BottomCenter;
                 button.Text = row["Nombre"].ToString();
-                button.Size = new Size(100, 130);
+                button.Size = new Size(130, 180);
+                button.Click += new EventHandler((sender, e) =>
+                {
+                    new Productos_Detalles(row).Show();
+                });
+        
                 flowLayoutPanel1.Controls.Add(button);
             }
         }
