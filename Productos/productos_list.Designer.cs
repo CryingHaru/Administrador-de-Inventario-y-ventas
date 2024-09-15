@@ -70,7 +70,7 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.ForeColor = Color.White;
             rjButton1.ImageSize = new Size(20, 20);
-            rjButton1.Location = new Point(12, 179);
+            rjButton1.Location = new Point(12, 382);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(108, 36);
             rjButton1.TabIndex = 2;
