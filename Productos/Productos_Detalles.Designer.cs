@@ -43,7 +43,6 @@
             label6 = new Label();
             Detalles = new TextBox();
             Cerrar = new RJControls.RJButton();
-            Cerrar.Click += (sender, e) => this.Close();
             SuspendLayout();
             // 
             // Editar_button
@@ -201,6 +200,7 @@
             Cerrar.Text = "Cerrar";
             Cerrar.TextColor = Color.Black;
             Cerrar.UseVisualStyleBackColor = false;
+            Cerrar.Click += Cerrar_Click;
             // 
             // Productos_Detalles
             // 

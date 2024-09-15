@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace AVI
 {
+    
     public partial class Form1 : Form
     {
+        private WebcamBarcodeReader _barcodeReader;
         public Form1()
         {
             InitializeComponent();
+            lblResult.Text = "Press 'Start' to scan barcodes";
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,16 +36,35 @@ namespace AVI
             }
         }
 
+     
         private void button2_Click(object sender, EventArgs e)
         {
-            //barcode reader
-            MessageBox.Show("Iniciando escaneo de código de barras...");
-            BarcodeScannerWatcher barcodeScannerWatcher = new BarcodeScannerWatcher();
-            barcodeScannerWatcher.StartWatchingAsync().Wait();
-            MessageBox.Show("Código de barras detectado: " + barcodeScannerWatcher.Readed);
+            
+            _barcodeReader = new WebcamBarcodeReader(UpdateBarcodeResult);
+            _barcodeReader.Start();
+        }
 
+        
+        private void UpdateBarcodeResult(string result)
+        {
+      
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => lblResult.Text = result));
+            }
+            else
+            {
+                lblResult.Text = result;
+            }
+        }
 
-
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+          
+            if (_barcodeReader != null)
+            {
+                _barcodeReader.Stop();
+            }
         }
     }
 }

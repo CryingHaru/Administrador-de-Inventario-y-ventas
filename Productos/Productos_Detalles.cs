@@ -33,8 +33,10 @@ namespace AVI
 
 
         }
-       
 
-        
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -1,70 +1,96 @@
 ﻿using System;
-using System.Threading.Tasks;
+using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using OpenCvSharp;
-using IronBarCode;
-using System.Drawing;
+using OpenCvSharp.Extensions;
+using ZXing;
+using ZXing.Windows.Compatibility;
 
 namespace AVI
 {
-    public class BarcodeScannerWatcher
+    public class WebcamBarcodeReader
     {
-        private VideoCapture videoCapture;
-        public string Readed { get; private set; }
+        private VideoCapture _capture;
+        private bool _isRunning;
+        private Action<string> _onBarcodeScanned;
 
-        public BarcodeScannerWatcher()
+        public WebcamBarcodeReader(Action<string> onBarcodeScanned)
         {
-            videoCapture = new VideoCapture(0);
-            if (!videoCapture.IsOpened())
+            _onBarcodeScanned = onBarcodeScanned;
+
+            for (int i = 0; i < 10; i++)
             {
-                MessageBox.Show("Cámara no encontrada. Asegúrese de que la cámara esté conectada.");
-                throw new Exception("Camera not found. Make sure the camera is connected.");
-                
+                _capture = new VideoCapture(i);
+                if (_capture.IsOpened())
+                {
+                    break;
+                }
             }
 
-            Readed = null;
+            if (!_capture.IsOpened())
+            {
+                throw new Exception("No se pudo abrir ninguna cámara.");
+            }
         }
 
-        public async Task StartWatchingAsync()
+        public void Start()
         {
-            await Task.Run(() =>
+            _isRunning = true;
+            Thread captureThread = new Thread(CaptureLoop);
+            captureThread.IsBackground = true;
+            captureThread.Start();
+        }
+
+        public void Stop()
+        {
+            _isRunning = false;
+        }
+
+        private void CaptureLoop()
+        {
+            _onBarcodeScanned?.Invoke("Leyendo...");
+            while (_isRunning)
             {
-                while (string.IsNullOrEmpty(Readed))  // Keep watching until a barcode is detected
+                using (Mat frame = new Mat())
                 {
-                    Mat frame = new Mat();
-                    videoCapture.Read(frame);
+                    _capture.Read(frame);
 
                     if (!frame.Empty())
                     {
-                        Bitmap imageBitmap = MatToBitmap(frame);
-
-                        BarcodeReaderOptions options = new BarcodeReaderOptions
-                        {
-                            ExpectMultipleBarcodes = false,
-                            ExpectBarcodeTypes = BarcodeEncoding.All
-                        };
-
-                        BarcodeResults results = BarcodeReader.Read(imageBitmap, options);
- 
-                        if (results.Values().Length > 0)
-                        {
-                            Readed = results.Values()[0];
-                        }
+                        ProcessFrame(frame);
                     }
-
-                    
-                    System.Threading.Thread.Sleep(1000);
                 }
-
-                videoCapture.Release();
-            });
+                Thread.Sleep(100); // Pausar por 100 milisegundos
+            }
         }
 
-        private Bitmap MatToBitmap(Mat mat)
+        private void ProcessFrame(Mat frame)
         {
-            using (var ms = mat.ToMemoryStream())
+            try
             {
-                return new Bitmap(ms);
+                Bitmap bitmap = BitmapConverter.ToBitmap(frame);
+
+                // Verifica si la versión de ZXing.Net es compatible
+                var barcodeReader = new BarcodeReader(); // Instancia del lector de ZXing.Net
+                var result = barcodeReader.Decode(bitmap);
+
+                if (result != null)
+                {
+                    _onBarcodeScanned?.Invoke($"Código de barras encontrado: {result.Text}");
+                    //detener por 5 segundos
+                    Thread.Sleep(5000);
+
+
+                }
+                else
+                {
+                    _onBarcodeScanned?.Invoke("No se encontró código de barras.");
+                }
+            }
+            catch (Exception ex)
+            {
+                _onBarcodeScanned?.Invoke($"Error al procesar el frame: {ex.Message}");
             }
         }
     }

@@ -47,7 +47,7 @@ namespace AVI
                 //img desde la base de datos
                 string imagenPath = row["Imagen"]?.ToString() ?? string.Empty;
                 //comprobar si existe la imagen
-                if (!string.IsNullOrEmpty(imagenPath) && (imagenPath.EndsWith(".png") || imagenPath.EndsWith(".jpg")))
+                if (!string.IsNullOrEmpty(imagenPath) && (imagenPath.EndsWith(".png") || imagenPath.EndsWith(".jpg")) && System.IO.File.Exists("Image/" + imagenPath)) 
                 {
                     button.SetImage(Image.FromFile("Image/" + imagenPath));
                 }
