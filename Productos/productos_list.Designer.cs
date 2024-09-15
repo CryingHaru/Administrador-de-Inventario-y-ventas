@@ -42,19 +42,20 @@
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Location = new Point(135, 50);
+            flowLayoutPanel1.Location = new Point(154, 67);
+            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(636, 368);
+            flowLayoutPanel1.Size = new Size(727, 491);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // Titulo
             // 
             Titulo.AutoSize = true;
-            Titulo.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Titulo.Location = new Point(136, 16);
+            Titulo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Titulo.Location = new Point(155, 21);
             Titulo.Name = "Titulo";
-            Titulo.Size = new Size(99, 23);
+            Titulo.Size = new Size(131, 29);
             Titulo.TabIndex = 1;
             Titulo.Text = "Productos";
             // 
@@ -72,7 +73,7 @@
             rjButton1.ImageSize = new Size(20, 20);
             rjButton1.Location = new Point(12, 382);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(108, 36);
+            rjButton1.Size = new Size(123, 48);
             rjButton1.TabIndex = 2;
             rjButton1.Text = "Tests";
             rjButton1.TextColor = Color.White;
@@ -88,12 +89,13 @@
             Agregar.BorderSize = 1;
             Agregar.FlatAppearance.BorderSize = 0;
             Agregar.FlatStyle = FlatStyle.Flat;
-            Agregar.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Agregar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Agregar.ForeColor = Color.Black;
             Agregar.ImageSize = new Size(20, 20);
-            Agregar.Location = new Point(12, 50);
+            Agregar.Location = new Point(14, 67);
+            Agregar.Margin = new Padding(3, 4, 3, 4);
             Agregar.Name = "Agregar";
-            Agregar.Size = new Size(108, 37);
+            Agregar.Size = new Size(123, 49);
             Agregar.TabIndex = 3;
             Agregar.Text = "Nuevo";
             Agregar.TextColor = Color.Black;
@@ -108,16 +110,18 @@
             Categorias.BorderSize = 1;
             Categorias.FlatAppearance.BorderSize = 0;
             Categorias.FlatStyle = FlatStyle.Flat;
-            Categorias.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Categorias.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Categorias.ForeColor = Color.Black;
             Categorias.ImageSize = new Size(20, 20);
-            Categorias.Location = new Point(12, 136);
+            Categorias.Location = new Point(14, 181);
+            Categorias.Margin = new Padding(3, 4, 3, 4);
             Categorias.Name = "Categorias";
-            Categorias.Size = new Size(108, 37);
+            Categorias.Size = new Size(123, 49);
             Categorias.TabIndex = 4;
             Categorias.Text = "Categorias";
             Categorias.TextColor = Color.Black;
             Categorias.UseVisualStyleBackColor = false;
+            Categorias.Click += Categorias_Click;
             // 
             // Marcas
             // 
@@ -128,12 +132,13 @@
             Marcas.BorderSize = 1;
             Marcas.FlatAppearance.BorderSize = 0;
             Marcas.FlatStyle = FlatStyle.Flat;
-            Marcas.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Marcas.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Marcas.ForeColor = Color.Black;
             Marcas.ImageSize = new Size(20, 20);
-            Marcas.Location = new Point(12, 93);
+            Marcas.Location = new Point(14, 124);
+            Marcas.Margin = new Padding(3, 4, 3, 4);
             Marcas.Name = "Marcas";
-            Marcas.Size = new Size(108, 37);
+            Marcas.Size = new Size(123, 49);
             Marcas.TabIndex = 5;
             Marcas.Text = "Marcas";
             Marcas.TextColor = Color.Black;
@@ -150,12 +155,13 @@
             Buscar.BorderSize = 1;
             Buscar.FlatAppearance.BorderSize = 0;
             Buscar.FlatStyle = FlatStyle.Flat;
-            Buscar.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Buscar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Buscar.ForeColor = Color.Black;
             Buscar.ImageSize = new Size(20, 20);
-            Buscar.Location = new Point(663, 10);
+            Buscar.Location = new Point(758, 13);
+            Buscar.Margin = new Padding(3, 4, 3, 4);
             Buscar.Name = "Buscar";
-            Buscar.Size = new Size(108, 37);
+            Buscar.Size = new Size(123, 49);
             Buscar.TabIndex = 6;
             Buscar.Text = "Buscar";
             Buscar.TextColor = Color.Black;
@@ -163,10 +169,10 @@
             // 
             // Productos_list
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(Buscar);
             Controls.Add(Marcas);
             Controls.Add(Categorias);
@@ -174,9 +180,11 @@
             Controls.Add(rjButton1);
             Controls.Add(Titulo);
             Controls.Add(flowLayoutPanel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Productos_list";
             Text = "Productos";
             WindowState = FormWindowState.Maximized;
+            Load += Productos_list_Load;
             ResumeLayout(false);
             PerformLayout();
         }
