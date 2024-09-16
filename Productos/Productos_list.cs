@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace AVI
 {
-    public partial class Productos_list : Form
+    public partial class Marcas_list : Form
 
     {
         private Productos Productos; // Declarar la variable productos
 
-        public Productos_list()
+        public Marcas_list()
         {
             InitializeComponent();
             Productos = new Productos();
