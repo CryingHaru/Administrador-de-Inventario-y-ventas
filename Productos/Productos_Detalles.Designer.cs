@@ -1,6 +1,6 @@
 ﻿namespace AVI
 {
-    partial class Marca_Detalles
+    partial class Productos_Detalles
     {
         /// <summary>
         /// Required designer variable.
