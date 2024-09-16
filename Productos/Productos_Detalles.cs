@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AVI
 {
-    public partial class Productos_Detalles : Form
+    public partial class Marca_Detalles : Form
     {
-        public Productos_Detalles(DataRow row)
+        public Marca_Detalles(DataRow row)
         {
             InitializeComponent();
             Nombre.Text = row["Nombre"].ToString();
