@@ -31,5 +31,11 @@ namespace AVI
             this.SQLcomando = $"INSERT INTO Categorias (Idcategoria, Nombre) VALUES ({idCategoria}, '{nombre}')";
             return this.Ejecutar();
         }
+        //obtener el ultimo id de la tabla
+        public int UltimoId()
+        {
+            this.SQLcomando = "SELECT MAX(Idcategoria) FROM Categorias";
+            return this.UltimoId();
+        }
     }
 }
