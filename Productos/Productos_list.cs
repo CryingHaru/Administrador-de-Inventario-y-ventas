@@ -1,4 +1,5 @@
-﻿using AVI.RJControls;
+﻿using Administrador_de_Inventario_y_ventas.Categorias;
+using AVI.RJControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,7 @@ namespace AVI
                 //img desde la base de datos
                 string imagenPath = row["Imagen"]?.ToString() ?? string.Empty;
                 //comprobar si existe la imagen
-                if (!string.IsNullOrEmpty(imagenPath) && (imagenPath.EndsWith(".png") || imagenPath.EndsWith(".jpg")) && System.IO.File.Exists("Image/" + imagenPath)) 
+                if (!string.IsNullOrEmpty(imagenPath) && (imagenPath.EndsWith(".png") || imagenPath.EndsWith(".jpg")) && System.IO.File.Exists("Image/" + imagenPath))
                 {
                     button.SetImage(Image.FromFile("Image/" + imagenPath));
                 }
@@ -62,7 +63,7 @@ namespace AVI
                 {
                     new Productos_Detalles(row).Show();
                 });
-        
+
                 flowLayoutPanel1.Controls.Add(button);
             }
         }
@@ -75,6 +76,19 @@ namespace AVI
         private void rjButton1_Click(object sender, EventArgs e)
         {
             new Form1().Show();
+        }
+
+        private void Productos_list_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Categorias_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Categorias_list categorias = new Categorias_list();
+            categorias.Show();
         }
     }
 }
