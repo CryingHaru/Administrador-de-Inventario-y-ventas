@@ -143,6 +143,7 @@
             Marcas.Text = "Marcas";
             Marcas.TextColor = Color.Black;
             Marcas.UseVisualStyleBackColor = false;
+            Marcas.Click += Marcas_Click;
             // 
             // Buscar
             // 

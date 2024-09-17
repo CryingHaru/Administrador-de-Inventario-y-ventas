@@ -1,4 +1,5 @@
 ﻿using Administrador_de_Inventario_y_ventas.Categorias;
+using Administrador_de_Inventario_y_ventas.Marcas;
 using AVI.RJControls;
 using System;
 using System.Collections.Generic;
@@ -89,6 +90,14 @@ namespace AVI
 
             Categorias_list categorias = new Categorias_list();
             categorias.Show();
+        }
+
+        private void Marcas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Marcas_list marcas = new Marcas_list();
+            marcas.Show();
         }
     }
 }

@@ -55,7 +55,6 @@
             label1.Size = new Size(136, 20);
             label1.TabIndex = 4;
             label1.Text = "Nombre Categoria:";
-            label1.Click += label1_Click;
             // 
             // Cerrar
             // 
@@ -140,6 +139,7 @@
             Controls.Add(Titulo);
             Name = "Categorias_add";
             Text = "Categorias_add";
+            Load += Categorias_add_Load;
             ResumeLayout(false);
             PerformLayout();
         }
