@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AVI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,38 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
+        {
+            AVI.Marca marca = new AVI.Marca();
+            // Obtener el texto del TextBox para el nombre de la categoría
+            string nombreMarca = txtNombreCategoria.Text;
+
+            DataTable valores = marca.UltimoId();
+            int ultimo = int.Parse(valores.Rows[0][0].ToString());
+            ultimo++;
+            // Obtener el texto del TextBox para el Id de la categoría y convertirlo a entero
+
+            if (!string.IsNullOrEmpty(nombreMarca))
+            {
+
+                bool resultado = marca.AgregarCategoria(ultimo, nombreMarca);
+
+                if (resultado)
+                {
+                    MessageBox.Show("Marca agregada exitosamente.");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar la marca.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un Id y un nombre válidos para la .");
+            }
+        }
+
+        private void txtNombreCategoria_TextChanged(object sender, EventArgs e)
         {
 
         }

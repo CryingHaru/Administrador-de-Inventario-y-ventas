@@ -1,6 +1,6 @@
-﻿namespace Administrador_de_Inventario_y_ventas.Categorias
+﻿namespace AVI
 {
-    partial class Categorias_edit
+    partial class Marcas_edit
     {
         /// <summary>
         /// Required designer variable.
@@ -28,57 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            rjButton1 = new AVI.RJControls.RJButton();
+            Cerrar = new AVI.RJControls.RJButton();
             txtIdCategoria = new TextBox();
             label2 = new Label();
             txtNombreCategoria = new TextBox();
             label1 = new Label();
             Titulo = new Label();
-            rjButton1 = new AVI.RJControls.RJButton();
-            Cerrar = new AVI.RJControls.RJButton();
             SuspendLayout();
-            // 
-            // txtIdCategoria
-            // 
-            txtIdCategoria.Location = new Point(27, 79);
-            txtIdCategoria.Name = "txtIdCategoria";
-            txtIdCategoria.ReadOnly = true;
-            txtIdCategoria.Size = new Size(307, 27);
-            txtIdCategoria.TabIndex = 25;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(27, 56);
-            label2.Name = "label2";
-            label2.Size = new Size(94, 20);
-            label2.TabIndex = 24;
-            label2.Text = "Id Categoria:";
-            // 
-            // txtNombreCategoria
-            // 
-            txtNombreCategoria.Location = new Point(27, 155);
-            txtNombreCategoria.Name = "txtNombreCategoria";
-            txtNombreCategoria.Size = new Size(307, 27);
-            txtNombreCategoria.TabIndex = 23;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(27, 132);
-            label1.Name = "label1";
-            label1.Size = new Size(136, 20);
-            label1.TabIndex = 22;
-            label1.Text = "Nombre Categoria:";
-            // 
-            // Titulo
-            // 
-            Titulo.AutoSize = true;
-            Titulo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Titulo.Location = new Point(80, 18);
-            Titulo.Name = "Titulo";
-            Titulo.Size = new Size(203, 29);
-            Titulo.TabIndex = 21;
-            Titulo.Text = "Editar Categoria";
             // 
             // rjButton1
             // 
@@ -92,15 +49,14 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.ForeColor = Color.Black;
             rjButton1.ImageSize = new Size(20, 20);
-            rjButton1.Location = new Point(27, 216);
+            rjButton1.Location = new Point(32, 230);
             rjButton1.Margin = new Padding(3, 4, 3, 4);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(114, 53);
-            rjButton1.TabIndex = 27;
+            rjButton1.TabIndex = 34;
             rjButton1.Text = "Aceptar";
             rjButton1.TextColor = Color.Black;
             rjButton1.UseVisualStyleBackColor = false;
-            rjButton1.Click += rjButton1_Click;
             // 
             // Cerrar
             // 
@@ -114,21 +70,63 @@
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.ForeColor = Color.Black;
             Cerrar.ImageSize = new Size(20, 20);
-            Cerrar.Location = new Point(220, 216);
+            Cerrar.Location = new Point(225, 230);
             Cerrar.Margin = new Padding(3, 4, 3, 4);
             Cerrar.Name = "Cerrar";
             Cerrar.Size = new Size(114, 53);
-            Cerrar.TabIndex = 26;
+            Cerrar.TabIndex = 33;
             Cerrar.Text = "Cerrar";
             Cerrar.TextColor = Color.Black;
             Cerrar.UseVisualStyleBackColor = false;
-            Cerrar.Click += Cerrar_Click;
             // 
-            // Categorias_edit
+            // txtIdCategoria
+            // 
+            txtIdCategoria.Location = new Point(32, 93);
+            txtIdCategoria.Name = "txtIdCategoria";
+            txtIdCategoria.ReadOnly = true;
+            txtIdCategoria.Size = new Size(307, 27);
+            txtIdCategoria.TabIndex = 32;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(32, 70);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 20);
+            label2.TabIndex = 31;
+            label2.Text = "Id Marca:";
+            // 
+            // txtNombreCategoria
+            // 
+            txtNombreCategoria.Location = new Point(32, 169);
+            txtNombreCategoria.Name = "txtNombreCategoria";
+            txtNombreCategoria.Size = new Size(307, 27);
+            txtNombreCategoria.TabIndex = 30;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(32, 146);
+            label1.Name = "label1";
+            label1.Size = new Size(112, 20);
+            label1.TabIndex = 29;
+            label1.Text = "Nombre Marca:";
+            // 
+            // Titulo
+            // 
+            Titulo.AutoSize = true;
+            Titulo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Titulo.Location = new Point(102, 21);
+            Titulo.Name = "Titulo";
+            Titulo.Size = new Size(160, 29);
+            Titulo.TabIndex = 28;
+            Titulo.Text = "Editar Marca";
+            // 
+            // Marcas_edit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(350, 298);
+            ClientSize = new Size(370, 302);
             Controls.Add(rjButton1);
             Controls.Add(Cerrar);
             Controls.Add(txtIdCategoria);
@@ -136,21 +134,21 @@
             Controls.Add(txtNombreCategoria);
             Controls.Add(label1);
             Controls.Add(Titulo);
-            Name = "Categorias_edit";
-            Text = "Categorias_edit";
-            Load += Categorias_edit_Load;
+            Name = "Marcas_edit";
+            Text = "Marcas_edit";
+            Load += Marcas_edit_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private AVI.RJControls.RJButton rjButton1;
+        private AVI.RJControls.RJButton Cerrar;
         private TextBox txtIdCategoria;
         private Label label2;
         private TextBox txtNombreCategoria;
         private Label label1;
         private Label Titulo;
-        private AVI.RJControls.RJButton rjButton1;
-        private AVI.RJControls.RJButton Cerrar;
     }
 }

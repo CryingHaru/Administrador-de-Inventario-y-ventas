@@ -21,7 +21,7 @@ namespace AVI
             return this.Ejecutar();
         }
 
-        public bool EditarCategoria(int id, string nuevoNombre)
+        public bool EditarMarca(int idmarca, string nuevoNombre)
         {
             this.SQLcomando = $"UPDATE Marca SET Nombre = '{nuevoNombre}' WHERE Idmarca = {id}";
             return this.Ejecutar();
@@ -30,6 +30,11 @@ namespace AVI
         {
             this.SQLcomando = $"INSERT INTO Marca (Idmarca, Nombre) VALUES ({Idmarca}, '{nombre}')";
             return this.Ejecutar();
+        }
+        public DataTable UltimoId()
+        {
+            this.SQLcomando = "SELECT MAX(Idmarca) FROM Marca";
+            return this.Consultar();
         }
     }
 }

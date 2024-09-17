@@ -21,7 +21,7 @@ namespace AVI
             return this.Ejecutar();
         }
 
-        public bool EditarCategoria(int id, string nuevoNombre)
+        public bool EditarCategoria(int id,string nuevoNombre)
         {
             this.SQLcomando = $"UPDATE Categorias SET Nombre = '{nuevoNombre}' WHERE Idcategoria = {id}";
             return this.Ejecutar();
@@ -32,10 +32,10 @@ namespace AVI
             return this.Ejecutar();
         }
         //obtener el ultimo id de la tabla
-        public int UltimoId()
+        public DataTable UltimoId()
         {
             this.SQLcomando = "SELECT MAX(Idcategoria) FROM Categorias";
-            return this.UltimoId();
+            return this.Consultar();
         }
     }
 }

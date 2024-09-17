@@ -109,6 +109,7 @@
             rjButton1.Text = "Editar";
             rjButton1.TextColor = Color.Black;
             rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
             // 
             // Agregar
             // 
@@ -130,6 +131,7 @@
             Agregar.Text = "Nuevo";
             Agregar.TextColor = Color.Black;
             Agregar.UseVisualStyleBackColor = false;
+            Agregar.Click += Agregar_Click;
             // 
             // Titulo
             // 

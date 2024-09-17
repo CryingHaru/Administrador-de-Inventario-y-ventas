@@ -33,8 +33,6 @@
             Cerrar = new AVI.RJControls.RJButton();
             rjButton1 = new AVI.RJControls.RJButton();
             txtNombreCategoria = new TextBox();
-            label2 = new Label();
-            txtIdCategoria = new TextBox();
             SuspendLayout();
             // 
             // Titulo
@@ -50,7 +48,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(37, 123);
+            label1.Location = new Point(37, 72);
             label1.Name = "label1";
             label1.Size = new Size(136, 20);
             label1.TabIndex = 4;
@@ -102,36 +100,17 @@
             // 
             // txtNombreCategoria
             // 
-            txtNombreCategoria.Location = new Point(37, 146);
+            txtNombreCategoria.Location = new Point(37, 95);
             txtNombreCategoria.Name = "txtNombreCategoria";
             txtNombreCategoria.Size = new Size(307, 27);
             txtNombreCategoria.TabIndex = 18;
             txtNombreCategoria.TextChanged += textBox1_TextChanged;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(37, 47);
-            label2.Name = "label2";
-            label2.Size = new Size(94, 20);
-            label2.TabIndex = 19;
-            label2.Text = "Id Categoria:";
-            // 
-            // txtIdCategoria
-            // 
-            txtIdCategoria.Location = new Point(37, 70);
-            txtIdCategoria.Name = "txtIdCategoria";
-            txtIdCategoria.Size = new Size(307, 27);
-            txtIdCategoria.TabIndex = 20;
-            txtIdCategoria.TextChanged += textBox1_TextChanged_1;
             // 
             // Categorias_add
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(369, 279);
-            Controls.Add(txtIdCategoria);
-            Controls.Add(label2);
             Controls.Add(txtNombreCategoria);
             Controls.Add(rjButton1);
             Controls.Add(Cerrar);
@@ -151,7 +130,5 @@
         private AVI.RJControls.RJButton Cerrar;
         private AVI.RJControls.RJButton rjButton1;
         private TextBox txtNombreCategoria;
-        private Label label2;
-        private TextBox txtIdCategoria;
     }
 }
