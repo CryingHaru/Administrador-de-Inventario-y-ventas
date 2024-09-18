@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            rjButton1 = new AVI.RJControls.RJButton();
-            Cerrar = new AVI.RJControls.RJButton();
-            txtIdCategoria = new TextBox();
+            rjButton1 = new RJControls.RJButton();
+            Cerrar = new RJControls.RJButton();
+            Idmarca = new TextBox();
             label2 = new Label();
-            txtNombreCategoria = new TextBox();
+            txtnombreMarca = new TextBox();
             label1 = new Label();
             Titulo = new Label();
             SuspendLayout();
@@ -79,13 +79,13 @@
             Cerrar.TextColor = Color.Black;
             Cerrar.UseVisualStyleBackColor = false;
             // 
-            // txtIdCategoria
+            // Idmarca
             // 
-            txtIdCategoria.Location = new Point(32, 93);
-            txtIdCategoria.Name = "txtIdCategoria";
-            txtIdCategoria.ReadOnly = true;
-            txtIdCategoria.Size = new Size(307, 27);
-            txtIdCategoria.TabIndex = 32;
+            Idmarca.Location = new Point(32, 93);
+            Idmarca.Name = "Idmarca";
+            Idmarca.ReadOnly = true;
+            Idmarca.Size = new Size(307, 27);
+            Idmarca.TabIndex = 32;
             // 
             // label2
             // 
@@ -96,12 +96,12 @@
             label2.TabIndex = 31;
             label2.Text = "Id Marca:";
             // 
-            // txtNombreCategoria
+            // txtnombreMarca
             // 
-            txtNombreCategoria.Location = new Point(32, 169);
-            txtNombreCategoria.Name = "txtNombreCategoria";
-            txtNombreCategoria.Size = new Size(307, 27);
-            txtNombreCategoria.TabIndex = 30;
+            txtnombreMarca.Location = new Point(32, 169);
+            txtnombreMarca.Name = "txtnombreMarca";
+            txtnombreMarca.Size = new Size(307, 27);
+            txtnombreMarca.TabIndex = 30;
             // 
             // label1
             // 
@@ -129,9 +129,9 @@
             ClientSize = new Size(370, 302);
             Controls.Add(rjButton1);
             Controls.Add(Cerrar);
-            Controls.Add(txtIdCategoria);
+            Controls.Add(Idmarca);
             Controls.Add(label2);
-            Controls.Add(txtNombreCategoria);
+            Controls.Add(txtnombreMarca);
             Controls.Add(label1);
             Controls.Add(Titulo);
             Name = "Marcas_edit";
@@ -145,9 +145,9 @@
 
         private AVI.RJControls.RJButton rjButton1;
         private AVI.RJControls.RJButton Cerrar;
-        private TextBox txtIdCategoria;
+        private TextBox Idmarca;
         private Label label2;
-        private TextBox txtNombreCategoria;
+        private TextBox txtnombreMarca;
         private Label label1;
         private Label Titulo;
     }
