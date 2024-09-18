@@ -79,6 +79,7 @@
             Cerrar.Text = "Cerrar";
             Cerrar.TextColor = Color.Black;
             Cerrar.UseVisualStyleBackColor = false;
+            Cerrar.Click += Cerrar_Click;
             // 
             // Idmarca
             // 

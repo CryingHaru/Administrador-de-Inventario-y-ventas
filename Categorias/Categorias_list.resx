@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEMAAABDCAYAAADHyrhzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
+        IgAALiIBquLdkgAAA99JREFUeF7tm39x20AYRAshEAqhEAKhEAqhEMIgEAqhEAqhEAqhENxbjy/zfHmy
+        ZOmkKmPtzPujG0e6vR/fSef00+l0OrigJtlIXwt/C6/nf60ky0fUJBvppZCbhZ+Fp0J3WT6iJtlI7Izw
+        u/C50FWWj6hJNlLbGSHL5kuhmywfUZNsJOuMyrdCF1k+oibZSLc6I/woLJblI2qSjTTWGeFXYVFhtXxE
+        TdJZCfNcSPhsowkY/hQYfIgU1tl1xPIRNUkHZVf4XkgQBpvL7MJq+YiaZIEyAzLqDNKLzKy7ZfmImmSG
+        1uyE8CFmRupB6gAbfouEmlMzZhdRy0fUJBOVkRqrCQmfLTLvIW2gKbtJfnf3u0mWRYKy4SQjP/bgNNYZ
+        s2pEK8tH1CQjSkg2mmTqp6OmaKgz0skf4gk0Qdlwktpxz5S2zphdKIdk+YiaZEBppC2NuSPZdsaiQjkk
+        y0fUJKI00orlkpFkZywulEOyfERNIrLtc+mUzg6TQtulUA7J8hE1SaOhOtGtyK0py0fUJI3syXLVc8uZ
+        yjLLwF0tN8tH1CSQzYpsn6us7wVKO2txv1q+lo+oSSCbFbnx3pQDZbYx7T7L8hE1yUV5DecNwttNdqa2
+        M8L5cNnyETXJRTmP4MXDXotmdqa2rWm/5iNqkova54qsxT2r1oxK2q/5iJqkKAWSFw5dDmhXVNrXtvnJ
+        8hE1SZHtIpmKe5YtlWfLR9QkRfYS1f3brs6y2fxi+YiapKh9/N57vahq68ar5SNqkqL2+WKvW2qrd+22
+        fERNkovggueLFj6Cjs6Ajs6Ajs6AVumMYzepFB3PGZWi4wm0UnS8m1QuOt5aw0XHeUa46COddLVbauh6
+        0hXZTfZ2BmrF/m3QLB9Rk0B2o72djtvfebwNmOUjapJGNjv28r2JfdN3tZQtH1GTNMp3ELxZ5X8XUyua
+        4WoZWz6iJhHZCGQrW/Jd6xLlvu1WGt7NWMtH1CSi1Ije38LP1VBHpH3vapnlI2qSAQ01It5WSyZLY6gN
+        OiiWj6hJbsh2l0qm6Jq7jC3VylWdoCwfUZOMKLOADSH3/E3XVOV6tn1Wbs5Ky0fUJBOUBtp0rWR7W7p0
+        siRsW6/k/qMdb/mImmSiskatqJI0OG+TCTa2hPLzfC6fv9XRIfedVLgtH1GT3KEEuLWWWxIyo90yFp7c
+        VZssH1GTzFCma0Kx0b3J9e+uR5aPqEkWaI1OmdUJVZaPqEk6KK/PS/6/SX4vv7/43NXyETVJZ2V9Z2Rz
+        yJz1npFuiZ+f53OT68EUWT6i5qOi5qOi5qOi5qOi5qOi5qOi5qOi5mNy+vQPMHKB7Lclk6QAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
 </root>

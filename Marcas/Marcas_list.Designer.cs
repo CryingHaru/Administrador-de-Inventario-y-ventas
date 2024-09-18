@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Marcas_list));
             dataGridView1 = new DataGridView();
             rjButton3 = new AVI.RJControls.RJButton();
             rjButton2 = new AVI.RJControls.RJButton();
             rjButton1 = new AVI.RJControls.RJButton();
             Agregar = new AVI.RJControls.RJButton();
             Titulo = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -43,7 +46,7 @@
             dataGridView1.Location = new Point(163, 54);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(267, 371);
+            dataGridView1.Size = new Size(304, 371);
             dataGridView1.TabIndex = 1;
             // 
             // rjButton3
@@ -88,6 +91,7 @@
             rjButton2.Text = "Borrar";
             rjButton2.TextColor = Color.Black;
             rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Click += rjButton2_Click;
             // 
             // rjButton1
             // 
@@ -143,11 +147,24 @@
             Titulo.TabIndex = 12;
             Titulo.Text = "Marcas";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, 13);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(33, 35);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // Marcas_list
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(485, 450);
+            ClientSize = new Size(501, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(Titulo);
             Controls.Add(rjButton3);
             Controls.Add(rjButton2);
@@ -158,6 +175,7 @@
             Text = "Marcas_list";
             Load += Marcas_list_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,5 +188,6 @@
         private AVI.RJControls.RJButton rjButton1;
         private AVI.RJControls.RJButton Agregar;
         private Label Titulo;
+        private PictureBox pictureBox1;
     }
 }

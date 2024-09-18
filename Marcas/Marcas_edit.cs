@@ -20,6 +20,7 @@ namespace AVI
             InitializeComponent();
             idMarca = idmarca;
             txtnombreMarca.Text = nombreMarca;
+            Idmarca.Text = idmarca.ToString();
         }
 
         private void Marcas_edit_Load(object sender, EventArgs e)
@@ -50,6 +51,11 @@ namespace AVI
             {
                 MessageBox.Show("Por favor, ingrese un nombre para la Marca.");
             }
+        }
+
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

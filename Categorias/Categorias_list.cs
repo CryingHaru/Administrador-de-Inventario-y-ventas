@@ -107,5 +107,10 @@ namespace Administrador_de_Inventario_y_ventas.Categorias
                 MessageBox.Show("Por favor, seleccione una categoría para eliminar.");
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            LoadCategoriasData();
+        }
     }
 }

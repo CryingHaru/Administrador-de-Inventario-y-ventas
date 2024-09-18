@@ -15,7 +15,7 @@ namespace AVI
             this.SQLcomando = "SELECT * FROM Marca";
             return this.Consultar();
         }
-        public bool EliminarCategoria(int id)
+        public bool EliminarMarca(int id)
         {
             this.SQLcomando = $"DELETE FROM Marca WHERE Idmarca = {id}";
             return this.Ejecutar();
@@ -26,7 +26,7 @@ namespace AVI
             this.SQLcomando = $"UPDATE Marca SET Nombre = '{nuevoNombre}' WHERE Idmarca = {idmarca}";
             return this.Ejecutar();
         }
-        public bool AgregarCategoria(int Idmarca, string nombre)
+        public bool AgregarMarca(int Idmarca, string nombre)
         {
             this.SQLcomando = $"INSERT INTO Marca (Idmarca, Nombre) VALUES ({Idmarca}, '{nombre}')";
             return this.Ejecutar();

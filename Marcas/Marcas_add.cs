@@ -37,7 +37,7 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
             if (!string.IsNullOrEmpty(nombreMarca))
             {
 
-                bool resultado = marca.AgregarCategoria(ultimo, nombreMarca);
+                bool resultado = marca.AgregarMarca(ultimo, nombreMarca);
 
                 if (resultado)
                 {
@@ -58,6 +58,16 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
         private void txtNombreCategoria_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Marcas_add_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

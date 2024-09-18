@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Categorias_list));
             flowLayoutPanel1 = new FlowLayoutPanel();
             dataGridView1 = new DataGridView();
             Titulo = new Label();
@@ -35,8 +36,10 @@
             rjButton1 = new AVI.RJControls.RJButton();
             rjButton2 = new AVI.RJControls.RJButton();
             rjButton3 = new AVI.RJControls.RJButton();
+            pictureBox1 = new PictureBox();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -47,7 +50,7 @@
             flowLayoutPanel1.Location = new Point(138, 54);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(628, 374);
+            flowLayoutPanel1.Size = new Size(335, 374);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // dataGridView1
@@ -56,7 +59,7 @@
             dataGridView1.Location = new Point(3, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(625, 371);
+            dataGridView1.Size = new Size(332, 371);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -158,11 +161,24 @@
             rjButton3.UseVisualStyleBackColor = false;
             rjButton3.Click += rjButton3_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(33, 35);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // Categorias_list
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(507, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(rjButton3);
             Controls.Add(rjButton2);
             Controls.Add(rjButton1);
@@ -174,6 +190,7 @@
             Load += Categorias_list_Load;
             flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -187,5 +204,6 @@
         private AVI.RJControls.RJButton rjButton1;
         private AVI.RJControls.RJButton rjButton2;
         private AVI.RJControls.RJButton rjButton3;
+        private PictureBox pictureBox1;
     }
 }

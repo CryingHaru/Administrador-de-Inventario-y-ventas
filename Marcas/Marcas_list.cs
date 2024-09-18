@@ -74,5 +74,43 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
                 MessageBox.Show("Por favor, seleccione una categoría para editar.");
             }
         }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Obtener el ID de la categoría seleccionada
+                int idMarca = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdMarca"].Value);
+
+                // Confirmar la eliminación
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar esta Marca?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    // Llamar al método EliminarCategoria
+                    AVI.Marca marcas = new AVI.Marca();
+                    bool resultado = marcas.EliminarMarca(idMarca);
+
+                    if (resultado)
+                    {
+                        MessageBox.Show("Marca eliminada exitosamente.");
+                        // Recargar los datos después de la eliminación
+                        LoadMarcaData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar la Marca.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una Marca para eliminar.");
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            LoadMarcaData();
+        }
     }
 }
