@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Administrador_de_Inventario_y_ventas.Categorias
 {
-    public partial class Categorias_list : Form
+    public partial class Clientes_list : Form
     {
         private AVI.Categorias categorias;
 
-        public Categorias_list()
+        public Clientes_list()
         {
             InitializeComponent();
             categorias = new AVI.Categorias();
@@ -63,7 +63,7 @@ namespace Administrador_de_Inventario_y_ventas.Categorias
                 string nombreCategoria = dataGridView1.SelectedRows[0].Cells["Nombre"].Value.ToString();
 
                 // Abrir el formulario de edición con los datos seleccionados
-                Categorias_edit categoriasEdit = new Categorias_edit(idCategoria, nombreCategoria);
+                Clientes_edit categoriasEdit = new Categorias_edit(idCategoria, nombreCategoria);
                 categoriasEdit.ShowDialog();
 
                 // Recargar los datos después de la edición
