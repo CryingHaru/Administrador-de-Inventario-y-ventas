@@ -57,6 +57,7 @@
             rjButton1.Text = "Aceptar";
             rjButton1.TextColor = Color.Black;
             rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
             // 
             // Cerrar
             // 
