@@ -43,7 +43,7 @@ namespace Administrador_de_Inventario_y_ventas.Categorias
 
         private void Agregar_Click(object sender, EventArgs e)
         {
-            Clientes_add categoriasAdd = new Categorias_add();
+            Categorias_add categoriasAdd = new Categorias_add();
             categoriasAdd.Show();
         }
 

@@ -23,7 +23,7 @@ namespace AVI
 
         public bool EditarMarca(int idmarca, string nuevoNombre)
         {
-            this.SQLcomando = $"UPDATE Marca SET Nombre = '{nuevoNombre}' WHERE Idmarca = {id}";
+            this.SQLcomando = $"UPDATE Marca SET Nombre = '{nuevoNombre}' WHERE Idmarca = {idmarca}";
             return this.Ejecutar();
         }
         public bool AgregarCategoria(int Idmarca, string nombre)

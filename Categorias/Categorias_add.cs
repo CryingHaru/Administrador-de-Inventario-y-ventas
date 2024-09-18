@@ -12,9 +12,9 @@ using AVI;
 
 namespace Administrador_de_Inventario_y_ventas.Categorias
 {
-    public partial class Clientes_add : Form
+    public partial class Categorias_add : Form
     {
-        public Clientes_add()
+        public Categorias_add()
         {
             InitializeComponent();
         }

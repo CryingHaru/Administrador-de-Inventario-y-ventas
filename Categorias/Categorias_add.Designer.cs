@@ -1,6 +1,6 @@
 ﻿namespace Administrador_de_Inventario_y_ventas.Categorias
 {
-    partial class Clientes_add
+    partial class Categorias_add
     {
         /// <summary>
         /// Required designer variable.

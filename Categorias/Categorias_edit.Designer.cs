@@ -1,6 +1,6 @@
-﻿namespace Administrador_de_Inventario_y_ventas.Categorias
+﻿namespace AVI
 {
-    partial class Clientes_edit
+    partial class Categorias_edit
     {
         /// <summary>
         /// Required designer variable.

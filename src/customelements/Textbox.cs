@@ -44,10 +44,23 @@ namespace AVI
             }
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
+        //border 
+        [Category("Appearance")]
+        [Description("The color of the border.")]
+        public Color BorderColor { get; set; } = Color.LightGray;
 
+        //border
+        [Category("Appearance")]
+        [Description("The width of the border.")]
+        public int BorderSize { get; set; } = 2;
+
+        //border
+        [Category("Appearance")]
+        [Description("The radius of the border.")]
+        public int BorderRadius { get; set; } = 0;
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
             // Crear una sombra
             using (GraphicsPath path = new GraphicsPath())
             {
@@ -79,6 +92,13 @@ namespace AVI
         {
             base.OnResize(e);
             this.Invalidate();
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            // Draw the text on the control
+            TextRenderer.DrawText(e.Graphics, this.Text, this.Font, new Rectangle(10, 10, this.Width - 20, this.Height - 20), this.ForeColor);
         }
     }
 }

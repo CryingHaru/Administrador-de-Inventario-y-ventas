@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Administrador_de_Inventario_y_ventas.Categorias
+namespace AVI
 {
-    public partial class Clientes_edit : Form
+    public partial class Categorias_edit : Form
     {
         private int idCategoria;
 
-        public Clientes_edit(int Idcategoria, string nombre)
+        public Categorias_edit(int Idcategoria, string nombre)
         {
             InitializeComponent();
             idCategoria = Idcategoria;

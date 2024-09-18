@@ -88,7 +88,7 @@ namespace AVI
         {
             this.Hide();
 
-            Clientes_list categorias = new Categorias_list();
+            Categorias_list categorias = new Categorias_list();
             categorias.Show();
         }
 

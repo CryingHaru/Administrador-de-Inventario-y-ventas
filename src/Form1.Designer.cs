@@ -35,9 +35,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(46, 42);
+            button1.Location = new Point(39, 36);
             button1.Name = "button1";
-            button1.Size = new Size(100, 83);
+            button1.Size = new Size(86, 72);
             button1.TabIndex = 0;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // 
             // button2
             // 
-            button2.Location = new Point(163, 42);
+            button2.Location = new Point(140, 36);
             button2.Name = "button2";
-            button2.Size = new Size(144, 83);
+            button2.Size = new Size(123, 72);
             button2.TabIndex = 1;
             button2.Text = "Prueba detectorde codigos";
             button2.UseVisualStyleBackColor = true;
@@ -56,17 +56,17 @@
             // lblResult
             // 
             lblResult.AutoSize = true;
-            lblResult.Location = new Point(313, 76);
+            lblResult.Location = new Point(268, 66);
             lblResult.Name = "lblResult";
-            lblResult.Size = new Size(38, 15);
+            lblResult.Size = new Size(35, 13);
             lblResult.TabIndex = 2;
             lblResult.Text = "label1";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(686, 390);
             Controls.Add(lblResult);
             Controls.Add(button2);
             Controls.Add(button1);

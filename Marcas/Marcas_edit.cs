@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using AVI;
 
 namespace AVI
 {
@@ -33,7 +34,7 @@ namespace AVI
             if (!string.IsNullOrEmpty(nuevoNombre))
             {
                 AVI.Marca marcas = new AVI.Marca();
-                bool resultado = marcas.EditarCategoria(idMarca, nuevoNombre);
+                bool resultado = marcas.EditarMarca(idMarca, nuevoNombre);
 
                 if (resultado)
                 {
