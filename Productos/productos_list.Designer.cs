@@ -36,6 +36,7 @@
             Categorias = new RJControls.RJButton();
             Marcas = new RJControls.RJButton();
             Buscar = new RJControls.RJButton();
+            Cliente = new RJControls.RJButton();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -171,12 +172,35 @@
             Buscar.TextColor = Color.Black;
             Buscar.UseVisualStyleBackColor = false;
             // 
+            // Cliente
+            // 
+            Cliente.BackColor = Color.White;
+            Cliente.BackgroundColor = Color.White;
+            Cliente.BorderColor = Color.FromArgb(64, 64, 64);
+            Cliente.BorderRadius = 8;
+            Cliente.BorderSize = 1;
+            Cliente.FlatAppearance.BorderSize = 0;
+            Cliente.FlatStyle = FlatStyle.Flat;
+            Cliente.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Cliente.ForeColor = Color.Black;
+            Cliente.ImageSize = new Size(20, 20);
+            Cliente.Location = new Point(12, 238);
+            Cliente.Margin = new Padding(3, 4, 3, 4);
+            Cliente.Name = "Cliente";
+            Cliente.Size = new Size(123, 49);
+            Cliente.TabIndex = 7;
+            Cliente.Text = "Clientes";
+            Cliente.TextColor = Color.Black;
+            Cliente.UseVisualStyleBackColor = false;
+            Cliente.Click += Cliente_Click_1;
+            // 
             // Productos_list
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(686, 390);
+            ClientSize = new Size(914, 600);
+            Controls.Add(Cliente);
             Controls.Add(Buscar);
             Controls.Add(Marcas);
             Controls.Add(Categorias);
@@ -202,5 +226,6 @@
         private RJControls.RJButton Categorias;
         private RJControls.RJButton Marcas;
         private RJControls.RJButton Buscar;
+        private RJControls.RJButton Cliente;
     }
 }
