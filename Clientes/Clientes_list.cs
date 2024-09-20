@@ -36,7 +36,6 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
         }
         private void LoadClienteData()
         {
-            // Obtén el DataTable de las categorías
             DataTable ClienteDataTable = cliente.Clientelist();
 
             // Asigna el DataTable al DataGridView
