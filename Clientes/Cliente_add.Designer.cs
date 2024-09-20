@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtNombreCategoria = new TextBox();
+            txtApellidoCliente = new TextBox();
             rjButton1 = new AVI.RJControls.RJButton();
             Cerrar = new AVI.RJControls.RJButton();
             label1 = new Label();
             Titulo = new Label();
-            textBox1 = new TextBox();
+            txtNombreCliente = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtTelefonoCliente = new TextBox();
+            txtDireccionCliente = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            textBox4 = new TextBox();
+            txtDUICliente = new TextBox();
             label6 = new Label();
             label7 = new Label();
             SuspendLayout();
             // 
-            // txtNombreCategoria
+            // txtApellidoCliente
             // 
-            txtNombreCategoria.Location = new Point(42, 156);
-            txtNombreCategoria.Name = "txtNombreCategoria";
-            txtNombreCategoria.Size = new Size(307, 27);
-            txtNombreCategoria.TabIndex = 30;
-            txtNombreCategoria.TextChanged += txtNombreCategoria_TextChanged;
+            txtApellidoCliente.Location = new Point(42, 156);
+            txtApellidoCliente.Name = "txtApellidoCliente";
+            txtApellidoCliente.Size = new Size(307, 27);
+            txtApellidoCliente.TabIndex = 30;
+            txtApellidoCliente.TextChanged += txtNombreCategoria_TextChanged;
             // 
             // rjButton1
             // 
@@ -73,6 +73,7 @@
             rjButton1.Text = "Aceptar";
             rjButton1.TextColor = Color.Black;
             rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
             // 
             // Cerrar
             // 
@@ -94,6 +95,7 @@
             Cerrar.Text = "Cerrar";
             Cerrar.TextColor = Color.Black;
             Cerrar.UseVisualStyleBackColor = false;
+            Cerrar.Click += Cerrar_Click;
             // 
             // label1
             // 
@@ -103,7 +105,6 @@
             label1.Size = new Size(69, 20);
             label1.TabIndex = 27;
             label1.Text = "Apellido:";
-            label1.Click += this.label1_Click;
             // 
             // Titulo
             // 
@@ -114,12 +115,12 @@
             Titulo.Size = new Size(0, 29);
             Titulo.TabIndex = 26;
             // 
-            // textBox1
+            // txtNombreCliente
             // 
-            textBox1.Location = new Point(42, 90);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(307, 27);
-            textBox1.TabIndex = 31;
+            txtNombreCliente.Location = new Point(42, 90);
+            txtNombreCliente.Name = "txtNombreCliente";
+            txtNombreCliente.Size = new Size(307, 27);
+            txtNombreCliente.TabIndex = 31;
             // 
             // label2
             // 
@@ -140,19 +141,19 @@
             label3.Text = "Telelfono:";
             label3.Click += label3_Click;
             // 
-            // textBox2
+            // txtTelefonoCliente
             // 
-            textBox2.Location = new Point(42, 219);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(307, 27);
-            textBox2.TabIndex = 34;
+            txtTelefonoCliente.Location = new Point(42, 219);
+            txtTelefonoCliente.Name = "txtTelefonoCliente";
+            txtTelefonoCliente.Size = new Size(307, 27);
+            txtTelefonoCliente.TabIndex = 34;
             // 
-            // textBox3
+            // txtDireccionCliente
             // 
-            textBox3.Location = new Point(42, 279);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(307, 27);
-            textBox3.TabIndex = 35;
+            txtDireccionCliente.Location = new Point(42, 279);
+            txtDireccionCliente.Name = "txtDireccionCliente";
+            txtDireccionCliente.Size = new Size(307, 27);
+            txtDireccionCliente.TabIndex = 35;
             // 
             // label4
             // 
@@ -172,12 +173,12 @@
             label5.TabIndex = 37;
             label5.Text = "DUI:";
             // 
-            // textBox4
+            // txtDUICliente
             // 
-            textBox4.Location = new Point(42, 339);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(307, 27);
-            textBox4.TabIndex = 38;
+            txtDUICliente.Location = new Point(42, 339);
+            txtDUICliente.Name = "txtDUICliente";
+            txtDUICliente.Size = new Size(307, 27);
+            txtDUICliente.TabIndex = 38;
             // 
             // label6
             // 
@@ -201,44 +202,44 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(373, 496);
+            ClientSize = new Size(371, 485);
             Controls.Add(label7);
             Controls.Add(label6);
-            Controls.Add(textBox4);
+            Controls.Add(txtDUICliente);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(txtDireccionCliente);
+            Controls.Add(txtTelefonoCliente);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(txtNombreCategoria);
+            Controls.Add(txtNombreCliente);
+            Controls.Add(txtApellidoCliente);
             Controls.Add(rjButton1);
             Controls.Add(Cerrar);
             Controls.Add(label1);
             Controls.Add(Titulo);
             Name = "Cliente_add";
             Text = "Cliente_add";
-            Load += this.Cliente_add_Load;
+            Load += Cliente_add_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox txtNombreCategoria;
+        private TextBox txtApellidoCliente;
         private AVI.RJControls.RJButton rjButton1;
         private AVI.RJControls.RJButton Cerrar;
         private Label label1;
         private Label Titulo;
-        private TextBox textBox1;
+        private TextBox txtNombreCliente;
         private Label label2;
         private Label label3;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtTelefonoCliente;
+        private TextBox txtDireccionCliente;
         private Label label4;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox txtDUICliente;
         private Label label6;
         private Label label7;
     }

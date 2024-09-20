@@ -93,6 +93,7 @@
             rjButton2.Text = "Borrar";
             rjButton2.TextColor = Color.Black;
             rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Click += rjButton2_Click;
             // 
             // rjButton1
             // 
@@ -135,6 +136,7 @@
             Agregar.Text = "Nuevo";
             Agregar.TextColor = Color.Black;
             Agregar.UseVisualStyleBackColor = false;
+            Agregar.Click += Agregar_Click;
             // 
             // dataGridView1
             // 
