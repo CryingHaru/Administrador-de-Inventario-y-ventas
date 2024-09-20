@@ -112,5 +112,10 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
         {
             LoadMarcaData();
         }
+
+        private void Titulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

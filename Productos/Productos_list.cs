@@ -1,5 +1,6 @@
 ﻿using Administrador_de_Inventario_y_ventas.Categorias;
 using Administrador_de_Inventario_y_ventas.Marcas;
+using Administrador_de_Inventario_y_ventas.Clientes;
 using AVI.RJControls;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clientes_list = Administrador_de_Inventario_y_ventas.Clientes.Clientes_list;
 
 namespace AVI
 {
@@ -98,6 +100,15 @@ namespace AVI
 
             Marcas_list marcas = new Marcas_list();
             marcas.Show();
+        }
+
+        private void Cliente_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Clientes_list cliente = new Clientes_list();
+            cliente.Show();
+
         }
     }
 }
