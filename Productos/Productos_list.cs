@@ -88,7 +88,7 @@ namespace AVI
 
         private void Categorias_Click(object sender, EventArgs e)
         {
-            this.Hide();
+           // this.Hide();
 
             Categorias_list categorias = new Categorias_list();
             categorias.Show();
@@ -108,6 +108,16 @@ namespace AVI
 
             Clientes_list cliente = new Clientes_list();
             cliente.Show();
+
+        }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textboxelement1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

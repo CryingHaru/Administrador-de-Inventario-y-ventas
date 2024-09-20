@@ -19,6 +19,16 @@ namespace Administrador_de_Inventario_y_ventas.Categorias
         {
             InitializeComponent();
             categorias = new AVI.Categorias();
+           
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            //si se seleciona un cuadro se seleciona toda la fila
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.AreAllCellsSelected(true);
+
         }
 
         private void Categorias_list_Load(object sender, EventArgs e)
@@ -50,8 +60,8 @@ namespace Administrador_de_Inventario_y_ventas.Categorias
         private void rjButton3_Click(object sender, EventArgs e)
         {
             this.Close();
-            Productos_list productos = new Productos_list();
-            productos.Show();
+        //Productos_list productos = new Productos_list();
+        //    productos.Show();
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
