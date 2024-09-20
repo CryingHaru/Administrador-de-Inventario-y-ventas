@@ -46,7 +46,7 @@
             flowLayoutPanel1.Location = new Point(116, 44);
             flowLayoutPanel1.Margin = new Padding(2, 3, 2, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(545, 319);
+            flowLayoutPanel1.Size = new Size(656, 359);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -73,8 +73,8 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.ForeColor = Color.White;
             rjButton1.ImageSize = new Size(20, 20);
-            rjButton1.Location = new Point(9, 248);
-            rjButton1.Margin = new Padding(2, 2, 2, 2);
+            rjButton1.Location = new Point(9, 288);
+            rjButton1.Margin = new Padding(2);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(92, 31);
             rjButton1.TabIndex = 2;
@@ -103,7 +103,6 @@
             Agregar.Text = "Nuevo";
             Agregar.TextColor = Color.Black;
             Agregar.UseVisualStyleBackColor = false;
-            Agregar.Click += Agregar_Click;
             // 
             // Categorias
             // 
@@ -163,7 +162,7 @@
             Buscar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Buscar.ForeColor = Color.Black;
             Buscar.ImageSize = new Size(20, 20);
-            Buscar.Location = new Point(568, 8);
+            Buscar.Location = new Point(679, 8);
             Buscar.Margin = new Padding(2, 3, 2, 3);
             Buscar.Name = "Buscar";
             Buscar.Size = new Size(92, 32);
@@ -184,10 +183,10 @@
             Cliente.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Cliente.ForeColor = Color.Black;
             Cliente.ImageSize = new Size(20, 20);
-            Cliente.Location = new Point(12, 238);
+            Cliente.Location = new Point(1, 329);
             Cliente.Margin = new Padding(3, 4, 3, 4);
             Cliente.Name = "Cliente";
-            Cliente.Size = new Size(123, 49);
+            Cliente.Size = new Size(101, 34);
             Cliente.TabIndex = 7;
             Cliente.Text = "Clientes";
             Cliente.TextColor = Color.Black;
@@ -199,7 +198,7 @@
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(1025, 640);
             Controls.Add(Cliente);
             Controls.Add(Buscar);
             Controls.Add(Marcas);

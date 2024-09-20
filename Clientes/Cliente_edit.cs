@@ -11,11 +11,22 @@ using AVI;
 
 namespace Administrador_de_Inventario_y_ventas.Clientes
 {
-    public partial class Cliente_add : Form
+    public partial class Cliente_edit : Form
     {
-        public Cliente_add()
+        private int Id;
+        public Cliente_edit(int Id)
         {
             InitializeComponent();
+            this.Id = Id;
+            AVI.Cliente cliente = new AVI.Cliente();
+            DataTable clienteData = cliente.Clientelist();
+            DataRow[] clienteRow = clienteData.Select($"Idcliente = {Id}");
+            txtNombreCliente.Text = clienteRow[0]["Nombre"].ToString();
+            txtApellidoCliente.Text = clienteRow[0]["Apellido"].ToString();
+            txtTelefonoCliente.Text = clienteRow[0]["Telefono"].ToString();
+            txtDUICliente.Text = clienteRow[0]["Dui"].ToString();
+            txtDireccionCliente.Text = clienteRow[0]["Direccion"].ToString();
+
         }
 
         private void txtNombreCategoria_TextChanged(object sender, EventArgs e)
@@ -48,13 +59,9 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
             string duiCliente = txtDUICliente.Text;
             string direccionCliente = txtDireccionCliente.Text;
 
-            DataTable valores = clientes.UltimoId();
-            int ultimo = int.Parse(valores.Rows[0][0].ToString());
-            ultimo++;
-
             if (!string.IsNullOrEmpty(nombreCliente) && !string.IsNullOrEmpty(apellidoCliente) && !string.IsNullOrEmpty(telefonoCliente) && !string.IsNullOrEmpty(duiCliente) && !string.IsNullOrEmpty(direccionCliente))
             {
-                bool resultado = clientes.AgregarCliente(ultimo, nombreCliente, apellidoCliente, telefonoCliente, duiCliente, direccionCliente);
+                bool resultado = clientes.EditarCliente(this.Id, nombreCliente, apellidoCliente, telefonoCliente, duiCliente, direccionCliente);
 
                 if (resultado)
                 {

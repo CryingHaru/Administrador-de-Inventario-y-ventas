@@ -44,9 +44,10 @@
             // 
             Titulo.AutoSize = true;
             Titulo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Titulo.Location = new Point(162, 5);
+            Titulo.Location = new Point(122, 3);
+            Titulo.Margin = new Padding(2, 0, 2, 0);
             Titulo.Name = "Titulo";
-            Titulo.Size = new Size(109, 29);
+            Titulo.Size = new Size(85, 24);
             Titulo.TabIndex = 18;
             Titulo.Text = "Clientes";
             Titulo.Click += Titulo_Click;
@@ -63,10 +64,10 @@
             rjButton3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rjButton3.ForeColor = Color.Black;
             rjButton3.ImageSize = new Size(20, 20);
-            rjButton3.Location = new Point(11, 323);
-            rjButton3.Margin = new Padding(3, 4, 3, 4);
+            rjButton3.Location = new Point(8, 210);
+            rjButton3.Margin = new Padding(2, 3, 2, 3);
             rjButton3.Name = "rjButton3";
-            rjButton3.Size = new Size(123, 49);
+            rjButton3.Size = new Size(92, 32);
             rjButton3.TabIndex = 17;
             rjButton3.Text = "Cerrar";
             rjButton3.TextColor = Color.Black;
@@ -85,10 +86,10 @@
             rjButton2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rjButton2.ForeColor = Color.Black;
             rjButton2.ImageSize = new Size(20, 20);
-            rjButton2.Location = new Point(11, 167);
-            rjButton2.Margin = new Padding(3, 4, 3, 4);
+            rjButton2.Location = new Point(8, 109);
+            rjButton2.Margin = new Padding(2, 3, 2, 3);
             rjButton2.Name = "rjButton2";
-            rjButton2.Size = new Size(123, 49);
+            rjButton2.Size = new Size(92, 32);
             rjButton2.TabIndex = 16;
             rjButton2.Text = "Borrar";
             rjButton2.TextColor = Color.Black;
@@ -107,14 +108,15 @@
             rjButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rjButton1.ForeColor = Color.Black;
             rjButton1.ImageSize = new Size(20, 20);
-            rjButton1.Location = new Point(11, 110);
-            rjButton1.Margin = new Padding(3, 4, 3, 4);
+            rjButton1.Location = new Point(8, 72);
+            rjButton1.Margin = new Padding(2, 3, 2, 3);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(123, 49);
+            rjButton1.Size = new Size(92, 32);
             rjButton1.TabIndex = 15;
             rjButton1.Text = "Editar";
             rjButton1.TextColor = Color.Black;
             rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
             // 
             // Agregar
             // 
@@ -128,10 +130,10 @@
             Agregar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Agregar.ForeColor = Color.Black;
             Agregar.ImageSize = new Size(20, 20);
-            Agregar.Location = new Point(11, 53);
-            Agregar.Margin = new Padding(3, 4, 3, 4);
+            Agregar.Location = new Point(8, 34);
+            Agregar.Margin = new Padding(2, 3, 2, 3);
             Agregar.Name = "Agregar";
-            Agregar.Size = new Size(123, 49);
+            Agregar.Size = new Size(92, 32);
             Agregar.TabIndex = 14;
             Agregar.Text = "Nuevo";
             Agregar.TextColor = Color.Black;
@@ -141,19 +143,21 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(162, 53);
+            dataGridView1.Location = new Point(122, 34);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(601, 319);
+            dataGridView1.Size = new Size(451, 207);
             dataGridView1.TabIndex = 19;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 11);
+            pictureBox1.Location = new Point(9, 7);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(33, 35);
+            pictureBox1.Size = new Size(25, 23);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
@@ -161,9 +165,9 @@
             // 
             // Clientes_list
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(600, 292);
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);
             Controls.Add(Titulo);
@@ -171,6 +175,7 @@
             Controls.Add(rjButton2);
             Controls.Add(rjButton1);
             Controls.Add(Agregar);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Clientes_list";
             Text = "Clientes_list";
             Load += Clientes_list_Load;

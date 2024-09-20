@@ -93,5 +93,18 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
                 MessageBox.Show("Por favor, seleccione un cliente para eliminar.");
             }
         }
-    }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Obtener el ID del cliente seleccionado
+                int idCliente = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdCliente"].Value);
+
+                Cliente_edit cliente_Edit = new Cliente_edit(idCliente);
+                cliente_Edit.Show();
+
+            }
+            }
+        }
 }
