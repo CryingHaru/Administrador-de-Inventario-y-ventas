@@ -99,5 +99,10 @@ namespace AVI
             Marcas_list marcas = new Marcas_list();
             marcas.Show();
         }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+            new Productos_agregar().Show();
+        }
     }
 }
