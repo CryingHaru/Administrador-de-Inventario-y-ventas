@@ -32,10 +32,20 @@ namespace AVI
             return this.Ejecutar();
         }
         //obtener el ultimo id de la tabla
-        public DataTable UltimoId()
+        public int Lastid()
         {
             this.SQLcomando = "SELECT MAX(Idcategoria) FROM Categorias";
-            return this.Consultar();
+            DataTable id = this.Consultar();
+            string idcategoria = id.Rows[0][0].ToString();
+
+            // Check if the string is null or empty
+            if (string.IsNullOrEmpty(idcategoria))
+            {
+                idcategoria = "0";
+            }
+
+            // Convert to integer
+            return int.Parse(idcategoria);
         }
-    }
+        }
 }

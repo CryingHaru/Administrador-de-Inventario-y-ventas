@@ -26,6 +26,9 @@
     <Compile Update="Clientes\Cliente_edit.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Productos\Productos_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Productos\Productos_anyadir.cs">
       <SubType>Form</SubType>
     </Compile>

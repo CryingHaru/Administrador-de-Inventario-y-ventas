@@ -1,6 +1,6 @@
 ﻿namespace AVI
 {
-    partial class Productos_agregar
+    partial class Productos_editar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos_agregar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos_editar));
             Guardar_button = new RJControls.RJButton();
             label1 = new Label();
             imageElement1 = new customelements.ImageElement();
@@ -42,6 +42,10 @@
             Cerrar = new RJControls.RJButton();
             Marcascombo = new ComboBox();
             Categoriascombo = new ComboBox();
+            Existencias = new TextBox();
+            label5 = new Label();
+            rjButton1 = new RJControls.RJButton();
+            rjButton2 = new RJControls.RJButton();
             SuspendLayout();
             // 
             // Guardar_button
@@ -121,7 +125,7 @@
             // 
             Precio.Location = new Point(59, 366);
             Precio.Name = "Precio";
-            Precio.Size = new Size(269, 23);
+            Precio.Size = new Size(122, 23);
             Precio.TabIndex = 10;
             // 
             // label4
@@ -188,12 +192,72 @@
             Categoriascombo.Size = new Size(269, 23);
             Categoriascombo.TabIndex = 17;
             // 
-            // Productos_agregar
+            // Existencias
+            // 
+            Existencias.Location = new Point(194, 368);
+            Existencias.Name = "Existencias";
+            Existencias.ReadOnly = true;
+            Existencias.Size = new Size(67, 23);
+            Existencias.TabIndex = 19;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(194, 348);
+            label5.Name = "label5";
+            label5.Size = new Size(67, 15);
+            label5.TabIndex = 18;
+            label5.Text = "Existencias:";
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.MediumSlateBlue;
+            rjButton1.BackgroundColor = Color.MediumSlateBlue;
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 0;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.ForeColor = Color.White;
+            rjButton1.ImageSize = new Size(20, 20);
+            rjButton1.Location = new Point(267, 366);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Size = new Size(61, 25);
+            rjButton1.TabIndex = 20;
+            rjButton1.Text = "Editar";
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
+            // 
+            // rjButton2
+            // 
+            rjButton2.BackColor = Color.White;
+            rjButton2.BackgroundColor = Color.White;
+            rjButton2.BorderColor = Color.Gray;
+            rjButton2.BorderRadius = 4;
+            rjButton2.BorderSize = 1;
+            rjButton2.Cursor = Cursors.Hand;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.ForeColor = Color.Black;
+            rjButton2.ImageSize = new Size(20, 20);
+            rjButton2.Location = new Point(12, 12);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Size = new Size(40, 40);
+            rjButton2.TabIndex = 21;
+            rjButton2.TextColor = Color.Black;
+            rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Click += rjButton2_Click;
+            // 
+            // Productos_editar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(404, 641);
+            Controls.Add(rjButton2);
+            Controls.Add(rjButton1);
+            Controls.Add(Existencias);
+            Controls.Add(label5);
             Controls.Add(Categoriascombo);
             Controls.Add(Marcascombo);
             Controls.Add(Cerrar);
@@ -207,7 +271,7 @@
             Controls.Add(imageElement1);
             Controls.Add(label1);
             Controls.Add(Guardar_button);
-            Name = "Productos_agregar";
+            Name = "Productos_editar";
             StartPosition = FormStartPosition.Manual;
             Text = "Producto";
             ResumeLayout(false);
@@ -232,5 +296,9 @@
         private RJControls.RJButton Cerrar;
         private ComboBox Marcascombo;
         private ComboBox Categoriascombo;
+        private TextBox Existencias;
+        private Label label5;
+        private RJControls.RJButton rjButton1;
+        private RJControls.RJButton rjButton2;
     }
 }

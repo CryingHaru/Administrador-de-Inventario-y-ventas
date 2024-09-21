@@ -37,8 +37,7 @@ namespace Administrador_de_Inventario_y_ventas.Categorias
             // Obtener el texto del TextBox para el nombre de la categoría
             string nombreCategoria = txtNombreCategoria.Text;
 
-            DataTable valores = categorias.UltimoId();
-            int ultimo = int.Parse(valores.Rows[0][0].ToString());
+           int ultimo = categorias.Lastid();
             ultimo++;
             // Obtener el texto del TextBox para el Id de la categoría y convertirlo a entero
 

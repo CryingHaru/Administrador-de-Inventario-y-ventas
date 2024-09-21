@@ -31,10 +31,22 @@ namespace AVI
             this.SQLcomando = $"INSERT INTO Marca (Idmarca, Nombre) VALUES ({Idmarca}, '{nombre}')";
             return this.Ejecutar();
         }
-        public DataTable UltimoId()
+        //
+        public int Lastid()
         {
             this.SQLcomando = "SELECT MAX(Idmarca) FROM Marca";
-            return this.Consultar();
+            DataTable id = this.Consultar();
+            string idmarca = id.Rows[0][0].ToString();
+
+            // Check if the string is null or empty
+            if (string.IsNullOrEmpty(idmarca))
+            {
+                idmarca = "0";
+            }
+
+            // Convert to integer
+            return int.Parse(idmarca);
+
         }
     }
 }

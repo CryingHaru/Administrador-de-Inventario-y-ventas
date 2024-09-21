@@ -31,6 +31,8 @@ namespace AVI
         private void Generatedisplay(DataTable content)
         {
             //holaaa quien lee esto ps que bien xd
+            //clean all
+            flowLayoutPanel1.Controls.Clear();
 
             foreach (DataRow row in content.Rows)
             {
@@ -119,6 +121,28 @@ namespace AVI
         private void textboxelement1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        public void Actualizar()
+        {
+            Productos = new Productos();
+            Generatedisplay(Productos.ProductosList());
+
+            //revisar la carpeta de imagenes y eliminar las que no esten en la base de datos
+            string[] files = System.IO.Directory.GetFiles("Image");
+            DataTable images = Productos.listimages();
+            List<string> imagenes = new List<string>();
+            foreach (DataRow row in images.Rows)
+            {
+                imagenes.Add(row["Imagen"].ToString());
+            }
+            foreach (string file in files)
+            {
+                string filename = System.IO.Path.GetFileName(file);
+                if (!imagenes.Contains(filename))
+                {
+                    System.IO.File.Delete(file);
+                }
+            }
         }
     }
 }

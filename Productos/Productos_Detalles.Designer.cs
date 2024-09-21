@@ -65,6 +65,7 @@
             Editar_button.Text = "Editar";
             Editar_button.TextColor = Color.Black;
             Editar_button.UseVisualStyleBackColor = false;
+            Editar_button.Click += Editar_button_Click;
             // 
             // label1
             // 

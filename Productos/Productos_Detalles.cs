@@ -12,8 +12,10 @@ namespace AVI
 {
     public partial class Productos_Detalles : Form
     {
+        DataRow contenido;
         public Productos_Detalles(DataRow row)
         {
+            this.contenido = row;
             InitializeComponent();
             Nombre.Text = row["Nombre"].ToString();
             string imagenPath = row["Imagen"]?.ToString() ?? string.Empty;
@@ -36,6 +38,12 @@ namespace AVI
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void Editar_button_Click(object sender, EventArgs e)
+        {
+            new Productos_editar(this.contenido).Show();
             this.Close();
         }
     }

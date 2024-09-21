@@ -10,28 +10,41 @@ using System.Windows.Forms;
 
 namespace AVI
 {
-    public partial class Productos_agregar : Form
+    public partial class Productos_editar : Form
     {
         string image = "";
-        public Productos_agregar()
+        DataRow contenido;
+        public Productos_editar(DataRow row)
         {
+            contenido = row;
             InitializeComponent();
-            //marcas
-            //get marcas from db; Idmarca, Nombre and set hidden idmarca
             Marca marca = new Marca();
             DataTable marcas = marca.MarcasList();
-            //Marcascombo
             Marcascombo.DataSource = marcas;
             Marcascombo.DisplayMember = "Nombre";
             Marcascombo.ValueMember = "Idmarca";
-            //categorias
-            //get categorias from db; Idcategoria, Nombre and set hidden idcategoria
             Categorias categoria = new Categorias();
             DataTable categorias = categoria.CategoriasList();
-            //Categoriascombo
             Categoriascombo.DataSource = categorias;
             Categoriascombo.DisplayMember = "Nombre";
             Categoriascombo.ValueMember = "Idcategoria";
+
+            //rellenar con los valores del row
+            Nombre.Text = row["Nombre"].ToString();
+            Descripcion.Text = row["Detalles"].ToString();
+            Precio.Text = row["Precioventa"].ToString();
+            Existencias.Text = row["Existencias"].ToString();
+            Marcascombo.SelectedValue = row["Marca"];
+            Categoriascombo.SelectedValue = row["Categoria"];
+            //check image path existence
+            string imagenPath = row["Imagen"]?.ToString() ?? string.Empty;
+            if (!string.IsNullOrEmpty(imagenPath) && (imagenPath.EndsWith(".png") || imagenPath.EndsWith(".jpg")))
+            {
+                imageElement1.Url = "Image/" + imagenPath;
+                imageElement1.Refresh();
+                image = imagenPath;
+            }
+
 
         }
 
@@ -40,7 +53,6 @@ namespace AVI
             this.Close();
         }
 
-        //marcas onload
 
         private void Marcas_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -71,7 +83,7 @@ namespace AVI
         private void Editar_button_Click(object sender, EventArgs e)
         {
             //comprueba si las casillas tienen valor de lo contrario informar al usuario
-            if (Nombre.Text == "" || Descripcion.Text == "" || Precio.Text == "" )
+            if (Nombre.Text == "" || Descripcion.Text == "" || Precio.Text == "")
             {
                 MessageBox.Show("Por favor llene todos los campos");
                 return;
@@ -87,11 +99,9 @@ namespace AVI
             {
                 codigo += random.Next(0, 9);
             }
-            //ProductoAdd(int id, string nombre,string descripcion, int marca, int categoria, decimal precio, string imagen, string codigobarra)
-            producto.ProductoAdd(producto.Lastid() + 1, Nombre.Text, Descripcion.Text, int.Parse(Marcascombo.SelectedValue.ToString()), int.Parse(Categoriascombo.SelectedValue.ToString()), decimal.Parse(Precio.Text), image, codigo);
-            MessageBox.Show("Producto agregado");
-            //actualizar la lista de productos// el form productos_list actualizalo
-            //el formulario activo con el metodo Actualizar
+            producto.ProductoEdit(int.Parse(contenido["IdProducto"]?.ToString() ?? "0"), Nombre.Text, Descripcion.Text, int.Parse(Marcascombo.SelectedValue.ToString()), int.Parse(Categoriascombo.SelectedValue.ToString()), decimal.Parse(Precio.Text), image, codigo);
+            MessageBox.Show("Producto actualizado");
+
             Productos_list? productos = Application.OpenForms["Productos_list"] as Productos_list;
             if (productos != null)
             {
@@ -103,6 +113,28 @@ namespace AVI
             }
             this.Close();
 
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estás seguro de que deseas eliminar este producto?", "Eliminar producto", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                //eliminar el producto
+                Productos producto = new Productos();
+                producto.ProductoDelete(int.Parse(contenido["IdProducto"]?.ToString() ?? "0"));
+                MessageBox.Show("Producto eliminado");
+                
+                Productos_list? productos = Application.OpenForms["Productos_list"] as Productos_list;
+                if (productos != null)
+                {
+                    productos.Actualizar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar la lista de productos porque el formulario Productos_list no está abierto.");
+                }
+                this.Close();
+            }
         }
     }
 }

@@ -29,8 +29,7 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
             // Obtener el texto del TextBox para el nombre de la categoría
             string nombreMarca = txtNombreCategoria.Text;
 
-            DataTable valores = marca.UltimoId();
-            int ultimo = int.Parse(valores.Rows[0][0].ToString());
+            int ultimo = marca.Lastid();
             ultimo++;
             // Obtener el texto del TextBox para el Id de la categoría y convertirlo a entero
 

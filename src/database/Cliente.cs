@@ -41,12 +41,18 @@ namespace AVI
 
             return this.Ejecutar();
         }
-        //obtener el ultimo id de la tabla
-        public DataTable UltimoId()
+        public int Lastid()
         {
             this.SQLcomando = "SELECT MAX(Idcliente) FROM Cliente";
-            return this.Consultar();
+            DataTable id = this.Consultar();
+            string idcliente = id.Rows[0][0].ToString();
+
+            if (string.IsNullOrEmpty(idcliente))
+            {
+                idcliente = "0";
+            }
+            return int.Parse(idcliente);
         }
     }
-}
+    }
 
