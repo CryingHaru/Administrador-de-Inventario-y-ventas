@@ -28,7 +28,7 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
         private void LoadMarcaData()
         {
             // Obtén el DataTable de las categorías
-            DataTable MarcaDataTable = Marca.ProductosList();
+            DataTable MarcaDataTable = Marca.MarcasList();
 
             // Asigna el DataTable al DataGridView
             dataGridView1.DataSource = MarcaDataTable;

@@ -10,7 +10,7 @@ namespace AVI
 {
     internal class Marca : Conectordb
     {
-        public DataTable ProductosList()
+        public DataTable MarcasList()
         {
             this.SQLcomando = "SELECT * FROM Marca";
             return this.Consultar();

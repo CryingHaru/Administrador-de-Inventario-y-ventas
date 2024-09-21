@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos_Detalles));
             Editar_button = new RJControls.RJButton();
             label1 = new Label();
             imageElement1 = new customelements.ImageElement();
@@ -76,6 +77,8 @@
             // 
             // imageElement1
             // 
+            imageElement1.BackgroundImage = (Image)resources.GetObject("imageElement1.BackgroundImage");
+            imageElement1.BackgroundImageLayout = ImageLayout.Stretch;
             imageElement1.ImageHeight = 160;
             imageElement1.ImageWidth = 160;
             imageElement1.Location = new Point(128, 37);

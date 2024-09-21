@@ -62,9 +62,11 @@ namespace AVI.customelements
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-
-            if (!string.IsNullOrEmpty(url))
+            //CHEQUEAR SI EXISTE LA IMAGEN
+            if (!string.IsNullOrEmpty(url) && (url.EndsWith(".png") || url.EndsWith(".jpg")) && System.IO.File.Exists(url))
             {
+                //quita la imagen de fondo
+                this.BackgroundImage = null;
                 try
                 {
                     using (var image = new Bitmap(url))
@@ -89,7 +91,7 @@ namespace AVI.customelements
                 catch (Exception ex)
                 {
                     // Manejo de errores, por ejemplo, si la URL no es válida
-                    e.Graphics.DrawString("Error loading image", this.Font, Brushes.Red, new PointF(0, 0));
+                    //);
                 }
             }
         }

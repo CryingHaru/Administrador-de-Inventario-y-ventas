@@ -40,7 +40,7 @@ namespace Administrador_de_Inventario_y_ventas.Categorias
         private void LoadCategoriasData()
         {
             // Obtén el DataTable de las categorías
-            DataTable categoriasDataTable = categorias.ProductosList();
+            DataTable categoriasDataTable = categorias.CategoriasList();
 
             // Asigna el DataTable al DataGridView
             dataGridView1.DataSource = categoriasDataTable;

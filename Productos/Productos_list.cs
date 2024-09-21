@@ -113,7 +113,7 @@ namespace AVI
 
         private void Agregar_Click(object sender, EventArgs e)
         {
-
+            new Productos_agregar().Show();
         }
 
         private void textboxelement1_TextChanged(object sender, EventArgs e)

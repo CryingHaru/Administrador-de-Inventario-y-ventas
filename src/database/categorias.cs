@@ -10,7 +10,7 @@ namespace AVI
 {
     class Categorias : Conectordb
     {
-        public DataTable ProductosList()
+        public DataTable CategoriasList()
         {
             this.SQLcomando = "SELECT * FROM Categorias";
             return this.Consultar();

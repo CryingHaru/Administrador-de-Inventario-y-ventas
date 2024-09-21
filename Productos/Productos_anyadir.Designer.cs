@@ -28,21 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos_agregar));
             Editar_button = new RJControls.RJButton();
             label1 = new Label();
             imageElement1 = new customelements.ImageElement();
             Nombre = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            Marca = new TextBox();
-            Categoria = new TextBox();
             Precio = new TextBox();
             label4 = new Label();
-            Existencias = new TextBox();
-            label5 = new Label();
             label6 = new Label();
             agregar = new TextBox();
             Cerrar = new RJControls.RJButton();
+            Marcascombo = new ComboBox();
+            Categoriascombo = new ComboBox();
             SuspendLayout();
             // 
             // Editar_button
@@ -61,7 +60,7 @@
             Editar_button.Name = "Editar_button";
             Editar_button.Size = new Size(100, 40);
             Editar_button.TabIndex = 0;
-            Editar_button.Text = "Editar";
+            Editar_button.Text = "Guardar";
             Editar_button.TextColor = Color.Black;
             Editar_button.UseVisualStyleBackColor = false;
             // 
@@ -76,6 +75,8 @@
             // 
             // imageElement1
             // 
+            imageElement1.BackgroundImage = (Image)resources.GetObject("imageElement1.BackgroundImage");
+            imageElement1.BackgroundImageLayout = ImageLayout.Stretch;
             imageElement1.ImageHeight = 160;
             imageElement1.ImageWidth = 160;
             imageElement1.Location = new Point(128, 37);
@@ -89,6 +90,7 @@
             // 
             // Nombre
             // 
+            Nombre.BackColor = SystemColors.ButtonHighlight;
             Nombre.Location = new Point(59, 223);
             Nombre.Name = "Nombre";
             Nombre.ReadOnly = true;
@@ -113,28 +115,11 @@
             label3.TabIndex = 6;
             label3.Text = "Categoria:";
             // 
-            // Marca
-            // 
-            Marca.Location = new Point(59, 270);
-            Marca.Name = "Marca";
-            Marca.ReadOnly = true;
-            Marca.Size = new Size(269, 23);
-            Marca.TabIndex = 7;
-            // 
-            // Categoria
-            // 
-            Categoria.Location = new Point(59, 318);
-            Categoria.Name = "Categoria";
-            Categoria.ReadOnly = true;
-            Categoria.Size = new Size(269, 23);
-            Categoria.TabIndex = 8;
-            // 
             // Precio
             // 
             Precio.Location = new Point(59, 366);
             Precio.Name = "Precio";
-            Precio.ReadOnly = true;
-            Precio.Size = new Size(129, 23);
+            Precio.Size = new Size(269, 23);
             Precio.TabIndex = 10;
             // 
             // label4
@@ -146,38 +131,20 @@
             label4.TabIndex = 9;
             label4.Text = "Precio:";
             // 
-            // Existencias
-            // 
-            Existencias.Location = new Point(194, 366);
-            Existencias.Name = "Existencias";
-            Existencias.ReadOnly = true;
-            Existencias.Size = new Size(134, 23);
-            Existencias.TabIndex = 12;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(194, 348);
-            label5.Name = "label5";
-            label5.Size = new Size(67, 15);
-            label5.TabIndex = 11;
-            label5.Text = "Existencias:";
-            // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Location = new Point(59, 397);
             label6.Name = "label6";
-            label6.Size = new Size(51, 15);
+            label6.Size = new Size(72, 15);
             label6.TabIndex = 13;
-            label6.Text = "agregar:";
+            label6.Text = "Descripción:";
             // 
             // agregar
             // 
             agregar.Location = new Point(59, 415);
             agregar.Multiline = true;
             agregar.Name = "agregar";
-            agregar.ReadOnly = true;
             agregar.Size = new Size(269, 132);
             agregar.TabIndex = 14;
             // 
@@ -202,21 +169,36 @@
             Cerrar.UseVisualStyleBackColor = false;
             Cerrar.Click += Cerrar_Click;
             // 
+            // Marcascombo
+            // 
+            Marcascombo.FormattingEnabled = true;
+            Marcascombo.Location = new Point(59, 274);
+            Marcascombo.Name = "Marcascombo";
+            Marcascombo.Size = new Size(269, 23);
+            Marcascombo.TabIndex = 16;
+            Marcascombo.SelectedIndexChanged += Marcas_SelectedIndexChanged;
+            // 
+            // Categoriascombo
+            // 
+            Categoriascombo.FormattingEnabled = true;
+            Categoriascombo.Location = new Point(59, 318);
+            Categoriascombo.Name = "Categoriascombo";
+            Categoriascombo.Size = new Size(269, 23);
+            Categoriascombo.TabIndex = 17;
+            // 
             // Productos_agregar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(404, 641);
+            Controls.Add(Categoriascombo);
+            Controls.Add(Marcascombo);
             Controls.Add(Cerrar);
             Controls.Add(agregar);
             Controls.Add(label6);
-            Controls.Add(Existencias);
-            Controls.Add(label5);
             Controls.Add(Precio);
             Controls.Add(label4);
-            Controls.Add(Categoria);
-            Controls.Add(Marca);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(Nombre);
@@ -239,16 +221,14 @@
         private TextBox Nombre;
         private Label label2;
         private Label label3;
-        private TextBox Marca;
-        private TextBox Categoria;
         private TextBox Precio;
         private Label label4;
-        private TextBox Existencias;
-        private Label label5;
         private Label label6;
         private TextBox agregar;
         private RJControls.RJButton Eliminar;
        
         private RJControls.RJButton Cerrar;
+        private ComboBox Marcascombo;
+        private ComboBox Categoriascombo;
     }
 }
