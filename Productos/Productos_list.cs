@@ -140,6 +140,11 @@ namespace AVI
                 string filename = System.IO.Path.GetFileName(file);
                 if (!imagenes.Contains(filename))
                 {
+                    //si no hay ninguna ignorar
+                    if (imagenes.Count == 0)
+                    {
+                        break;
+                    }
                     System.IO.File.Delete(file);
                 }
             }

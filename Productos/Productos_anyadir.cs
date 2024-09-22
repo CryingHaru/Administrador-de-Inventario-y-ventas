@@ -76,6 +76,12 @@ namespace AVI
                 MessageBox.Show("Por favor llene todos los campos");
                 return;
             }
+            //precio solo acepta numeros
+            if (!decimal.TryParse(Precio.Text, out decimal precio))
+            {
+                MessageBox.Show("El precio debe ser un número");
+                return;
+            }
             //guarda el producto en la base de datos
             Productos producto = new Productos();
             //genera codigo de barra aleatorio de 8 digitos

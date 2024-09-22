@@ -44,6 +44,13 @@ namespace AVI
                 imageElement1.Refresh();
                 image = imagenPath;
             }
+            //check existencvias
+            if (int.Parse(row["Existencias"].ToString()) == 0)
+            {
+                imageElement1.ShowCornerImage = true;
+                imageElement1.Refresh();
+                
+            }
 
 
         }
@@ -90,16 +97,7 @@ namespace AVI
             }
             //guarda el producto en la base de datos
             Productos producto = new Productos();
-            //genera codigo de barra aleatorio de 8 digitos
-            //muestra el id marca
-
-            Random random = new Random();
-            string codigo = "";
-            for (int i = 0; i < 8; i++)
-            {
-                codigo += random.Next(0, 9);
-            }
-            producto.ProductoEdit(int.Parse(contenido["IdProducto"]?.ToString() ?? "0"), Nombre.Text, Descripcion.Text, int.Parse(Marcascombo.SelectedValue.ToString()), int.Parse(Categoriascombo.SelectedValue.ToString()), decimal.Parse(Precio.Text), image, codigo);
+            producto.ProductoEdit(int.Parse(contenido["IdProducto"]?.ToString() ?? "0"), Nombre.Text, Descripcion.Text, int.Parse(Marcascombo.SelectedValue.ToString()), int.Parse(Categoriascombo.SelectedValue.ToString()), decimal.Parse(Precio.Text), image);
             MessageBox.Show("Producto actualizado");
 
             Productos_list? productos = Application.OpenForms["Productos_list"] as Productos_list;
@@ -123,7 +121,7 @@ namespace AVI
                 Productos producto = new Productos();
                 producto.ProductoDelete(int.Parse(contenido["IdProducto"]?.ToString() ?? "0"));
                 MessageBox.Show("Producto eliminado");
-                
+
                 Productos_list? productos = Application.OpenForms["Productos_list"] as Productos_list;
                 if (productos != null)
                 {
@@ -135,6 +133,13 @@ namespace AVI
                 }
                 this.Close();
             }
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            new ProductoExistencias(int.Parse(contenido["IdProducto"]?.ToString() ?? "0")).Show();
+            this.Close();
+
         }
     }
 }

@@ -44,7 +44,7 @@
             Categoriascombo = new ComboBox();
             Existencias = new TextBox();
             label5 = new Label();
-            rjButton1 = new RJControls.RJButton();
+            Editarexistencias = new RJControls.RJButton();
             rjButton2 = new RJControls.RJButton();
             SuspendLayout();
             // 
@@ -88,6 +88,7 @@
             imageElement1.Location = new Point(128, 37);
             imageElement1.Name = "imageElement1";
             imageElement1.Position = new Point(0, 0);
+            imageElement1.ShowCornerImage = false;
             imageElement1.Size = new Size(160, 160);
             imageElement1.TabIndex = 3;
             imageElement1.Text = "imageElement1";
@@ -209,24 +210,25 @@
             label5.TabIndex = 18;
             label5.Text = "Existencias:";
             // 
-            // rjButton1
+            // Editarexistencias
             // 
-            rjButton1.BackColor = Color.MediumSlateBlue;
-            rjButton1.BackgroundColor = Color.MediumSlateBlue;
-            rjButton1.BorderColor = Color.PaleVioletRed;
-            rjButton1.BorderRadius = 0;
-            rjButton1.BorderSize = 0;
-            rjButton1.FlatAppearance.BorderSize = 0;
-            rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.ForeColor = Color.White;
-            rjButton1.ImageSize = new Size(20, 20);
-            rjButton1.Location = new Point(267, 366);
-            rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(61, 25);
-            rjButton1.TabIndex = 20;
-            rjButton1.Text = "Editar";
-            rjButton1.TextColor = Color.White;
-            rjButton1.UseVisualStyleBackColor = false;
+            Editarexistencias.BackColor = Color.MediumSlateBlue;
+            Editarexistencias.BackgroundColor = Color.MediumSlateBlue;
+            Editarexistencias.BorderColor = Color.PaleVioletRed;
+            Editarexistencias.BorderRadius = 2;
+            Editarexistencias.BorderSize = 0;
+            Editarexistencias.FlatAppearance.BorderSize = 0;
+            Editarexistencias.FlatStyle = FlatStyle.Flat;
+            Editarexistencias.ForeColor = Color.White;
+            Editarexistencias.ImageSize = new Size(20, 20);
+            Editarexistencias.Location = new Point(267, 366);
+            Editarexistencias.Name = "Editarexistencias";
+            Editarexistencias.Size = new Size(61, 25);
+            Editarexistencias.TabIndex = 20;
+            Editarexistencias.Text = "Editar";
+            Editarexistencias.TextColor = Color.White;
+            Editarexistencias.UseVisualStyleBackColor = false;
+            Editarexistencias.Click += rjButton1_Click;
             // 
             // rjButton2
             // 
@@ -239,6 +241,7 @@
             rjButton2.FlatAppearance.BorderSize = 0;
             rjButton2.FlatStyle = FlatStyle.Flat;
             rjButton2.ForeColor = Color.Black;
+            rjButton2.Image = (Image)resources.GetObject("rjButton2.Image");
             rjButton2.ImageSize = new Size(20, 20);
             rjButton2.Location = new Point(12, 12);
             rjButton2.Name = "rjButton2";
@@ -255,7 +258,7 @@
             BackColor = SystemColors.Window;
             ClientSize = new Size(404, 641);
             Controls.Add(rjButton2);
-            Controls.Add(rjButton1);
+            Controls.Add(Editarexistencias);
             Controls.Add(Existencias);
             Controls.Add(label5);
             Controls.Add(Categoriascombo);
@@ -298,7 +301,7 @@
         private ComboBox Categoriascombo;
         private TextBox Existencias;
         private Label label5;
-        private RJControls.RJButton rjButton1;
+        private RJControls.RJButton Editarexistencias;
         private RJControls.RJButton rjButton2;
     }
 }

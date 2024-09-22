@@ -43,17 +43,29 @@ namespace AVI
             // Convert to integer
             return int.Parse(idproducto);
         }
-        public void ProductoEdit(int id, string nombre, string descripcion, int marca, int categoria, decimal precio, string imagen, string codigobarra)
+        public void ProductoEdit(int id, string nombre, string descripcion, int marca, int categoria, decimal precio, string imagen)
         {
             nombre = nombre.Replace("'", "''");
             descripcion = descripcion.Replace("'", "''");
-            this.SQLcomando = $"UPDATE Productos SET Marca = {marca}, Categoria = {categoria}, Detalles = '{descripcion}', Precioventa = {precio}, Imagen = '{imagen}', Codigobarra = '{codigobarra}', Nombre = '{nombre}' WHERE IdProducto = {id}";
+            this.SQLcomando = $"UPDATE Productos SET Marca = {marca}, Categoria = {categoria}, Detalles = '{descripcion}', Precioventa = {precio}, Imagen = '{imagen}', Nombre = '{nombre}' WHERE IdProducto = {id}";
             this.Ejecutar();
         }
         public DataTable listimages()
         {
             this.SQLcomando = "SELECT Imagen FROM Productos";
             return this.Consultar();
+        }
+        public void Existencias(int id, bool accion, int valor)
+        {
+            if (accion)
+            {
+                this.SQLcomando = $"UPDATE Productos SET Existencias = Existencias + {valor} WHERE IdProducto = {id}";
+            }
+            else
+            {
+                this.SQLcomando = $"UPDATE Productos SET Existencias = Existencias - {valor} WHERE IdProducto = {id}";
+            }
+            this.Ejecutar();
         }
     }
 

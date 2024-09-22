@@ -31,7 +31,11 @@ namespace AVI
             Precio.Text = row["Precioventa"].ToString();
             Existencias.Text = row["Existencias"].ToString();
             Detalles.Text = row["Detalles"].ToString();
-
+            if (int.Parse(row["Existencias"].ToString()) < 1)
+            {
+                imageElement1.ShowCornerImage = true;
+                imageElement1.Refresh();
+            }
 
 
         }

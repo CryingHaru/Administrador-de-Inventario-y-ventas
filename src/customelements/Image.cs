@@ -5,7 +5,6 @@ using System.Drawing.Drawing2D;
 using System.ComponentModel;
 using System.Drawing.Imaging;
 
-
 namespace AVI.customelements
 {
     public class ImageElement : Control
@@ -15,6 +14,7 @@ namespace AVI.customelements
         private int imageWidth;
         private int imageHeight;
         private Point position;
+        private bool showCornerImage;
 
         [Category("Custom Properties")]
         public string Url
@@ -51,12 +51,20 @@ namespace AVI.customelements
             set { position = value; Invalidate(); }
         }
 
+        [Category("Custom Properties")]
+        public bool ShowCornerImage
+        {
+            get { return showCornerImage; }
+            set { showCornerImage = value; Invalidate(); }
+        }
+
         public ImageElement()
         {
             transparency = 1.0f; // Opacidad completa por defecto
             imageWidth = 100; // Ancho por defecto
             imageHeight = 100; // Altura por defecto
             position = new Point(0, 0); // Posición por defecto
+            showCornerImage = false; // No mostrar imagen en la esquina por defecto
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -65,7 +73,6 @@ namespace AVI.customelements
             //CHEQUEAR SI EXISTE LA IMAGEN
             if (!string.IsNullOrEmpty(url) && (url.EndsWith(".png") || url.EndsWith(".jpg")) && System.IO.File.Exists(url))
             {
-                //quita la imagen de fondo
                 this.BackgroundImage = null;
                 try
                 {
@@ -94,6 +101,21 @@ namespace AVI.customelements
                     //);
                 }
             }
+
+            // DIBUJAR TEXTO "SIN EXISTENCIAS" EN ROJO SI showCornerImage ESTÁ ACTIVADO
+            if (showCornerImage)
+            {
+                using (Font font = new Font("Roboto", 8, FontStyle.Bold))
+                {
+                    var state = e.Graphics.Save();
+                    e.Graphics.TranslateTransform(0, 60);
+                    e.Graphics.RotateTransform(-45);
+                    e.Graphics.DrawString("Sin Existencias", font, Brushes.Red, new PointF(0, 0));
+                    e.Graphics.Restore(state);
+                }
+            }
+
+
         }
     }
 }
