@@ -38,13 +38,13 @@ namespace AVI
             {
 
                 RJButton button = new RJControls.RJButton();
-                button.BackColor = Color.White;
+                button.BackColor = Color.Black;
                 button.FlatStyle = FlatStyle.Flat;
                 //border black
                 button.BorderSize = 1;
-                button.BorderColor = Color.FromArgb(219, 219, 219);
+                button.BorderColor = Color.FromArgb(255, 196, 0);
                 button.BorderRadius = 3;
-                button.TextColor = Color.Black;
+                button.TextColor = Color.White;
                 button.Font = new Font("Roboto", 10);
                 //cursor pointer
                 button.Cursor = Cursors.Hand;
