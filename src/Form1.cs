@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace AVI
 {
-    
+
     public partial class Form1 : Form
     {
         private WebcamBarcodeReader _barcodeReader;
@@ -36,18 +36,18 @@ namespace AVI
             }
         }
 
-     
+
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
             _barcodeReader = new WebcamBarcodeReader(UpdateBarcodeResult);
             _barcodeReader.Start();
         }
 
-        
+
         private void UpdateBarcodeResult(string result)
         {
-      
+
             if (InvokeRequired)
             {
                 Invoke(new Action(() => lblResult.Text = result));
@@ -60,11 +60,17 @@ namespace AVI
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-          
+
             if (_barcodeReader != null)
             {
                 _barcodeReader.Stop();
             }
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            new Ventas_list().Show();
+            this.Close();
         }
     }
 }

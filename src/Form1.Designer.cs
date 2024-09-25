@@ -31,6 +31,7 @@
             button1 = new Button();
             button2 = new Button();
             lblResult = new Label();
+            rjButton1 = new RJControls.RJButton();
             SuspendLayout();
             // 
             // button1
@@ -62,11 +63,32 @@
             lblResult.TabIndex = 2;
             lblResult.Text = "label1";
             // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.MediumSlateBlue;
+            rjButton1.BackgroundColor = Color.MediumSlateBlue;
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 0;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.ForeColor = Color.White;
+            rjButton1.ImageSize = new Size(20, 20);
+            rjButton1.Location = new Point(425, 39);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Size = new Size(150, 40);
+            rjButton1.TabIndex = 3;
+            rjButton1.Text = "Ventas";
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(686, 390);
+            Controls.Add(rjButton1);
             Controls.Add(lblResult);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -81,5 +103,6 @@
         private Button button1;
         private Button button2;
         private Label lblResult;
+        private RJControls.RJButton rjButton1;
     }
 }

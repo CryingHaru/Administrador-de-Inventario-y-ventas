@@ -18,7 +18,11 @@ namespace AVI.RJControls
         private int borderRadius = 0;
         private Color borderColor = Color.PaleVioletRed;
         private Size imageSize = new Size(20, 20); // Tamaño de imagen por defecto
-        private Image buttonImage; // Campo para almacenar la imagen
+        private Image buttonImage = null!; // Inicialización para evitar CS8618
+        private Color _hoverColor = Color.FromArgb(255, 196, 0);
+        private Color _pressedColor = Color.FromArgb(255, 196, 0);
+        private Color _selectedColor = Color.FromArgb(255, 196, 0);
+        private Color _originalBackColor; // Almacena el color original del botón
 
         //Properties
         [Category("RJ Code Advance")]
@@ -59,6 +63,7 @@ namespace AVI.RJControls
         {
             get { return this.BackColor; }
             set { this.BackColor = value; }
+
         }
 
         [Category("RJ Code Advance")]
@@ -79,6 +84,14 @@ namespace AVI.RJControls
             }
         }
 
+        //hover color
+        [Category("RJ Code Advance")]
+        public Color HoverColor
+        {
+            get { return _hoverColor; }
+            set { _hoverColor = value; }
+        }
+
         //Constructor
         public RJButton()
         {
@@ -88,6 +101,7 @@ namespace AVI.RJControls
             this.BackColor = Color.MediumSlateBlue;
             this.ForeColor = Color.White;
             this.Resize += new EventHandler(Button_Resize);
+            _originalBackColor = this.BackColor; // Guardar el color original
         }
 
         //Methods
@@ -159,7 +173,8 @@ namespace AVI.RJControls
             }
         }
 
-        public void SetImage(Image image) { 
+        public void SetImage(Image image)
+        {
             this.buttonImage = image;
             this.Invalidate();
         }
@@ -182,6 +197,25 @@ namespace AVI.RJControls
         {
             if (borderRadius > this.Height)
                 borderRadius = this.Height;
+        }
+
+        protected override void OnMouseEnter(EventArgs e)
+        {
+            if (!this.IsHandleCreated)
+            {
+                return;
+            }
+            _originalBackColor = this.BackColor; // Guardar el color original al entrar
+            this.BackColor = _hoverColor;
+        }
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            if (!this.IsHandleCreated)
+            {
+                return;
+            }
+            this.BackColor = _originalBackColor; // Restaurar el color original al salir
         }
     }
 }
