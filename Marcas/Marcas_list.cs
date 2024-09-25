@@ -32,6 +32,37 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
 
             // Asigna el DataTable al DataGridView
             dataGridView1.DataSource = MarcaDataTable;
+
+            // Establecer el color de fondo del DataGridView
+            dataGridView1.BackgroundColor = Color.Black;
+
+            // Establecer el color de las filas alternas
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(30, 30, 30); // Gris oscuro
+
+            // Color de las celdas
+            dataGridView1.DefaultCellStyle.BackColor = Color.Black; // Fondo negro para las celdas
+            dataGridView1.DefaultCellStyle.ForeColor = Color.Gold;  // Texto en color oro
+
+            // Estilo para las filas seleccionadas
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Gold;  // Fondo dorado para la fila seleccionada
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black; // Texto en negro para la fila seleccionada
+
+            // Estilo del encabezado de columnas
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Black; // Fondo negro en el encabezado
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Gold;  // Texto dorado en el encabezado
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold); // Fuente en negrita
+
+            // Alinear el texto del encabezado de columnas en el centro
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Cambiar el color de las líneas de separación
+            dataGridView1.GridColor = Color.Gold; // Líneas doradas entre las celdas
+
+            // Opcional: Alinear el texto en las celdas (ajusta según tus necesidades)
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            // Quitar el borde 3D del encabezado de columnas (opcional, para un look más plano)
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
 
         private void rjButton3_Click(object sender, EventArgs e)
@@ -114,6 +145,11 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
         }
 
         private void Titulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
