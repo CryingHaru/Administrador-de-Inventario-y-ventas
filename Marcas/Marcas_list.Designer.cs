@@ -182,9 +182,9 @@
             Titulo.ForeColor = Color.Gold;
             Titulo.Location = new Point(163, 7);
             Titulo.Name = "Titulo";
-            Titulo.Size = new Size(97, 29);
+            Titulo.Size = new Size(84, 29);
             Titulo.TabIndex = 12;
-            Titulo.Text = "Marcas";
+            Titulo.Text = "Marca";
             Titulo.Click += Titulo_Click;
             // 
             // pictureBox1
