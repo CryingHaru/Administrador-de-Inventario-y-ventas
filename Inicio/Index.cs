@@ -1,19 +1,11 @@
+using Administrador_de_Inventario_y_ventas.Categorias;
+using Administrador_de_Inventario_y_ventas.Clientes;
+
 namespace AVI
 {
     public partial class Administador : Form
     {
-        public void EnterFullScreenMode(Form targetForm)
-        {
-            targetForm.WindowState = FormWindowState.Normal;
-            targetForm.FormBorderStyle = FormBorderStyle.None;
-            targetForm.WindowState = FormWindowState.Maximized;
-        }
 
-        public void LeaveFullScreenMode(Form targetForm)
-        {
-            targetForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
-            targetForm.WindowState = FormWindowState.Normal;
-        }
         public Administador()
         {
             InitializeComponent();
@@ -21,14 +13,42 @@ namespace AVI
 
         private void Administador_Load(object sender, EventArgs e)
         {
-            this.EnterFullScreenMode(this);
+
         }
 
         private void close_Click(object sender, EventArgs e)
         {
-            this.LeaveFullScreenMode(this);
+
         }
-       
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnCategorias_Click(object sender, EventArgs e)
+        {
+            Categorias_list categorias = new Categorias_list();
+            categorias.Show();
+        }
+
+        private void BtnClientes_Click(object sender, EventArgs e)
+        {
+            Clientes_list clientes_List = new Clientes_list();
+            clientes_List.Show();
+        }
+
+        private void BtnProductos_Click(object sender, EventArgs e)
+        {
+            Productos_list productos_List = new Productos_list();
+            productos_List.Show();
+        }
+
+        private void BtnVentas_Click(object sender, EventArgs e)
+        {
+            //Ventas_list ventas_List = new Ventas_list();
+            //ventas_List.Show();
+        }
     }
 }
 //Yo estuve aqui
