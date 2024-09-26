@@ -20,7 +20,7 @@ namespace AVI
     {
         private WebcamBarcodeReader _barcodeReader;
         private Productos Productos; // Declarar la variable productos
-        private DataTable Contenido;
+        private DataTable Contenido = new Productos().ProductosList();
         //lista de precios
         DataTable cantidades = new DataTable();
         void styles()
@@ -114,7 +114,6 @@ namespace AVI
         }
         private void Generatedisplay(DataTable content)
         {
-            Contenido = content;
             flowLayoutPanel1.Controls.Clear();
 
             foreach (DataRow row in content.Rows)

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing;
+using ZXing.Windows.Compatibility;
 
 namespace AVI
 {
@@ -36,6 +38,21 @@ namespace AVI
                 imageElement1.ShowCornerImage = true;
                 imageElement1.Refresh();
             }
+
+            //genera codigo de barra usando el campo Codigobarra 
+            BarcodeWriter writer = new BarcodeWriter
+            {
+                Format = BarcodeFormat.CODE_128,
+                Options = new ZXing.Common.EncodingOptions
+                {
+                    Height = 100,
+                    Width = 300
+                }
+            };
+            codigobarraimagen.Image = writer.Write(row["Codigobarra"].ToString());
+            codigobarraimagen.SizeMode = PictureBoxSizeMode.StretchImage;
+            codigobarraimagen.Refresh();
+
 
 
         }
