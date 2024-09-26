@@ -53,7 +53,6 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(415, 421);
             flowLayoutPanel1.TabIndex = 0;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // Titulo
             // 
@@ -91,7 +90,6 @@
             rjButton1.Text = "Atras";
             rjButton1.TextColor = Color.White;
             rjButton1.UseVisualStyleBackColor = false;
-            rjButton1.Click += rjButton1_Click;
             // 
             // Agregar
             // 
@@ -176,7 +174,6 @@
             textboxelement1.PlaceholderText = "Escribe aqui...";
             textboxelement1.Size = new Size(143, 19);
             textboxelement1.TabIndex = 9;
-            textboxelement1.TextChanged += textboxelement1_TextChanged;
             // 
             // label1
             // 
@@ -194,8 +191,10 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.Black;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = SystemColors.Window;
+            dataGridView1.GridColor = Color.Black;
             dataGridView1.Location = new Point(431, 147);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -222,7 +221,6 @@
             Name = "Ventas_nueva";
             Text = "Productos";
             WindowState = FormWindowState.Maximized;
-            Load += Productos_list_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
