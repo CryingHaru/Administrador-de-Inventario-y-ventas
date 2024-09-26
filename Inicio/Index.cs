@@ -49,7 +49,12 @@ namespace AVI
             //Ventas_list ventas_List = new Ventas_list();
             //ventas_List.Show();
             new Ventas_nueva().Show();
-            
+
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

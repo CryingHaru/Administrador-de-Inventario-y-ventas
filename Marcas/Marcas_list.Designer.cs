@@ -94,10 +94,12 @@
             rjButton3.BorderColor = Color.Gold;
             rjButton3.BorderRadius = 8;
             rjButton3.BorderSize = 1;
+            rjButton3.Cursor = Cursors.Hand;
             rjButton3.FlatAppearance.BorderSize = 0;
             rjButton3.FlatStyle = FlatStyle.Flat;
             rjButton3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rjButton3.ForeColor = Color.Gold;
+            rjButton3.HoverColor = Color.Black;
             rjButton3.ImageSize = new Size(20, 20);
             rjButton3.Location = new Point(12, 267);
             rjButton3.Margin = new Padding(3, 4, 3, 4);
@@ -116,10 +118,12 @@
             rjButton2.BorderColor = Color.Gold;
             rjButton2.BorderRadius = 8;
             rjButton2.BorderSize = 1;
+            rjButton2.Cursor = Cursors.Hand;
             rjButton2.FlatAppearance.BorderSize = 0;
             rjButton2.FlatStyle = FlatStyle.Flat;
             rjButton2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rjButton2.ForeColor = Color.Gold;
+            rjButton2.HoverColor = Color.Black;
             rjButton2.ImageSize = new Size(20, 20);
             rjButton2.Location = new Point(12, 169);
             rjButton2.Margin = new Padding(3, 4, 3, 4);
@@ -138,10 +142,12 @@
             rjButton1.BorderColor = Color.Gold;
             rjButton1.BorderRadius = 8;
             rjButton1.BorderSize = 1;
+            rjButton1.Cursor = Cursors.Hand;
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rjButton1.ForeColor = Color.Gold;
+            rjButton1.HoverColor = Color.Black;
             rjButton1.ImageSize = new Size(20, 20);
             rjButton1.Location = new Point(12, 112);
             rjButton1.Margin = new Padding(3, 4, 3, 4);
@@ -160,10 +166,12 @@
             Agregar.BorderColor = Color.Gold;
             Agregar.BorderRadius = 8;
             Agregar.BorderSize = 1;
+            Agregar.Cursor = Cursors.Hand;
             Agregar.FlatAppearance.BorderSize = 0;
             Agregar.FlatStyle = FlatStyle.Flat;
             Agregar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Agregar.ForeColor = Color.Gold;
+            Agregar.HoverColor = Color.Black;
             Agregar.ImageSize = new Size(20, 20);
             Agregar.Location = new Point(12, 55);
             Agregar.Margin = new Padding(3, 4, 3, 4);
@@ -190,6 +198,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Cursor = Cursors.WaitCursor;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 13);
             pictureBox1.Name = "pictureBox1";
