@@ -13,28 +13,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clientes_list = Administrador_de_Inventario_y_ventas.Clientes.Clientes_list;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using AVI.Properties;
-using System.Resources;
-
-
 
 namespace AVI
 {
-    public partial class Ventas_list : Form
+    public partial class Ventas_nueva : Form
+
     {
         private Productos Productos; // Declarar la variable productos
 
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas_list));
-
-        public Ventas_list()
+        public Ventas_nueva()
         {
             InitializeComponent();
-            Ventas ventas = new Ventas();
-            DataTable content = ventas.VentasList();
-            //add to content from ventas.cantot();
-           
-            Generatedisplay(content);
+            Productos = new Productos();
+            Generatedisplay(Productos.ProductosList());
         }
 
         private void Generatedisplay(DataTable content)
@@ -45,29 +36,41 @@ namespace AVI
 
             foreach (DataRow row in content.Rows)
             {
-                //get cant and total
-                DataTable cantotal = new Ventas().cantotal(Convert.ToInt32(row["ID"]));
-                customelements.Card card = new customelements.Card();
-                card.Size = new Size(200, 200);
-                card.BorderSize = 2;
-                card.HeaderText = "ID: " + row["ID"].ToString();
-                card.HeaderColor = Color.FromArgb(0, 0, 0);
-                card.HeaderImage = (Image)resources.GetObject("card1.HeaderImage");
-                card.HeaderImagePosition = new Point(160, 0);
-                card.HeaderImageSize = new Size(30, 30);
-                card.HeaderFont = new Font("Speedee", 14, FontStyle.Bold, GraphicsUnit.Point, 0);
-                card.HeaderTextColor = Color.FromArgb(255, 255, 255);
-                card.HeaderTextAlign = ContentAlignment.BottomLeft;
-                card.FooterText = "Fecha: " + row["Fecha"].ToString();
-                card.Nombre = "Nombre: " + row["Nombre"].ToString();
-                card.Apellido = "Apellido: " + row["Apellido"].ToString();
-                card.Cantidad = "Cantidad: " + cantotal.Rows[0]["Cantidad"].ToString();
-                card.Total = "Total: " + cantotal.Rows[0]["Total"].ToString();
-                card.Click += (sender, e) =>
+
+                RJButton button = new RJControls.RJButton();
+                button.BackColor = Color.Black;
+                button.FlatStyle = FlatStyle.Flat;
+                //border black
+                button.BorderSize = 1;
+                button.BorderColor = Color.FromArgb(255, 196, 0);
+                button.BorderRadius = 3;
+                button.TextColor = Color.White;
+                button.Font = new Font("Roboto", 10);
+                //cursor pointer
+                button.Cursor = Cursors.Hand;
+
+
+                //img desde la base de datos
+                string imagenPath = row["Imagen"]?.ToString() ?? string.Empty;
+                //comprobar si existe la imagen
+                if (!string.IsNullOrEmpty(imagenPath) && (imagenPath.EndsWith(".png") || imagenPath.EndsWith(".jpg")) && System.IO.File.Exists("Image/" + imagenPath))
                 {
-                    MessageBox.Show("Holaaaaq" + row["ID"].ToString());
-                };
-                flowLayoutPanel1.Controls.Add(card);
+                    button.SetImage(Image.FromFile("Image/" + imagenPath));
+                }
+
+                //image size 
+                button.ImageSize = new Size(100, 100);
+                button.ImageAlign = ContentAlignment.TopCenter;
+                button.TextAlign = ContentAlignment.BottomCenter;
+                button.Text = row["Nombre"].ToString();
+                button.Size = new Size(130, 180);
+                button.Click += new EventHandler((sender, e) =>
+                {
+                    //add the element to the grid
+                    dataGridView1.Rows.Add(row["IdProducto"], row["Nombre"],1, row["Precioventa"]);
+                });
+
+                flowLayoutPanel1.Controls.Add(button);
             }
         }
 
@@ -88,7 +91,7 @@ namespace AVI
 
         private void Categorias_Click(object sender, EventArgs e)
         {
-            // this.Hide();
+           // this.Hide();
 
             Categorias_list categorias = new Categorias_list();
             categorias.Show();
@@ -122,10 +125,9 @@ namespace AVI
         }
         public void Actualizar()
         {
-            Ventas ventas = new Ventas();
-            DataTable content = ventas.VentasList();
-            Generatedisplay(content);
-            //Generatedisplay();
+            Productos = new Productos();
+            Generatedisplay(Productos.ProductosList());
+
         }
     }
 }

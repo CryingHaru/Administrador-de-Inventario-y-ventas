@@ -32,6 +32,7 @@
             button2 = new Button();
             lblResult = new Label();
             rjButton1 = new RJControls.RJButton();
+            rjButton2 = new RJControls.RJButton();
             SuspendLayout();
             // 
             // button1
@@ -73,6 +74,7 @@
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.ForeColor = Color.White;
+            rjButton1.HoverColor = Color.FromArgb(255, 196, 0);
             rjButton1.ImageSize = new Size(20, 20);
             rjButton1.Location = new Point(425, 39);
             rjButton1.Name = "rjButton1";
@@ -83,11 +85,33 @@
             rjButton1.UseVisualStyleBackColor = false;
             rjButton1.Click += rjButton1_Click;
             // 
+            // rjButton2
+            // 
+            rjButton2.BackColor = Color.MediumSlateBlue;
+            rjButton2.BackgroundColor = Color.MediumSlateBlue;
+            rjButton2.BorderColor = Color.PaleVioletRed;
+            rjButton2.BorderRadius = 0;
+            rjButton2.BorderSize = 0;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.ForeColor = Color.White;
+            rjButton2.HoverColor = Color.FromArgb(255, 196, 0);
+            rjButton2.ImageSize = new Size(20, 20);
+            rjButton2.Location = new Point(210, 134);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Size = new Size(150, 40);
+            rjButton2.TabIndex = 4;
+            rjButton2.Text = "nueva venta";
+            rjButton2.TextColor = Color.White;
+            rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Click += rjButton2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(686, 390);
+            Controls.Add(rjButton2);
             Controls.Add(rjButton1);
             Controls.Add(lblResult);
             Controls.Add(button2);
@@ -104,5 +128,6 @@
         private Button button2;
         private Label lblResult;
         private RJControls.RJButton rjButton1;
+        private RJControls.RJButton rjButton2;
     }
 }

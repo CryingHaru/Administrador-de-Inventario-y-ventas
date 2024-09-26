@@ -40,6 +40,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Update="src\customelements\card.cs" />
+    <Compile Update="Ventas\Ventas_nueva.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Ventas\Ventas_list.cs">
       <SubType>Form</SubType>
     </Compile>

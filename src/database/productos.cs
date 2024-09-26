@@ -59,11 +59,19 @@ namespace AVI
         {
             if (accion)
             {
+                //INSERT INTO [dbo].[Movimientos] (Fecha, Tipo, Producto, Cantidad) VALUES('2024-09-26 10:00:00', 1, 1, 100);
+               
+                this.SQLcomando = $"INSERT INTO [dbo].[Movimientos] (Fecha, Tipo, Producto, Cantidad) VALUES(GETDATE(), 1, {id}, {valor})";
+                this.Ejecutar();
+
                 this.SQLcomando = $"UPDATE Productos SET Existencias = Existencias + {valor} WHERE IdProducto = {id}";
             }
             else
             {
+                this.SQLcomando = $"INSERT INTO [dbo].[Movimientos] (Fecha, Tipo, Producto, Cantidad) VALUES(GETDATE(), 0, {id}, {valor})";
+                this.Ejecutar();
                 this.SQLcomando = $"UPDATE Productos SET Existencias = Existencias - {valor} WHERE IdProducto = {id}";
+
             }
             this.Ejecutar();
         }

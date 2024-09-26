@@ -72,5 +72,11 @@ namespace AVI
             new Ventas_list().Show();
             this.Close();
         }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            new Ventas_nueva().Show(); 
+            this.Close();
+        }
     }
 }
