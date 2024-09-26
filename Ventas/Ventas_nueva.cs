@@ -74,17 +74,49 @@ namespace AVI
 
         private void UpdateBarcodeResult(string result)
         {
+
             if (InvokeRequired)
             {
-               //
+                //revisa si en contenido hay un codigo de barra que sea el mismo
+               
+                DataRow[] rows = Contenido.Select("Codigobarra = '" + result + "'");
+                if (rows.Length > 0)
+                {
+                    // Preguntar la cantidad
+                    string input = Microsoft.VisualBasic.Interaction.InputBox("¿Cuántos productos desea agregar?", "Agregar producto", "1");
+                    if (int.TryParse(input, out int cantidad) && cantidad > 0)
+                    {
+                        // Agregar al DataGridView
+                        decimal precioUnitario = Convert.ToDecimal(rows[0]["Precioventa"]);
+                        //comprobar si hay existencias
+                        if (cantidad > Convert.ToInt32(cantidades.Select("IdProducto = " + rows[0]["IdProducto"].ToString())[0]["Existencias"]))
+                        {
+                            MessageBox.Show("No hay suficientes existencias para este producto.", "Existencias insuficientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        //actualizar existencias
+                        cantidades.Select("IdProducto = " + rows[0]["IdProducto"].ToString())[0]["Existencias"] = Convert.ToInt32(cantidades.Select("IdProducto = " + rows[0]["IdProducto"].ToString())[0]["Existencias"]) - cantidad;
+                        //actualizar datagrid
+
+                        decimal total = cantidad * precioUnitario;
+                        dataGridView1.Rows.Add(rows[0]["Nombre"].ToString(), cantidad, precioUnitario.ToString(), total.ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor, ingrese una cantidad válida.", "Cantidad inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                
             }
             else
             {
-                label1.Text = result;
+                
             }
         }
         private void Generatedisplay(DataTable content)
         {
+            //contenido = idproducto y codigobarra
+      
             flowLayoutPanel1.Controls.Clear();
 
             foreach (DataRow row in content.Rows)

@@ -77,7 +77,7 @@ namespace AVI
 
                 if (result != null)
                 {
-                    _onBarcodeScanned?.Invoke($"Código de barras encontrado: {result.Text}");
+                    _onBarcodeScanned?.Invoke(result.Text);
                     //detener por 5 segundos
                     Thread.Sleep(5000);
 
@@ -85,7 +85,7 @@ namespace AVI
                 }
                 else
                 {
-                    _onBarcodeScanned?.Invoke("No se encontró código de barras.");
+                    //
                 }
             }
             catch (Exception ex)
