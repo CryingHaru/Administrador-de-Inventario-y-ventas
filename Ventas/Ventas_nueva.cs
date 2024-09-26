@@ -26,6 +26,9 @@ namespace AVI
         void styles()
         {
             dataGridView1.AccessibilityObject.Value = "Nombre del producto";
+            dataGridView1.Columns.Add("IdProducto", "IdProducto");
+            //hide idproducto
+            dataGridView1.Columns["IdProducto"].Visible = false;
             dataGridView1.Columns.Add("Nombre", "Nombre del producto");
             dataGridView1.Columns.Add("Cantidad", "Cantidad");
             dataGridView1.Columns.Add("Precio", "Precio unitario");
@@ -55,7 +58,7 @@ namespace AVI
             dataGridView1.DefaultCellStyle.Font = new Font("Speede", 12);
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Speede", 12, FontStyle.Bold);
             dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 255, 255);
-           
+
         }
         public Ventas_nueva()
         {
@@ -68,6 +71,15 @@ namespace AVI
             //barcode reader
             _barcodeReader = new WebcamBarcodeReader(UpdateBarcodeResult);
             _barcodeReader.Start();
+
+            Cliente cliente = new Cliente();
+            DataTable clientes = cliente.Clientelist();
+            //display nombre y apellido
+            clientelement.DataSource = clientes;
+            clientelement.DisplayMember = "Nombre";
+            clientelement.ValueMember = "IdCliente";
+
+
 
         }
 
@@ -101,7 +113,8 @@ namespace AVI
                     //actualizar datagrid
 
                     decimal total = cantidad * precioUnitario;
-                    dataGridView1.Rows.Add(rows[0]["Nombre"].ToString(), cantidad, precioUnitario.ToString(), total.ToString());
+                    dataGridView1.Rows.Add(rows[0]["IdProducto"].ToString(), rows[0]["Nombre"].ToString(), cantidad, precioUnitario.ToString(), total.ToString());
+                    dataGridView1_CellValueChanged();
                 }
                 else
                 {
@@ -113,7 +126,7 @@ namespace AVI
         private void Generatedisplay(DataTable content)
         {
             //contenido = idproducto y codigobarra
-      
+
             flowLayoutPanel1.Controls.Clear();
 
             foreach (DataRow row in content.Rows)
@@ -128,7 +141,7 @@ namespace AVI
                 button.BorderRadius = 3;
                 button.TextColor = Color.White;
                 button.Font = new Font("Roboto", 10);
-               
+
                 button.Cursor = Cursors.Hand;
                 button.TabStop = true;
 
@@ -166,7 +179,8 @@ namespace AVI
                         //actualizar datagrid
 
                         decimal total = cantidad * precioUnitario;
-                        dataGridView1.Rows.Add(row["Nombre"].ToString(), cantidad, precioUnitario.ToString(), total.ToString());
+                        dataGridView1.Rows.Add(row["IdProducto"].ToString(), row["Nombre"].ToString(), cantidad, precioUnitario.ToString(), total.ToString());
+                        dataGridView1_CellValueChanged();
                     }
                     else
                     {
@@ -180,14 +194,44 @@ namespace AVI
 
         private void Agregar_Click(object sender, EventArgs e)
         {
-          
+            //agrega a la base de datos los productos y la venta completa
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("No se han agregado productos a la venta.", "Venta vacía", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
         }
 
-      
-        public void Actualizar()
+
+
+
+        private void dataGridView1_CellValueChanged()
         {
-            Productos = new Productos();
-            Generatedisplay(Productos.ProductosList());
+            Totaldelostotales.Text = "0";
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["Total"].Value != null)
+                {
+                    Totaldelostotales.Text = (Convert.ToDecimal(Totaldelostotales.Text) + Convert.ToDecimal(row.Cells["Total"].Value)).ToString();
+                }
+            }
+        }
+
+        private void clientenew_Click(object sender, EventArgs e)
+        {
+            //new cliente
+            new Cliente_add().ShowDialog();
+            //actualizar combobox
+            clientelement.DataSource = new Cliente().Clientelist();
+            clientelement.Refresh();
+
+
+        }
+
+        private void Totaldelostotales_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

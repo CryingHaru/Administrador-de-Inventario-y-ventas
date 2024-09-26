@@ -39,6 +39,10 @@
             textboxelement1 = new Textboxelement();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            clientelement = new ComboBox();
+            clientenew = new RJControls.RJButton();
+            Totaldelostotales = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -48,10 +52,10 @@
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.ForeColor = Color.WhiteSmoke;
-            flowLayoutPanel1.Location = new Point(11, 149);
+            flowLayoutPanel1.Location = new Point(11, 131);
             flowLayoutPanel1.Margin = new Padding(2, 3, 2, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(415, 421);
+            flowLayoutPanel1.Size = new Size(415, 439);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // Titulo
@@ -82,7 +86,7 @@
             rjButton1.Image = (Image)resources.GetObject("rjButton1.Image");
             rjButton1.ImageAlign = ContentAlignment.MiddleLeft;
             rjButton1.ImageSize = new Size(20, 20);
-            rjButton1.Location = new Point(836, 443);
+            rjButton1.Location = new Point(859, 78);
             rjButton1.Margin = new Padding(2);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(131, 42);
@@ -108,12 +112,12 @@
             Agregar.Image = (Image)resources.GetObject("Agregar.Image");
             Agregar.ImageAlign = ContentAlignment.MiddleLeft;
             Agregar.ImageSize = new Size(20, 20);
-            Agregar.Location = new Point(836, 396);
+            Agregar.Location = new Point(859, 514);
             Agregar.Margin = new Padding(2, 3, 2, 3);
             Agregar.Name = "Agregar";
             Agregar.Size = new Size(131, 42);
             Agregar.TabIndex = 3;
-            Agregar.Text = "Agregar";
+            Agregar.Text = "Finalizar";
             Agregar.TextColor = Color.WhiteSmoke;
             Agregar.UseVisualStyleBackColor = false;
             Agregar.Click += Agregar_Click;
@@ -179,7 +183,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(15, 60);
+            label1.Location = new Point(11, 78);
             label1.Name = "label1";
             label1.Size = new Size(42, 13);
             label1.TabIndex = 10;
@@ -198,8 +202,65 @@
             dataGridView1.Location = new Point(431, 147);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(400, 423);
+            dataGridView1.Size = new Size(400, 376);
             dataGridView1.TabIndex = 11;
+            // 
+            // clientelement
+            // 
+            clientelement.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            clientelement.FormattingEnabled = true;
+            clientelement.Location = new Point(12, 100);
+            clientelement.Name = "clientelement";
+            clientelement.Size = new Size(407, 21);
+            clientelement.TabIndex = 12;
+            // 
+            // clientenew
+            // 
+            clientenew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            clientenew.BackColor = Color.Black;
+            clientenew.BackgroundColor = Color.Black;
+            clientenew.BorderColor = Color.FromArgb(255, 195, 0);
+            clientenew.BorderRadius = 2;
+            clientenew.BorderSize = 1;
+            clientenew.FlatAppearance.BorderSize = 0;
+            clientenew.FlatStyle = FlatStyle.Flat;
+            clientenew.Font = new Font("Speedee", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clientenew.ForeColor = Color.White;
+            clientenew.HoverColor = Color.Red;
+            clientenew.ImageSize = new Size(20, 20);
+            clientenew.Location = new Point(424, 94);
+            clientenew.Name = "clientenew";
+            clientenew.Size = new Size(143, 31);
+            clientenew.TabIndex = 13;
+            clientenew.Text = "Nuevo cliente";
+            clientenew.TextColor = Color.White;
+            clientenew.UseVisualStyleBackColor = false;
+            clientenew.Click += clientenew_Click;
+            // 
+            // Totaldelostotales
+            // 
+            Totaldelostotales.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Totaldelostotales.AutoSize = true;
+            Totaldelostotales.Font = new Font("Speedee", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Totaldelostotales.ForeColor = Color.White;
+            Totaldelostotales.Location = new Point(492, 526);
+            Totaldelostotales.Name = "Totaldelostotales";
+            Totaldelostotales.Size = new Size(22, 21);
+            Totaldelostotales.TabIndex = 14;
+            Totaldelostotales.Text = "0 ";
+            Totaldelostotales.Click += Totaldelostotales_Click;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Speedee", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(431, 526);
+            label2.Name = "label2";
+            label2.Size = new Size(55, 21);
+            label2.TabIndex = 15;
+            label2.Text = "Total: ";
             // 
             // Ventas_nueva
             // 
@@ -207,6 +268,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1014, 582);
+            Controls.Add(label2);
+            Controls.Add(Totaldelostotales);
+            Controls.Add(clientenew);
+            Controls.Add(clientelement);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Controls.Add(Agregar);
@@ -219,7 +284,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
             Name = "Ventas_nueva";
-            Text = "Productos";
+            Text = "Nueva venta";
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -238,5 +303,9 @@
         private Textboxelement textboxelement1;
         private Label label1;
         private DataGridView dataGridView1;
+        private ComboBox clientelement;
+        private RJControls.RJButton clientenew;
+        private Label Totaldelostotales;
+        private Label label2;
     }
 }
