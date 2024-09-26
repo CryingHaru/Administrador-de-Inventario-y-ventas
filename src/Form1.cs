@@ -50,7 +50,7 @@ namespace AVI
 
             if (InvokeRequired)
             {
-                Invoke(new Action(() => lblResult.Text = result));
+               Invoke(new Action(() => lblResult.Text = result));
             }
             else
             {
