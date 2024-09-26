@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Marcas_add));
             txtNombreCategoria = new TextBox();
             rjButton1 = new AVI.RJControls.RJButton();
             Cerrar = new AVI.RJControls.RJButton();
             label1 = new Label();
             Titulo = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtNombreCategoria
             // 
+            txtNombreCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtNombreCategoria.Location = new Point(22, 122);
             txtNombreCategoria.Name = "txtNombreCategoria";
             txtNombreCategoria.Size = new Size(307, 27);
@@ -54,6 +58,7 @@
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.ForeColor = Color.Black;
+            rjButton1.HoverColor = Color.Black;
             rjButton1.ImageSize = new Size(20, 20);
             rjButton1.Location = new Point(22, 224);
             rjButton1.Margin = new Padding(3, 4, 3, 4);
@@ -76,6 +81,7 @@
             Cerrar.FlatAppearance.BorderSize = 0;
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.ForeColor = Color.Black;
+            Cerrar.HoverColor = Color.Black;
             Cerrar.ImageSize = new Size(20, 20);
             Cerrar.Location = new Point(215, 224);
             Cerrar.Margin = new Padding(3, 4, 3, 4);
@@ -90,6 +96,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = Color.Gold;
             label1.Location = new Point(22, 99);
             label1.Name = "label1";
             label1.Size = new Size(112, 20);
@@ -100,6 +107,7 @@
             // 
             Titulo.AutoSize = true;
             Titulo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Titulo.ForeColor = Color.Gold;
             Titulo.Location = new Point(90, 25);
             Titulo.Name = "Titulo";
             Titulo.Size = new Size(165, 29);
@@ -107,11 +115,23 @@
             Titulo.Text = "Nueva Marca";
             Titulo.Click += Titulo_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(61, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 26;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // Marcas_add
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(346, 295);
+            Controls.Add(pictureBox1);
             Controls.Add(txtNombreCategoria);
             Controls.Add(rjButton1);
             Controls.Add(Cerrar);
@@ -120,6 +140,7 @@
             Name = "Marcas_add";
             Text = "Marcas_add";
             Load += Marcas_add_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -130,5 +151,6 @@
         private AVI.RJControls.RJButton Cerrar;
         private Label label1;
         private Label Titulo;
+        private PictureBox pictureBox1;
     }
 }

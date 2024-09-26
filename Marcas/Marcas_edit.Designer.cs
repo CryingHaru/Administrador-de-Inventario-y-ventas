@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Marcas_edit));
             rjButton1 = new RJControls.RJButton();
             Cerrar = new RJControls.RJButton();
             Idmarca = new TextBox();
@@ -35,6 +36,8 @@
             txtnombreMarca = new TextBox();
             label1 = new Label();
             Titulo = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // rjButton1
@@ -48,6 +51,7 @@
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.ForeColor = Color.Black;
+            rjButton1.HoverColor = Color.FromArgb(255, 196, 0);
             rjButton1.ImageSize = new Size(20, 20);
             rjButton1.Location = new Point(32, 230);
             rjButton1.Margin = new Padding(3, 4, 3, 4);
@@ -70,6 +74,7 @@
             Cerrar.FlatAppearance.BorderSize = 0;
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.ForeColor = Color.Black;
+            Cerrar.HoverColor = Color.FromArgb(255, 196, 0);
             Cerrar.ImageSize = new Size(20, 20);
             Cerrar.Location = new Point(225, 230);
             Cerrar.Margin = new Padding(3, 4, 3, 4);
@@ -88,10 +93,12 @@
             Idmarca.ReadOnly = true;
             Idmarca.Size = new Size(307, 27);
             Idmarca.TabIndex = 32;
+            Idmarca.TextChanged += Idmarca_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.Gold;
             label2.Location = new Point(32, 70);
             label2.Name = "label2";
             label2.Size = new Size(70, 20);
@@ -108,6 +115,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = Color.Gold;
             label1.Location = new Point(32, 146);
             label1.Name = "label1";
             label1.Size = new Size(112, 20);
@@ -118,17 +126,29 @@
             // 
             Titulo.AutoSize = true;
             Titulo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Titulo.ForeColor = Color.Gold;
             Titulo.Location = new Point(102, 21);
             Titulo.Name = "Titulo";
             Titulo.Size = new Size(160, 29);
             Titulo.TabIndex = 28;
             Titulo.Text = "Editar Marca";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(61, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 35;
+            pictureBox1.TabStop = false;
+            // 
             // Marcas_edit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(370, 302);
+            Controls.Add(pictureBox1);
             Controls.Add(rjButton1);
             Controls.Add(Cerrar);
             Controls.Add(Idmarca);
@@ -139,6 +159,7 @@
             Name = "Marcas_edit";
             Text = "Marcas_edit";
             Load += Marcas_edit_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -152,5 +173,6 @@
         private TextBox txtnombreMarca;
         private Label label1;
         private Label Titulo;
+        private PictureBox pictureBox1;
     }
 }
