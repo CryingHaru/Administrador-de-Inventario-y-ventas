@@ -78,5 +78,10 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
                 MessageBox.Show("Por favor, ingrese todos los datos válidos para el cliente.");
             }
         }
+
+        private void txtTelefonoCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

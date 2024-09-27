@@ -47,10 +47,10 @@
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.ForeColor = Color.WhiteSmoke;
-            flowLayoutPanel1.Location = new Point(195, 88);
-            flowLayoutPanel1.Margin = new Padding(3, 5, 3, 5);
+            flowLayoutPanel1.Location = new Point(171, 66);
+            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(623, 480);
+            flowLayoutPanel1.Size = new Size(545, 360);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -58,9 +58,10 @@
             // 
             Titulo.AutoSize = true;
             Titulo.Font = new Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Titulo.Location = new Point(195, 40);
+            Titulo.ForeColor = SystemColors.ControlLightLight;
+            Titulo.Location = new Point(171, 30);
             Titulo.Name = "Titulo";
-            Titulo.Size = new Size(146, 31);
+            Titulo.Size = new Size(118, 25);
             Titulo.TabIndex = 1;
             Titulo.Text = "Productos";
             // 
@@ -80,9 +81,10 @@
             rjButton1.Image = (Image)resources.GetObject("rjButton1.Image");
             rjButton1.ImageAlign = ContentAlignment.MiddleLeft;
             rjButton1.ImageSize = new Size(20, 20);
-            rjButton1.Location = new Point(15, 505);
+            rjButton1.Location = new Point(13, 379);
+            rjButton1.Margin = new Padding(3, 2, 3, 2);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(175, 65);
+            rjButton1.Size = new Size(153, 49);
             rjButton1.TabIndex = 2;
             rjButton1.Text = "Atras";
             rjButton1.TextColor = Color.White;
@@ -104,10 +106,10 @@
             Agregar.Image = (Image)resources.GetObject("Agregar.Image");
             Agregar.ImageAlign = ContentAlignment.MiddleLeft;
             Agregar.ImageSize = new Size(20, 20);
-            Agregar.Location = new Point(15, 129);
-            Agregar.Margin = new Padding(3, 5, 3, 5);
+            Agregar.Location = new Point(13, 97);
+            Agregar.Margin = new Padding(3, 4, 3, 4);
             Agregar.Name = "Agregar";
-            Agregar.Size = new Size(175, 65);
+            Agregar.Size = new Size(153, 49);
             Agregar.TabIndex = 3;
             Agregar.Text = "Nuevo";
             Agregar.TextColor = Color.WhiteSmoke;
@@ -129,10 +131,10 @@
             Categorias.Image = (Image)resources.GetObject("Categorias.Image");
             Categorias.ImageAlign = ContentAlignment.MiddleLeft;
             Categorias.ImageSize = new Size(20, 20);
-            Categorias.Location = new Point(15, 203);
-            Categorias.Margin = new Padding(3, 5, 3, 5);
+            Categorias.Location = new Point(13, 152);
+            Categorias.Margin = new Padding(3, 4, 3, 4);
             Categorias.Name = "Categorias";
-            Categorias.Size = new Size(175, 65);
+            Categorias.Size = new Size(153, 49);
             Categorias.TabIndex = 4;
             Categorias.Text = "Categorias";
             Categorias.TextAlign = ContentAlignment.MiddleRight;
@@ -155,10 +157,10 @@
             Marcas.Image = (Image)resources.GetObject("Marcas.Image");
             Marcas.ImageAlign = ContentAlignment.MiddleLeft;
             Marcas.ImageSize = new Size(20, 20);
-            Marcas.Location = new Point(15, 277);
-            Marcas.Margin = new Padding(3, 5, 3, 5);
+            Marcas.Location = new Point(13, 208);
+            Marcas.Margin = new Padding(3, 4, 3, 4);
             Marcas.Name = "Marcas";
-            Marcas.Size = new Size(175, 65);
+            Marcas.Size = new Size(153, 49);
             Marcas.TabIndex = 5;
             Marcas.Text = "Marcas";
             Marcas.TextColor = Color.WhiteSmoke;
@@ -180,10 +182,10 @@
             Buscar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Buscar.ForeColor = Color.WhiteSmoke;
             Buscar.ImageSize = new Size(20, 20);
-            Buscar.Location = new Point(711, 22);
-            Buscar.Margin = new Padding(3, 5, 3, 5);
+            Buscar.Location = new Point(622, 16);
+            Buscar.Margin = new Padding(3, 4, 3, 4);
             Buscar.Name = "Buscar";
-            Buscar.Size = new Size(107, 40);
+            Buscar.Size = new Size(94, 30);
             Buscar.TabIndex = 6;
             Buscar.Text = "Buscar";
             Buscar.TextColor = Color.WhiteSmoke;
@@ -196,10 +198,10 @@
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(15, 18);
-            pictureBox1.Margin = new Padding(4, 5, 4, 5);
+            pictureBox1.Location = new Point(13, 14);
+            pictureBox1.Margin = new Padding(4, 4, 4, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(149, 65);
+            pictureBox1.Size = new Size(130, 49);
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
@@ -216,20 +218,20 @@
             textboxelement1.ForeColor = Color.WhiteSmoke;
             textboxelement1.IsPassword = false;
             textboxelement1.IsReadOnly = false;
-            textboxelement1.Location = new Point(513, 26);
-            textboxelement1.Margin = new Padding(4, 5, 4, 5);
+            textboxelement1.Location = new Point(449, 20);
+            textboxelement1.Margin = new Padding(4, 4, 4, 4);
             textboxelement1.Name = "textboxelement1";
             textboxelement1.PlaceholderText = "Escribe aqui...";
-            textboxelement1.Size = new Size(191, 23);
+            textboxelement1.Size = new Size(167, 19);
             textboxelement1.TabIndex = 9;
             textboxelement1.TextChanged += textboxelement1_TextChanged;
             // 
             // Productos_list
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(849, 586);
+            ClientSize = new Size(743, 440);
             Controls.Add(textboxelement1);
             Controls.Add(pictureBox1);
             Controls.Add(Buscar);
@@ -240,7 +242,7 @@
             Controls.Add(Titulo);
             Controls.Add(flowLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 5, 3, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Productos_list";
             Text = "Productos";
             WindowState = FormWindowState.Maximized;
