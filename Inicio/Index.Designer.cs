@@ -35,6 +35,7 @@
             pictureBox1 = new PictureBox();
             BtnVentas = new RJControls.RJButton();
             rjButton1 = new RJControls.RJButton();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             BtnCategoria.Image = (Image)resources.GetObject("BtnCategoria.Image");
             BtnCategoria.ImageAlign = ContentAlignment.BottomCenter;
             BtnCategoria.ImageSize = new Size(15, 15);
-            BtnCategoria.Location = new Point(255, 171);
+            BtnCategoria.Location = new Point(735, 375);
             BtnCategoria.Margin = new Padding(3, 4, 3, 4);
             BtnCategoria.Name = "BtnCategoria";
             BtnCategoria.Size = new Size(145, 129);
@@ -83,7 +84,7 @@
             BtnClientes.Image = (Image)resources.GetObject("BtnClientes.Image");
             BtnClientes.ImageAlign = ContentAlignment.BottomCenter;
             BtnClientes.ImageSize = new Size(20, 20);
-            BtnClientes.Location = new Point(255, 308);
+            BtnClientes.Location = new Point(735, 512);
             BtnClientes.Margin = new Padding(3, 4, 3, 4);
             BtnClientes.Name = "BtnClientes";
             BtnClientes.Size = new Size(145, 124);
@@ -111,7 +112,7 @@
             BtnProductos.Image = (Image)resources.GetObject("BtnProductos.Image");
             BtnProductos.ImageAlign = ContentAlignment.BottomCenter;
             BtnProductos.ImageSize = new Size(20, 20);
-            BtnProductos.Location = new Point(498, 171);
+            BtnProductos.Location = new Point(978, 375);
             BtnProductos.Margin = new Padding(3, 4, 3, 4);
             BtnProductos.Name = "BtnProductos";
             BtnProductos.Size = new Size(145, 129);
@@ -129,7 +130,7 @@
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(255, -2);
+            pictureBox1.Location = new Point(735, 202);
             pictureBox1.Margin = new Padding(5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(388, 164);
@@ -153,7 +154,7 @@
             BtnVentas.Image = (Image)resources.GetObject("BtnVentas.Image");
             BtnVentas.ImageAlign = ContentAlignment.BottomCenter;
             BtnVentas.ImageSize = new Size(20, 20);
-            BtnVentas.Location = new Point(498, 308);
+            BtnVentas.Location = new Point(978, 512);
             BtnVentas.Margin = new Padding(3, 4, 3, 4);
             BtnVentas.Name = "BtnVentas";
             BtnVentas.Size = new Size(145, 124);
@@ -181,7 +182,7 @@
             rjButton1.Image = (Image)resources.GetObject("rjButton1.Image");
             rjButton1.ImageAlign = ContentAlignment.MiddleLeft;
             rjButton1.ImageSize = new Size(20, 20);
-            rjButton1.Location = new Point(363, 471);
+            rjButton1.Location = new Point(843, 675);
             rjButton1.Margin = new Padding(3, 4, 3, 4);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(180, 84);
@@ -192,12 +193,25 @@
             rjButton1.UseVisualStyleBackColor = false;
             rjButton1.Click += rjButton1_Click;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Anchor = AnchorStyles.None;
+            flowLayoutPanel1.AutoSize = true;
+            flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.Location = new Point(430, 121);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(0, 0);
+            flowLayoutPanel1.TabIndex = 15;
+            flowLayoutPanel1.WrapContents = false;
+            // 
             // Administador
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(936, 585);
+            ClientSize = new Size(1331, 831);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(rjButton1);
             Controls.Add(BtnVentas);
             Controls.Add(BtnProductos);
@@ -211,6 +225,7 @@
             Load += Administador_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -220,5 +235,6 @@
         private RJControls.RJButton BtnProductos;
         private RJControls.RJButton BtnVentas;
         private RJControls.RJButton rjButton1;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

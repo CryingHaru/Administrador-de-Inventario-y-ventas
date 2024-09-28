@@ -5,25 +5,22 @@ namespace AVI
 {
     public partial class Administador : Form
     {
-
         public Administador()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void Administador_Load(object sender, EventArgs e)
         {
-
         }
 
         private void close_Click(object sender, EventArgs e)
         {
-
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void BtnCategorias_Click(object sender, EventArgs e)
@@ -46,10 +43,7 @@ namespace AVI
 
         private void BtnVentas_Click(object sender, EventArgs e)
         {
-            //Ventas_list ventas_List = new Ventas_list();
-            //ventas_List.Show();
             new Ventas_nueva().Show();
-
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
@@ -58,4 +52,3 @@ namespace AVI
         }
     }
 }
-//Yo estuve aqui

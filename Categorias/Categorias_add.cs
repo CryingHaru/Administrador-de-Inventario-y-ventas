@@ -1,29 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using AVI;
-
-namespace Administrador_de_Inventario_y_ventas.Categorias
+﻿namespace Administrador_de_Inventario_y_ventas.Categorias
 {
     public partial class Categorias_add : Form
     {
         public Categorias_add()
         {
             InitializeComponent();
-        }
-
-
-
-        private void Nombre_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Cerrar_Click(object sender, EventArgs e)
@@ -34,17 +15,14 @@ namespace Administrador_de_Inventario_y_ventas.Categorias
         private void rjButton1_Click(object sender, EventArgs e)
         {
             AVI.Categorias categorias = new AVI.Categorias();
-            // Obtener el texto del TextBox para el nombre de la categoría
             string nombreCategoria = txtNombreCategoria.Text;
 
-           int ultimo = categorias.Lastid();
+            int ultimo = categorias.Lastid();
             ultimo++;
-            // Obtener el texto del TextBox para el Id de la categoría y convertirlo a entero
 
             if (!string.IsNullOrEmpty(nombreCategoria))
             {
-                
-                bool resultado = categorias.AgregarCategoria(ultimo,nombreCategoria);
+                bool resultado = categorias.AgregarCategoria(ultimo, nombreCategoria);
 
                 if (resultado)
                 {
@@ -62,19 +40,28 @@ namespace Administrador_de_Inventario_y_ventas.Categorias
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void Categorias_add_Load(object sender, EventArgs e)
         {
+            this.BackColor = Color.Black;
+            AplicarEstiloBoton(rjButton1);
+            AplicarEstiloBoton(Cerrar);
+            AplicarEstiloInput(txtNombreCategoria);
+        }
 
+        private void AplicarEstiloBoton(Button button)
+        {
+            button.BackColor = Color.Black;
+            button.ForeColor = Color.Gold;
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Gold;
+            button.FlatAppearance.BorderSize = 2;
+        }
+
+        private void AplicarEstiloInput(TextBox textBox)
+        {
+            textBox.BackColor = Color.Black;
+            textBox.ForeColor = Color.Gold;
+            textBox.BorderStyle = BorderStyle.FixedSingle;
         }
     }
 }

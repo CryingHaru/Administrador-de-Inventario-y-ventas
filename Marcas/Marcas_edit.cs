@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AVI;
 
@@ -14,6 +8,7 @@ namespace AVI
     public partial class Marcas_edit : Form
     {
         private int idMarca;
+
         public Marcas_edit(int idmarca, string nombreMarca)
         {
             InitializeComponent();
@@ -21,35 +16,31 @@ namespace AVI
             txtnombreMarca.Text = nombreMarca;
             Idmarca.Text = idmarca.ToString();
 
-            // Aplicar estilos a los controles
-            this.BackColor = Color.Black; // Fondo negro del formulario
+            this.BackColor = Color.Black;
             AplicarEstiloBoton(rjButton1);
             AplicarEstiloBoton(Cerrar);
             AplicarEstiloInput(txtnombreMarca);
             AplicarEstiloInput(Idmarca);
         }
 
-        // Método para aplicar estilo a los botones
         private void AplicarEstiloBoton(Button button)
         {
-            button.BackColor = Color.Black; // Fondo negro
-            button.ForeColor = Color.Gold;  // Texto dorado
-            button.FlatStyle = FlatStyle.Flat;  // Botón plano
-            button.FlatAppearance.BorderColor = Color.Gold;  // Borde dorado
-            button.FlatAppearance.BorderSize = 2; // Grosor del borde
+            button.BackColor = Color.Black;
+            button.ForeColor = Color.Gold;
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Gold;
+            button.FlatAppearance.BorderSize = 2;
         }
 
-        // Método para aplicar estilo a los TextBox (inputs)
         private void AplicarEstiloInput(TextBox textBox)
         {
-            textBox.BackColor = Color.Black;  // Fondo negro
-            textBox.ForeColor = Color.Gold;   // Texto dorado
-            textBox.BorderStyle = BorderStyle.FixedSingle;  // Borde simple
+            textBox.BackColor = Color.Black;
+            textBox.ForeColor = Color.Gold;
+            textBox.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void Marcas_edit_Load(object sender, EventArgs e)
         {
-
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
@@ -84,7 +75,6 @@ namespace AVI
 
         private void Idmarca_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

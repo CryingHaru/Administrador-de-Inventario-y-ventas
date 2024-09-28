@@ -24,7 +24,11 @@ namespace AVI
 
         private void Categorias_edit_Load(object sender, EventArgs e)
         {
-
+            this.BackColor = Color.Black;
+            AplicarEstiloBoton(rjButton1);
+            AplicarEstiloBoton(Cerrar);
+            AplicarEstiloInput(txtNombreCategoria);
+            AplicarEstiloInput(txtIdCategoria);
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
@@ -55,6 +59,22 @@ namespace AVI
         private void Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AplicarEstiloBoton(Button button)
+        {
+            button.BackColor = Color.Black;
+            button.ForeColor = Color.Gold;
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Gold;
+            button.FlatAppearance.BorderSize = 2;
+        }
+
+        private void AplicarEstiloInput(TextBox textBox)
+        {
+            textBox.BackColor = Color.Black;
+            textBox.ForeColor = Color.Gold;
+            textBox.BorderStyle = BorderStyle.FixedSingle;
         }
     }
 }

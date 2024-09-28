@@ -14,6 +14,7 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
     public partial class Cliente_edit : Form
     {
         private int Id;
+
         public Cliente_edit(int Id)
         {
             InitializeComponent();
@@ -27,21 +28,34 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
             txtDUICliente.Text = clienteRow[0]["Dui"].ToString();
             txtDireccionCliente.Text = clienteRow[0]["Direccion"].ToString();
 
+            this.BackColor = Color.Black;
+            AplicarEstiloBoton(rjButton1);
+            AplicarEstiloBoton(Cerrar);
+            AplicarEstiloInput(txtNombreCliente);
+            AplicarEstiloInput(txtApellidoCliente);
+            AplicarEstiloInput(txtTelefonoCliente);
+            AplicarEstiloInput(txtDUICliente);
+            AplicarEstiloInput(txtDireccionCliente);
         }
 
-        private void txtNombreCategoria_TextChanged(object sender, EventArgs e)
+        private void AplicarEstiloBoton(Button button)
         {
-
+            button.BackColor = Color.Black;
+            button.ForeColor = Color.Gold;
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Gold;
+            button.FlatAppearance.BorderSize = 2;
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void AplicarEstiloInput(TextBox textBox)
         {
-
+            textBox.BackColor = Color.Black;
+            textBox.ForeColor = Color.Gold;
+            textBox.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void Cliente_add_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Cerrar_Click(object sender, EventArgs e)
@@ -52,7 +66,6 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
         private void rjButton1_Click(object sender, EventArgs e)
         {
             AVI.Cliente clientes = new AVI.Cliente();
-            // Obtener el texto de los TextBox para los campos del cliente
             string nombreCliente = txtNombreCliente.Text;
             string apellidoCliente = txtApellidoCliente.Text;
             string telefonoCliente = txtTelefonoCliente.Text;
@@ -65,12 +78,12 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
 
                 if (resultado)
                 {
-                    MessageBox.Show("Cliente agregado exitosamente.");
+                    MessageBox.Show("Cliente editado exitosamente.");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Error al agregar el cliente.");
+                    MessageBox.Show("Error al editar el cliente.");
                 }
             }
             else
@@ -81,7 +94,6 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
 
         private void txtTelefonoCliente_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

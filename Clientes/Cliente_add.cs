@@ -16,21 +16,42 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
         public Cliente_add()
         {
             InitializeComponent();
+            this.BackColor = Color.Black;
+            AplicarEstiloBoton(rjButton1);
+            AplicarEstiloBoton(Cerrar);
+            AplicarEstiloInput(txtNombreCliente);
+            AplicarEstiloInput(txtApellidoCliente);
+            AplicarEstiloInput(txtTelefonoCliente);
+            AplicarEstiloInput(txtDUICliente);
+            AplicarEstiloInput(txtDireccionCliente);
+        }
+
+        private void AplicarEstiloBoton(Button button)
+        {
+            button.BackColor = Color.Black;
+            button.ForeColor = Color.Gold;
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Gold;
+            button.FlatAppearance.BorderSize = 2;
+        }
+
+        private void AplicarEstiloInput(TextBox textBox)
+        {
+            textBox.BackColor = Color.Black;
+            textBox.ForeColor = Color.Gold;
+            textBox.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void txtNombreCategoria_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Cliente_add_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Cerrar_Click(object sender, EventArgs e)
@@ -41,7 +62,6 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
         private void rjButton1_Click(object sender, EventArgs e)
         {
             AVI.Cliente clientes = new AVI.Cliente();
-            // Obtener el texto de los TextBox para los campos del cliente
             string nombreCliente = txtNombreCliente.Text;
             string apellidoCliente = txtApellidoCliente.Text;
             string telefonoCliente = txtTelefonoCliente.Text;
@@ -51,7 +71,11 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
             int ultimo = clientes.Lastid();
             ultimo++;
 
-            if (!string.IsNullOrEmpty(nombreCliente) && !string.IsNullOrEmpty(apellidoCliente) && !string.IsNullOrEmpty(telefonoCliente) && !string.IsNullOrEmpty(duiCliente) && !string.IsNullOrEmpty(direccionCliente))
+            if (!string.IsNullOrEmpty(nombreCliente) &&
+                !string.IsNullOrEmpty(apellidoCliente) &&
+                !string.IsNullOrEmpty(telefonoCliente) &&
+                !string.IsNullOrEmpty(duiCliente) &&
+                !string.IsNullOrEmpty(direccionCliente))
             {
                 bool resultado = clientes.AgregarCliente(ultimo, nombreCliente, apellidoCliente, telefonoCliente, duiCliente, direccionCliente);
 

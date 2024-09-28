@@ -1,12 +1,7 @@
 ﻿using AVI;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Administrador_de_Inventario_y_ventas.Marcas
@@ -20,22 +15,17 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
 
         private void Titulo_Click(object sender, EventArgs e)
         {
-
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
             AVI.Marca marca = new AVI.Marca();
-            // Obtener el texto del TextBox para el nombre de la categoría
             string nombreMarca = txtNombreCategoria.Text;
-
             int ultimo = marca.Lastid();
             ultimo++;
-            // Obtener el texto del TextBox para el Id de la categoría y convertirlo a entero
 
             if (!string.IsNullOrEmpty(nombreMarca))
             {
-
                 bool resultado = marca.AgregarMarca(ultimo, nombreMarca);
 
                 if (resultado)
@@ -50,43 +40,35 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
             }
             else
             {
-                MessageBox.Show("Por favor, ingrese un Id y un nombre válidos para la .");
+                MessageBox.Show("Por favor, ingrese un nombre válido para la marca.");
             }
         }
 
-        // Método para aplicar estilo a los botones
         private void AplicarEstiloBoton(Button button)
         {
-            button.BackColor = Color.Black; // Fondo negro
-            button.ForeColor = Color.Gold;  // Texto dorado
-            button.FlatStyle = FlatStyle.Flat;  // Botón plano
-            button.FlatAppearance.BorderColor = Color.Gold;  // Borde dorado
-            button.FlatAppearance.BorderSize = 2; // Grosor del borde
+            button.BackColor = Color.Black;
+            button.ForeColor = Color.Gold;
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Gold;
+            button.FlatAppearance.BorderSize = 2;
         }
 
-        // Método para aplicar estilo a los TextBox (inputs)
         private void AplicarEstiloInput(TextBox textBox)
         {
-            textBox.BackColor = Color.Black;  // Fondo negro
-            textBox.ForeColor = Color.Gold;   // Texto dorado
-            textBox.BorderStyle = BorderStyle.FixedSingle;  // Borde simple
+            textBox.BackColor = Color.Black;
+            textBox.ForeColor = Color.Gold;
+            textBox.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void txtNombreCategoria_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void Marcas_add_Load(object sender, EventArgs e)
         {
-            // Estilo del formulario
-            this.BackColor = Color.Black; // Fondo negro para el formulario
-
-            // Estilo para los botones
+            this.BackColor = Color.Black;
             AplicarEstiloBoton(rjButton1);
             AplicarEstiloBoton(Cerrar);
-
-            // Estilo para los TextBox (inputs)
             AplicarEstiloInput(txtNombreCategoria);
         }
 
@@ -97,7 +79,6 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

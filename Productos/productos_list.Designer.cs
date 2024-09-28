@@ -52,7 +52,6 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(545, 360);
             flowLayoutPanel1.TabIndex = 0;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // Titulo
             // 
@@ -246,7 +245,6 @@
             Name = "Productos_list";
             Text = "Productos";
             WindowState = FormWindowState.Maximized;
-            Load += Productos_list_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
