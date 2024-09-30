@@ -49,8 +49,6 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
         private void rjButton3_Click(object sender, EventArgs e)
         {
             this.Close();
-            Productos_list productos = new Productos_list();
-            productos.Show();
         }
 
         private void Agregar_Click(object sender, EventArgs e)
