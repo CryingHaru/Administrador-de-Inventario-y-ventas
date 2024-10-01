@@ -153,9 +153,9 @@
             label3.Location = new Point(42, 196);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(74, 20);
+            label3.Size = new Size(70, 20);
             label3.TabIndex = 33;
-            label3.Text = "Telelfono:";
+            label3.Text = "Telefono:";
             // 
             // txtTelefonoCliente
             // 

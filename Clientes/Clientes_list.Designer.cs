@@ -141,7 +141,7 @@
             dataGridView1.Margin = new Padding(2, 3, 2, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(601, 319);
+            dataGridView1.Size = new Size(906, 478);
             dataGridView1.TabIndex = 19;
             // 
             // Titulo
@@ -189,7 +189,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlText;
-            ClientSize = new Size(800, 449);
+            ClientSize = new Size(1117, 584);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
             Controls.Add(dataGridView1);
