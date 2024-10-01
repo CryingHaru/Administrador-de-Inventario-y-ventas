@@ -1,6 +1,6 @@
 ﻿namespace AVI
 {
-    partial class Ventas_list
+    partial class Ventas_Detalles
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         /// 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas_list));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas_Detalles));
             flowLayoutPanel1 = new FlowLayoutPanel();
             card1 = new customelements.Card();
             Titulo = new Label();
@@ -134,7 +134,7 @@
             // 
             // Agregar
             // 
-            Agregar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Agregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Agregar.BackColor = Color.Black;
             Agregar.BackgroundColor = Color.Black;
             Agregar.BorderColor = Color.FromArgb(255, 195, 0);
@@ -217,7 +217,7 @@
             textboxelement1.TabIndex = 9;
             textboxelement1.TextChanged += textboxelement1_TextChanged;
             // 
-            // Ventas_list
+            // Ventas_Detalles
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -232,7 +232,7 @@
             Controls.Add(flowLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
-            Name = "Ventas_list";
+            Name = "Ventas_Detalles";
             Text = "Productos";
             WindowState = FormWindowState.Maximized;
             Load += Productos_list_Load;

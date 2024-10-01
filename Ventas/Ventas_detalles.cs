@@ -21,13 +21,13 @@ using System.Resources;
 
 namespace AVI
 {
-    public partial class Ventas_list : Form
+    public partial class Ventas_Detalles : Form
     {
         private Productos Productos; // Declarar la variable productos
 
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas_list));
 
-        public Ventas_list()
+        public Ventas_Detalles(int id)
         {
             InitializeComponent();
             Ventas ventas = new Ventas();
@@ -114,7 +114,6 @@ namespace AVI
         private void Agregar_Click(object sender, EventArgs e)
         {
            new Ventas_nueva().Show();
-           
         }
 
         private void textboxelement1_TextChanged(object sender, EventArgs e)

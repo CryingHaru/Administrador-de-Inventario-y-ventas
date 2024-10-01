@@ -43,7 +43,7 @@ namespace AVI
 
         private void BtnVentas_Click(object sender, EventArgs e)
         {
-            new Ventas_nueva().Show();
+            new Ventas_list().Show();
         }
 
         private void rjButton1_Click(object sender, EventArgs e)

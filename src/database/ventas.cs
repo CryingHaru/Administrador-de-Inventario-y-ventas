@@ -21,7 +21,7 @@ namespace AVI
         //insertar nueva venta y devover el id de la venta
         public string NuevaVenta(int idcliente)
         {
-            this.SQLcomando = $"INSERT INTO VentaCabecera (Idcliente, Fecha) VALUES ({idcliente}, GETDATE())";
+            this.SQLcomando = $"INSERT INTO VentaCabecera (Idcliente, Fecha) VALUES ({idcliente}, getdate())";
             this.Ejecutar();
             this.SQLcomando = "SELECT MAX(Idventa) FROM VentaCabecera";
             DataTable id = this.Consultar();
@@ -31,6 +31,14 @@ namespace AVI
                 idventa = "0";
             }
             return idventa;
+        }
+        //agregar prodductos a ventaproductos
+        public void AgregarProducto(int idventa, int idproducto, int cantidad,double preciounit)
+        {
+            this.SQLcomando = $"INSERT INTO Ventaprodutos (Idventa, Idproducto, Cantidad, Preciounitario) VALUES ({idventa}, {idproducto}, {cantidad}, {preciounit})";
+            this.Ejecutar();
+            //quitar existencias
+            new Productos().Existencias(idproducto, false, cantidad);
         }
     }
 

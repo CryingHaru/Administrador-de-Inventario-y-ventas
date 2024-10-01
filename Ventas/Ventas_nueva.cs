@@ -130,6 +130,11 @@ namespace AVI
 
             foreach (DataRow row in content.Rows)
             {
+                //solo los que tenga existencias
+                if (Convert.ToInt32(row["Existencias"]) == 0)
+                {
+                    continue;
+                }
                 cantidades.Rows.Add(row["IdProducto"], row["Existencias"]);
                 RJButton button = new RJControls.RJButton
                 {
@@ -194,6 +199,37 @@ namespace AVI
                 MessageBox.Show("No se han agregado productos a la venta.", "Venta vacía", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (clientelement.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, seleccione un cliente.", "Cliente no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Crear venta
+            Ventas ventas = new Ventas();
+            int idventa = Convert.ToInt32(ventas.NuevaVenta(Convert.ToInt32(clientelement.SelectedValue)));
+            if (idventa == 0)
+            {
+                MessageBox.Show("No se pudo crear la venta.", "Error al crear la venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Agregar productos
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                ventas.AgregarProducto(idventa, Convert.ToInt32(row.Cells["IdProducto"].Value), Convert.ToInt32(row.Cells["Cantidad"].Value), Convert.ToDouble(row.Cells["Precio"].Value));
+            }
+
+            MessageBox.Show("Venta realizada con éxito.", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //buscar el formulario de ventas abierto y en caso de encontrarlo ejecutar la funcion actualizar
+
+            if (Application.OpenForms.OfType<Ventas_list>().Count() == 1)
+            {
+                Ventas_list form = (Ventas_list)Application.OpenForms["Ventas_list"];
+                form.Actualizar();
+            }
+            this.Close();
+
 
         }
 
