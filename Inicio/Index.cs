@@ -50,5 +50,10 @@ namespace AVI
         {
             Application.Exit();
         }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            new Movimientos().Show();
+        }
     }
 }

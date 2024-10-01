@@ -65,7 +65,8 @@ namespace AVI
                 card.Total = "Total: " + cantotal.Rows[0]["Total"].ToString();
                 card.Click += (sender, e) =>
                 {
-                    MessageBox.Show("Holaaaaq" + row["ID"].ToString());
+                   
+                    new Ventas_Detalles(Convert.ToInt32(row["ID"])).Show();
                 };
                 flowLayoutPanel1.Controls.Add(card);
             }

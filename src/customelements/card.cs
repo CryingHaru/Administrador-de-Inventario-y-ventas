@@ -47,6 +47,32 @@ namespace AVI.customelements
         private int _borderSize;
         private Color _borderColor;
         private int _borderRadius;
+        //body
+        // body image
+        private Image? _bodyImage; // Nueva propiedad para la imagen del cuerpo
+        private Size _bodyImageSize; // Tamaño de la imagen del cuerpo
+        private Point _bodyImagePosition; // Posición de la imagen del cuerpo
+
+        [Category("Body")]
+        public Image? BodyImage
+        {
+            get { return _bodyImage; }
+            set { _bodyImage = value; Invalidate(); }
+        }
+
+        [Category("Body")]
+        public Size BodyImageSize
+        {
+            get { return _bodyImageSize; }
+            set { _bodyImageSize = value; Invalidate(); }
+        }
+
+        [Category("Body")]
+        public Point BodyImagePosition
+        {
+            get { return _bodyImagePosition; }
+            set { _bodyImagePosition = value; Invalidate(); }
+        }
 
         // Properties
         [Category("Header")]
@@ -236,6 +262,9 @@ namespace AVI.customelements
             _bodyFont = new Font("Roboto", 10);
             _bodyTextColor = Color.Black;
             _bodyTextAlign = ContentAlignment.MiddleCenter;
+            _bodyImage = null;
+            _bodyImageSize = new Size(50, 50);
+            _bodyImagePosition = new Point(10, 50);
 
             _nombre = "Nombre";
             _apellido = "Apellido";
@@ -298,8 +327,14 @@ namespace AVI.customelements
                 graphics.FillRectangle(brush, bodyRectangle);
             }
 
+            if (_bodyImage != null)
+            {
+                Rectangle imageRectangle = new Rectangle(_bodyImagePosition, _bodyImageSize);
+                graphics.DrawImage(_bodyImage, imageRectangle);
+            }
+
             // Dibujar los nuevos elementos de texto en el cuerpo
-            int textYPosition = 50; // Posición Y inicial para los textos adicionales
+            int textYPosition = _bodyImage != null ? _bodyImagePosition.Y + _bodyImageSize.Height + 10 : 50; // Ajustar la posición Y si hay una imagen
             int textSpacing = 20; // Espaciado entre los textos
 
             using (SolidBrush brush = new SolidBrush(_bodyTextColor))

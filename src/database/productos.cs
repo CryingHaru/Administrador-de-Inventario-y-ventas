@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace AVI
@@ -74,6 +75,12 @@ namespace AVI
 
             }
             this.Ejecutar();
+        }
+        public DataTable Movimientos()
+        {
+            this.SQLcomando = "SELECT Movimientos.Fecha AS Fecha, Movimientos.Tipo AS Tipo, Productos.Nombre, Movimientos.Cantidad FROM dbo.Movimientos INNER JOIN dbo.Productos ON Movimientos.Producto = Productos.IdProducto";
+            return this.Consultar();
+
         }
     }
 

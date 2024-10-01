@@ -36,6 +36,7 @@
             BtnVentas = new RJControls.RJButton();
             rjButton1 = new RJControls.RJButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            rjButton2 = new RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -56,10 +57,10 @@
             BtnCategoria.Image = (Image)resources.GetObject("BtnCategoria.Image");
             BtnCategoria.ImageAlign = ContentAlignment.BottomCenter;
             BtnCategoria.ImageSize = new Size(15, 15);
-            BtnCategoria.Location = new Point(735, 375);
-            BtnCategoria.Margin = new Padding(3, 4, 3, 4);
+            BtnCategoria.Location = new Point(551, 244);
+            BtnCategoria.Margin = new Padding(2, 3, 2, 3);
             BtnCategoria.Name = "BtnCategoria";
-            BtnCategoria.Size = new Size(145, 129);
+            BtnCategoria.Size = new Size(109, 84);
             BtnCategoria.TabIndex = 10;
             BtnCategoria.Text = "Categorias";
             BtnCategoria.TextAlign = ContentAlignment.TopCenter;
@@ -84,10 +85,10 @@
             BtnClientes.Image = (Image)resources.GetObject("BtnClientes.Image");
             BtnClientes.ImageAlign = ContentAlignment.BottomCenter;
             BtnClientes.ImageSize = new Size(20, 20);
-            BtnClientes.Location = new Point(735, 512);
-            BtnClientes.Margin = new Padding(3, 4, 3, 4);
+            BtnClientes.Location = new Point(551, 333);
+            BtnClientes.Margin = new Padding(2, 3, 2, 3);
             BtnClientes.Name = "BtnClientes";
-            BtnClientes.Size = new Size(145, 124);
+            BtnClientes.Size = new Size(109, 81);
             BtnClientes.TabIndex = 11;
             BtnClientes.Text = "Clientes";
             BtnClientes.TextAlign = ContentAlignment.TopCenter;
@@ -112,10 +113,10 @@
             BtnProductos.Image = (Image)resources.GetObject("BtnProductos.Image");
             BtnProductos.ImageAlign = ContentAlignment.BottomCenter;
             BtnProductos.ImageSize = new Size(20, 20);
-            BtnProductos.Location = new Point(978, 375);
-            BtnProductos.Margin = new Padding(3, 4, 3, 4);
+            BtnProductos.Location = new Point(734, 244);
+            BtnProductos.Margin = new Padding(2, 3, 2, 3);
             BtnProductos.Name = "BtnProductos";
-            BtnProductos.Size = new Size(145, 129);
+            BtnProductos.Size = new Size(109, 84);
             BtnProductos.TabIndex = 12;
             BtnProductos.Text = "Productos";
             BtnProductos.TextAlign = ContentAlignment.TopCenter;
@@ -130,10 +131,10 @@
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(735, 202);
-            pictureBox1.Margin = new Padding(5);
+            pictureBox1.Location = new Point(551, 131);
+            pictureBox1.Margin = new Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(388, 164);
+            pictureBox1.Size = new Size(291, 107);
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
@@ -154,10 +155,10 @@
             BtnVentas.Image = (Image)resources.GetObject("BtnVentas.Image");
             BtnVentas.ImageAlign = ContentAlignment.BottomCenter;
             BtnVentas.ImageSize = new Size(20, 20);
-            BtnVentas.Location = new Point(978, 512);
-            BtnVentas.Margin = new Padding(3, 4, 3, 4);
+            BtnVentas.Location = new Point(734, 333);
+            BtnVentas.Margin = new Padding(2, 3, 2, 3);
             BtnVentas.Name = "BtnVentas";
-            BtnVentas.Size = new Size(145, 124);
+            BtnVentas.Size = new Size(109, 81);
             BtnVentas.TabIndex = 13;
             BtnVentas.Text = "Ventas";
             BtnVentas.TextAlign = ContentAlignment.TopCenter;
@@ -182,10 +183,10 @@
             rjButton1.Image = (Image)resources.GetObject("rjButton1.Image");
             rjButton1.ImageAlign = ContentAlignment.MiddleLeft;
             rjButton1.ImageSize = new Size(20, 20);
-            rjButton1.Location = new Point(843, 675);
-            rjButton1.Margin = new Padding(3, 4, 3, 4);
+            rjButton1.Location = new Point(632, 439);
+            rjButton1.Margin = new Padding(2, 3, 2, 3);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(180, 84);
+            rjButton1.Size = new Size(135, 55);
             rjButton1.TabIndex = 14;
             rjButton1.Text = "Salir";
             rjButton1.TextColor = Color.Gold;
@@ -199,18 +200,48 @@
             flowLayoutPanel1.AutoSize = true;
             flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(430, 121);
+            flowLayoutPanel1.Location = new Point(322, 79);
+            flowLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(0, 0);
             flowLayoutPanel1.TabIndex = 15;
             flowLayoutPanel1.WrapContents = false;
             // 
+            // rjButton2
+            // 
+            rjButton2.AccessibleRole = AccessibleRole.None;
+            rjButton2.BackColor = Color.Black;
+            rjButton2.BackgroundColor = Color.Black;
+            rjButton2.BorderColor = Color.Gold;
+            rjButton2.BorderRadius = 1;
+            rjButton2.BorderSize = 1;
+            rjButton2.Cursor = Cursors.Hand;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            rjButton2.ForeColor = Color.Gold;
+            rjButton2.HoverColor = Color.FromArgb(28, 28, 28);
+            rjButton2.Image = (Image)resources.GetObject("rjButton2.Image");
+            rjButton2.ImageAlign = ContentAlignment.BottomCenter;
+            rjButton2.ImageSize = new Size(20, 20);
+            rjButton2.Location = new Point(420, 244);
+            rjButton2.Margin = new Padding(2, 3, 2, 3);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Size = new Size(109, 81);
+            rjButton2.TabIndex = 16;
+            rjButton2.Text = "Movimientos";
+            rjButton2.TextAlign = ContentAlignment.TopCenter;
+            rjButton2.TextColor = Color.Gold;
+            rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Click += rjButton2_Click;
+            // 
             // Administador
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1331, 831);
+            ClientSize = new Size(998, 540);
+            Controls.Add(rjButton2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(rjButton1);
             Controls.Add(BtnVentas);
@@ -219,7 +250,7 @@
             Controls.Add(BtnCategoria);
             Controls.Add(pictureBox1);
             ForeColor = SystemColors.Control;
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "Administador";
             Text = "Inicio";
             Load += Administador_Load;
@@ -236,5 +267,6 @@
         private RJControls.RJButton BtnVentas;
         private RJControls.RJButton rjButton1;
         private FlowLayoutPanel flowLayoutPanel1;
+        private RJControls.RJButton rjButton2;
     }
 }

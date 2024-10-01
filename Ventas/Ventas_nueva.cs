@@ -178,6 +178,21 @@ namespace AVI
                         cantidades.Select("IdProducto = " + row["IdProducto"].ToString())[0]["Existencias"] = Convert.ToInt32(cantidades.Select("IdProducto = " + row["IdProducto"].ToString())[0]["Existencias"]) - cantidad;
                         // Actualizar DataGridView
                         decimal total = cantidad * precioUnitario;
+                        //comprobar si ya existe el producto
+                    
+                        if (dataGridView1.Rows.Count > 0)
+                        {
+                            foreach (DataGridViewRow row1 in dataGridView1.Rows)
+                            {
+                                if (row1.Cells["IdProducto"].Value.ToString() == row["IdProducto"].ToString())
+                                {
+                                    row1.Cells["Cantidad"].Value = Convert.ToInt32(row1.Cells["Cantidad"].Value) + cantidad;
+                                    row1.Cells["Total"].Value = Convert.ToDecimal(row1.Cells["Total"].Value) + total;
+                                    dataGridView1_CellValueChanged();
+                                    return;
+                                }
+                            }
+                        }
                         dataGridView1.Rows.Add(row["IdProducto"].ToString(), row["Nombre"].ToString(), cantidad, precioUnitario.ToString(), total.ToString());
                         dataGridView1_CellValueChanged();
                     }

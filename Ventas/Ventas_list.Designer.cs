@@ -32,12 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas_list));
             flowLayoutPanel1 = new FlowLayoutPanel();
             card1 = new customelements.Card();
+            card2 = new customelements.Card();
             Titulo = new Label();
             rjButton1 = new RJControls.RJButton();
             Agregar = new RJControls.RJButton();
-            Buscar = new RJControls.RJButton();
             pictureBox1 = new PictureBox();
-            textboxelement1 = new Textboxelement();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -47,6 +46,7 @@
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Add(card1);
+            flowLayoutPanel1.Controls.Add(card2);
             flowLayoutPanel1.ForeColor = Color.WhiteSmoke;
             flowLayoutPanel1.Location = new Point(37, 60);
             flowLayoutPanel1.Margin = new Padding(2, 3, 2, 3);
@@ -61,6 +61,9 @@
             card1.BackColor = Color.White;
             card1.BodyColor = Color.White;
             card1.BodyFont = new Font("Speedee", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            card1.BodyImage = null;
+            card1.BodyImagePosition = new Point(10, 50);
+            card1.BodyImageSize = new Size(50, 50);
             card1.BodyTextAlign = ContentAlignment.MiddleCenter;
             card1.BodyTextColor = Color.Black;
             card1.BorderColor = Color.FromArgb(255, 196, 0);
@@ -91,6 +94,46 @@
             card1.Text = "card1";
             card1.Total = "Juan";
             card1.UseVisualStyleBackColor = false;
+            // 
+            // card2
+            // 
+            card2.Apellido = "";
+            card2.BackColor = Color.White;
+            card2.BodyColor = Color.White;
+            card2.BodyFont = new Font("Roboto", 10F);
+            card2.BodyImage = (Image)resources.GetObject("card2.BodyImage");
+            card2.BodyImagePosition = new Point(30, 35);
+            card2.BodyImageSize = new Size(80, 80);
+            card2.BodyTextAlign = ContentAlignment.MiddleCenter;
+            card2.BodyTextColor = Color.Black;
+            card2.BorderColor = Color.FromArgb(255, 196, 0);
+            card2.BorderRadius = 3;
+            card2.BorderSize = 1;
+            card2.Cantidad = "";
+            card2.FlatStyle = FlatStyle.Flat;
+            card2.Font = new Font("Roboto", 10F);
+            card2.FooterColor = Color.FromArgb(255, 196, 0);
+            card2.FooterFont = new Font("Roboto", 10F, FontStyle.Bold);
+            card2.FooterText = "Footer";
+            card2.FooterTextAlign = ContentAlignment.MiddleCenter;
+            card2.FooterTextColor = Color.White;
+            card2.ForeColor = Color.Black;
+            card2.HeaderColor = Color.FromArgb(255, 196, 0);
+            card2.HeaderFont = new Font("Roboto", 12F, FontStyle.Bold);
+            card2.HeaderImage = null;
+            card2.HeaderImagePosition = new Point(5, 5);
+            card2.HeaderImageSize = new Size(30, 30);
+            card2.HeaderText = "Header";
+            card2.HeaderTextAlign = ContentAlignment.MiddleCenter;
+            card2.HeaderTextColor = Color.White;
+            card2.Location = new Point(209, 3);
+            card2.Name = "card2";
+            card2.Nombre = "";
+            card2.Size = new Size(140, 150);
+            card2.TabIndex = 1;
+            card2.Text = "card2";
+            card2.Total = "";
+            card2.UseVisualStyleBackColor = false;
             // 
             // Titulo
             // 
@@ -159,31 +202,6 @@
             Agregar.UseVisualStyleBackColor = false;
             Agregar.Click += Agregar_Click;
             // 
-            // Buscar
-            // 
-            Buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Buscar.AutoSize = true;
-            Buscar.BackColor = Color.Black;
-            Buscar.BackgroundColor = Color.Black;
-            Buscar.BorderColor = Color.FromArgb(255, 195, 0);
-            Buscar.BorderRadius = 2;
-            Buscar.BorderSize = 2;
-            Buscar.Cursor = Cursors.Hand;
-            Buscar.FlatAppearance.BorderSize = 0;
-            Buscar.FlatStyle = FlatStyle.Flat;
-            Buscar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Buscar.ForeColor = Color.WhiteSmoke;
-            Buscar.HoverColor = Color.FromArgb(255, 196, 0);
-            Buscar.ImageSize = new Size(20, 20);
-            Buscar.Location = new Point(620, 14);
-            Buscar.Margin = new Padding(2, 3, 2, 3);
-            Buscar.Name = "Buscar";
-            Buscar.Size = new Size(80, 26);
-            Buscar.TabIndex = 6;
-            Buscar.Text = "Buscar";
-            Buscar.TextColor = Color.WhiteSmoke;
-            Buscar.UseVisualStyleBackColor = false;
-            // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Black;
@@ -197,35 +215,13 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
-            // textboxelement1
-            // 
-            textboxelement1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textboxelement1.BackColor = Color.FromArgb(65, 65, 65);
-            textboxelement1.BorderColor = Color.Black;
-            textboxelement1.BorderRadius = 1;
-            textboxelement1.BorderSize = 2;
-            textboxelement1.BorderStyle = BorderStyle.None;
-            textboxelement1.Cursor = Cursors.IBeam;
-            textboxelement1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textboxelement1.ForeColor = Color.WhiteSmoke;
-            textboxelement1.IsPassword = false;
-            textboxelement1.IsReadOnly = false;
-            textboxelement1.Location = new Point(472, 17);
-            textboxelement1.Name = "textboxelement1";
-            textboxelement1.PlaceholderText = "Escribe aqui...";
-            textboxelement1.Size = new Size(143, 19);
-            textboxelement1.TabIndex = 9;
-            textboxelement1.TextChanged += textboxelement1_TextChanged;
-            // 
             // Ventas_list
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(724, 493);
-            Controls.Add(textboxelement1);
             Controls.Add(pictureBox1);
-            Controls.Add(Buscar);
             Controls.Add(Agregar);
             Controls.Add(rjButton1);
             Controls.Add(Titulo);
@@ -248,9 +244,8 @@
         private Label Titulo;
         private RJControls.RJButton rjButton1;
         private RJControls.RJButton Agregar;
-        private RJControls.RJButton Buscar;
         private PictureBox pictureBox1;
-        private Textboxelement textboxelement1;
         private customelements.Card card1;
+        private customelements.Card card2;
     }
 }

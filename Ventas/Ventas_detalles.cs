@@ -24,16 +24,24 @@ namespace AVI
     public partial class Ventas_Detalles : Form
     {
         private Productos Productos; // Declarar la variable productos
-
+        public int id;
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas_list));
 
         public Ventas_Detalles(int id)
         {
             InitializeComponent();
             Ventas ventas = new Ventas();
-            DataTable content = ventas.VentasList();
+            DataTable content = ventas.Productosventas(id);
+            DataTable datos = ventas.DetallesVenta(id);
+            //SELECT VentaCabecera.Idventa AS ID, VentaCabecera.Fecha AS Fecha, Cliente.Nombre AS Nombre, Cliente.Apellido AS Apellido FROM dbo.VentaCabecera INNER JOIN dbo.Cliente ON VentaCabecera.Idcliente = Cliente.Idcliente WHERE VentaCabecera.Idventa
+            Nombrecliente.Text = datos.Rows[0]["Nombre"].ToString() + " " + datos.Rows[0]["Apellido"].ToString();
+            Fechaventa.Text = datos.Rows[0]["Fecha"].ToString();
+            VentaID.Text = "ID: " + datos.Rows[0]["ID"].ToString();
+            total.Text = ventas.cantotal(id).Rows[0]["Total"].ToString();
+
+            this.id = id;
             //add to content from ventas.cantot();
-           
+
             Generatedisplay(content);
         }
 
@@ -41,6 +49,7 @@ namespace AVI
         {
             //holaaa quien lee esto ps que bien xd
             //clean all
+
             flowLayoutPanel1.Controls.Clear();
 
             foreach (DataRow row in content.Rows)
@@ -48,25 +57,28 @@ namespace AVI
                 //get cant and total
                 DataTable cantotal = new Ventas().cantotal(Convert.ToInt32(row["ID"]));
                 customelements.Card card = new customelements.Card();
-                card.Size = new Size(200, 200);
+                card.Size = new Size(140, 175);
                 card.BorderSize = 2;
-                card.HeaderText = "ID: " + row["ID"].ToString();
+                card.HeaderText = row["Nombre"].ToString();
                 card.HeaderColor = Color.FromArgb(0, 0, 0);
                 card.HeaderImage = (Image)resources.GetObject("card1.HeaderImage");
+                //comprobar imagen formato que exista o que el campo no sea vacio
+                if (row["Imagen"].ToString() != "" && (row["Imagen"].ToString().EndsWith(".png") || row["Imagen"].ToString().EndsWith(".jpg")))
+                {
+                    card.BodyImage = Image.FromFile("Image/" + row["Imagen"].ToString());
+                    card.BodyImagePosition = new Point(40, 35);
+                    card.BodyImageSize = new Size(60, 60);
+                }
                 card.HeaderImagePosition = new Point(160, 0);
                 card.HeaderImageSize = new Size(30, 30);
-                card.HeaderFont = new Font("Speedee", 14, FontStyle.Bold, GraphicsUnit.Point, 0);
+                card.HeaderFont = new Font("Speedee", 12, FontStyle.Bold, GraphicsUnit.Point, 0);
                 card.HeaderTextColor = Color.FromArgb(255, 255, 255);
                 card.HeaderTextAlign = ContentAlignment.BottomLeft;
-                card.FooterText = "Fecha: " + row["Fecha"].ToString();
-                card.Nombre = "Nombre: " + row["Nombre"].ToString();
-                card.Apellido = "Apellido: " + row["Apellido"].ToString();
-                card.Cantidad = "Cantidad: " + cantotal.Rows[0]["Cantidad"].ToString();
-                card.Total = "Total: " + cantotal.Rows[0]["Total"].ToString();
-                card.Click += (sender, e) =>
-                {
-                    MessageBox.Show("Holaaaaq" + row["ID"].ToString());
-                };
+                card.FooterText = "Total: " + (Convert.ToDouble(row["Precio"]) * Convert.ToInt32(row["Cantidad"]));
+                card.Nombre = "Cantidad: " + row["Cantidad"];
+                card.Apellido = "Precio:" + row["Precio"];
+                card.Cantidad = "";
+                card.Total = "";
                 flowLayoutPanel1.Controls.Add(card);
             }
         }
@@ -113,7 +125,11 @@ namespace AVI
 
         private void Agregar_Click(object sender, EventArgs e)
         {
-           new Ventas_nueva().Show();
+            new Ventas().Anular(this.id);
+            //actualizar ventas list y cerrar
+            if (Application.OpenForms.OfType<Ventas_list>().Count() == 1)
+                Application.OpenForms.OfType<Ventas_list>().First().Actualizar();
+            this.Close();
         }
 
         private void textboxelement1_TextChanged(object sender, EventArgs e)

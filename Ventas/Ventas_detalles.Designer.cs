@@ -31,14 +31,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas_Detalles));
             flowLayoutPanel1 = new FlowLayoutPanel();
-            card1 = new customelements.Card();
             Titulo = new Label();
             rjButton1 = new RJControls.RJButton();
             Agregar = new RJControls.RJButton();
-            Buscar = new RJControls.RJButton();
             pictureBox1 = new PictureBox();
-            textboxelement1 = new Textboxelement();
-            flowLayoutPanel1.SuspendLayout();
+            LBnombre = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            total = new Label();
+            Nombrecliente = new Label();
+            Fechaventa = new Label();
+            VentaID = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -46,51 +51,13 @@
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(card1);
             flowLayoutPanel1.ForeColor = Color.WhiteSmoke;
-            flowLayoutPanel1.Location = new Point(37, 60);
+            flowLayoutPanel1.Location = new Point(37, 206);
             flowLayoutPanel1.Margin = new Padding(2, 3, 2, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(528, 421);
+            flowLayoutPanel1.Size = new Size(504, 226);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
-            // 
-            // card1
-            // 
-            card1.Apellido = "Juan";
-            card1.BackColor = Color.White;
-            card1.BodyColor = Color.White;
-            card1.BodyFont = new Font("Speedee", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            card1.BodyTextAlign = ContentAlignment.MiddleCenter;
-            card1.BodyTextColor = Color.Black;
-            card1.BorderColor = Color.FromArgb(255, 196, 0);
-            card1.BorderRadius = 3;
-            card1.BorderSize = 0;
-            card1.Cantidad = "Hola";
-            card1.FlatStyle = FlatStyle.Flat;
-            card1.Font = new Font("Roboto", 10F);
-            card1.FooterColor = Color.White;
-            card1.FooterFont = new Font("Roboto", 10F, FontStyle.Bold);
-            card1.FooterText = "Footer";
-            card1.FooterTextAlign = ContentAlignment.MiddleCenter;
-            card1.FooterTextColor = Color.White;
-            card1.ForeColor = Color.Black;
-            card1.HeaderColor = Color.Black;
-            card1.HeaderFont = new Font("Roboto", 12F, FontStyle.Bold);
-            card1.HeaderImage = (Image)resources.GetObject("card1.HeaderImage");
-            card1.HeaderImagePosition = new Point(160, 0);
-            card1.HeaderImageSize = new Size(30, 30);
-            card1.HeaderText = "Header";
-            card1.HeaderTextAlign = ContentAlignment.MiddleCenter;
-            card1.HeaderTextColor = Color.White;
-            card1.Location = new Point(3, 3);
-            card1.Name = "card1";
-            card1.Nombre = "Hola";
-            card1.Size = new Size(200, 200);
-            card1.TabIndex = 0;
-            card1.Text = "card1";
-            card1.Total = "Juan";
-            card1.UseVisualStyleBackColor = false;
             // 
             // Titulo
             // 
@@ -134,7 +101,7 @@
             // 
             // Agregar
             // 
-            Agregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Agregar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             Agregar.BackColor = Color.Black;
             Agregar.BackgroundColor = Color.Black;
             Agregar.BorderColor = Color.FromArgb(255, 195, 0);
@@ -154,35 +121,10 @@
             Agregar.Name = "Agregar";
             Agregar.Size = new Size(131, 42);
             Agregar.TabIndex = 3;
-            Agregar.Text = "Nueva";
+            Agregar.Text = "Anular";
             Agregar.TextColor = Color.White;
             Agregar.UseVisualStyleBackColor = false;
             Agregar.Click += Agregar_Click;
-            // 
-            // Buscar
-            // 
-            Buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Buscar.AutoSize = true;
-            Buscar.BackColor = Color.Black;
-            Buscar.BackgroundColor = Color.Black;
-            Buscar.BorderColor = Color.FromArgb(255, 195, 0);
-            Buscar.BorderRadius = 2;
-            Buscar.BorderSize = 2;
-            Buscar.Cursor = Cursors.Hand;
-            Buscar.FlatAppearance.BorderSize = 0;
-            Buscar.FlatStyle = FlatStyle.Flat;
-            Buscar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Buscar.ForeColor = Color.WhiteSmoke;
-            Buscar.HoverColor = Color.FromArgb(255, 196, 0);
-            Buscar.ImageSize = new Size(20, 20);
-            Buscar.Location = new Point(620, 14);
-            Buscar.Margin = new Padding(2, 3, 2, 3);
-            Buscar.Name = "Buscar";
-            Buscar.Size = new Size(80, 26);
-            Buscar.TabIndex = 6;
-            Buscar.Text = "Buscar";
-            Buscar.TextColor = Color.WhiteSmoke;
-            Buscar.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -197,25 +139,110 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
-            // textboxelement1
+            // LBnombre
             // 
-            textboxelement1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textboxelement1.BackColor = Color.FromArgb(65, 65, 65);
-            textboxelement1.BorderColor = Color.Black;
-            textboxelement1.BorderRadius = 1;
-            textboxelement1.BorderSize = 2;
-            textboxelement1.BorderStyle = BorderStyle.None;
-            textboxelement1.Cursor = Cursors.IBeam;
-            textboxelement1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textboxelement1.ForeColor = Color.WhiteSmoke;
-            textboxelement1.IsPassword = false;
-            textboxelement1.IsReadOnly = false;
-            textboxelement1.Location = new Point(472, 17);
-            textboxelement1.Name = "textboxelement1";
-            textboxelement1.PlaceholderText = "Escribe aqui...";
-            textboxelement1.Size = new Size(143, 19);
-            textboxelement1.TabIndex = 9;
-            textboxelement1.TextChanged += textboxelement1_TextChanged;
+            LBnombre.AutoSize = true;
+            LBnombre.Font = new Font("Speedee", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LBnombre.ForeColor = Color.White;
+            LBnombre.Location = new Point(37, 76);
+            LBnombre.Name = "LBnombre";
+            LBnombre.Size = new Size(155, 21);
+            LBnombre.TabIndex = 10;
+            LBnombre.Text = "Nombre del Cliente";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Black;
+            label1.Font = new Font("Speedee", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(37, 178);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(107, 25);
+            label1.TabIndex = 11;
+            label1.Text = "Productos:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Speedee", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(37, 147);
+            label2.Name = "label2";
+            label2.Size = new Size(60, 21);
+            label2.TabIndex = 12;
+            label2.Text = "Fecha:";
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new Font("Speedee", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(464, 76);
+            label3.Name = "label3";
+            label3.Size = new Size(77, 21);
+            label3.TabIndex = 13;
+            label3.Text = "Venta N°:";
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Font = new Font("Speedee", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(416, 451);
+            label4.Name = "label4";
+            label4.Size = new Size(52, 21);
+            label4.TabIndex = 14;
+            label4.Text = "Total:";
+            // 
+            // total
+            // 
+            total.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            total.AutoSize = true;
+            total.Font = new Font("Speedee", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            total.ForeColor = Color.White;
+            total.Location = new Point(474, 451);
+            total.Name = "total";
+            total.Size = new Size(19, 21);
+            total.TabIndex = 15;
+            total.Text = "0";
+            // 
+            // Nombrecliente
+            // 
+            Nombrecliente.AutoSize = true;
+            Nombrecliente.Font = new Font("Speedee", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Nombrecliente.ForeColor = Color.White;
+            Nombrecliente.Location = new Point(37, 97);
+            Nombrecliente.Name = "Nombrecliente";
+            Nombrecliente.Size = new Size(68, 21);
+            Nombrecliente.TabIndex = 16;
+            Nombrecliente.Text = "Nombre";
+            // 
+            // Fechaventa
+            // 
+            Fechaventa.AutoSize = true;
+            Fechaventa.Font = new Font("Speedee", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Fechaventa.ForeColor = Color.White;
+            Fechaventa.Location = new Point(103, 147);
+            Fechaventa.Name = "Fechaventa";
+            Fechaventa.Size = new Size(54, 21);
+            Fechaventa.TabIndex = 17;
+            Fechaventa.Text = "Fecha";
+            // 
+            // VentaID
+            // 
+            VentaID.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            VentaID.AutoSize = true;
+            VentaID.Font = new Font("Speedee", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            VentaID.ForeColor = Color.White;
+            VentaID.Location = new Point(547, 76);
+            VentaID.Name = "VentaID";
+            VentaID.Size = new Size(28, 21);
+            VentaID.TabIndex = 18;
+            VentaID.Text = "00";
             // 
             // Ventas_Detalles
             // 
@@ -223,9 +250,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(724, 493);
-            Controls.Add(textboxelement1);
+            Controls.Add(VentaID);
+            Controls.Add(Fechaventa);
+            Controls.Add(Nombrecliente);
+            Controls.Add(total);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(LBnombre);
             Controls.Add(pictureBox1);
-            Controls.Add(Buscar);
             Controls.Add(Agregar);
             Controls.Add(rjButton1);
             Controls.Add(Titulo);
@@ -233,10 +267,9 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
             Name = "Ventas_Detalles";
-            Text = "Productos";
+            Text = "Detalles";
             WindowState = FormWindowState.Maximized;
             Load += Productos_list_Load;
-            flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -248,9 +281,15 @@
         private Label Titulo;
         private RJControls.RJButton rjButton1;
         private RJControls.RJButton Agregar;
-        private RJControls.RJButton Buscar;
         private PictureBox pictureBox1;
-        private Textboxelement textboxelement1;
-        private customelements.Card card1;
+        private Label LBnombre;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label total;
+        private Label Nombrecliente;
+        private Label Fechaventa;
+        private Label VentaID;
     }
 }
