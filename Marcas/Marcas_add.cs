@@ -21,12 +21,11 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
         {
             AVI.Marca marca = new AVI.Marca();
             string nombreMarca = txtNombreCategoria.Text;
-            int ultimo = marca.Lastid();
-            ultimo++;
+            
 
             if (!string.IsNullOrEmpty(nombreMarca))
             {
-                bool resultado = marca.AgregarMarca(ultimo, nombreMarca);
+                bool resultado = marca.AgregarMarca( nombreMarca);
 
                 if (resultado)
                 {

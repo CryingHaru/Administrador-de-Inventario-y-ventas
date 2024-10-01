@@ -94,7 +94,7 @@ namespace AVI
                 codigo += random.Next(0, 9);
             }
             //ProductoAdd(int id, string nombre,string descripcion, int marca, int categoria, decimal precio, string imagen, string codigobarra)
-            producto.ProductoAdd(producto.Lastid() + 1, Nombre.Text, Descripcion.Text, int.Parse(Marcascombo.SelectedValue.ToString()), int.Parse(Categoriascombo.SelectedValue.ToString()), decimal.Parse(Precio.Text), image, codigo);
+            producto.ProductoAdd(Nombre.Text, Descripcion.Text, int.Parse(Marcascombo.SelectedValue.ToString()), int.Parse(Categoriascombo.SelectedValue.ToString()), decimal.Parse(Precio.Text), image, codigo);
             MessageBox.Show("Producto agregado");
             //actualizar la lista de productos// el form productos_list actualizalo
             //el formulario activo con el metodo Actualizar

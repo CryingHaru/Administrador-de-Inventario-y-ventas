@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clientes_list = Administrador_de_Inventario_y_ventas.Clientes.Clientes_list;
 using AVI.customelements;
+
 namespace AVI
 {
     public partial class Ventas_nueva : Form
@@ -21,14 +22,40 @@ namespace AVI
         private WebcamBarcodeReader _barcodeReader;
         private Productos Productos; // Declarar la variable productos
         private DataTable Contenido = new Productos().ProductosList();
-        //lista de precios
-        DataTable cantidades = new DataTable();
-        void styles()
+        private DataTable cantidades = new DataTable(); // Lista de precios
+
+        public Ventas_nueva()
+        {
+            InitializeComponent();
+            InicializarComponentes();
+        }
+
+        private void InicializarComponentes()
+        {
+            cantidades.Columns.Add("IdProducto", typeof(int));
+            cantidades.Columns.Add("Existencias", typeof(int));
+
+            Productos = new Productos();
+            Generatedisplay(Productos.ProductosList());
+            styles();
+
+            // Inicializar lector de código de barras
+            _barcodeReader = new WebcamBarcodeReader(UpdateBarcodeResult);
+            _barcodeReader.Start();
+
+            // Inicializar lista de clientes
+            Cliente cliente = new Cliente();
+            DataTable clientes = cliente.Clientelist();
+            clientelement.DataSource = clientes;
+            clientelement.DisplayMember = "Nombre";
+            clientelement.ValueMember = "IdCliente";
+        }
+
+        private void styles()
         {
             dataGridView1.AccessibilityObject.Value = "Nombre del producto";
             dataGridView1.Columns.Add("IdProducto", "IdProducto");
-            //hide idproducto
-            dataGridView1.Columns["IdProducto"].Visible = false;
+            dataGridView1.Columns["IdProducto"].Visible = false; // Ocultar IdProducto
             dataGridView1.Columns.Add("Nombre", "Nombre del producto");
             dataGridView1.Columns.Add("Cantidad", "Cantidad");
             dataGridView1.Columns.Add("Precio", "Precio unitario");
@@ -58,31 +85,7 @@ namespace AVI
             dataGridView1.DefaultCellStyle.Font = new Font("Speede", 12);
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Speede", 12, FontStyle.Bold);
             dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 255, 255);
-
         }
-        public Ventas_nueva()
-        {
-            cantidades.Columns.Add("IdProducto", typeof(int));
-            cantidades.Columns.Add("Existencias", typeof(int));
-            InitializeComponent();
-            Productos = new Productos();
-            Generatedisplay(Productos.ProductosList());
-            styles();
-            //barcode reader
-            _barcodeReader = new WebcamBarcodeReader(UpdateBarcodeResult);
-            _barcodeReader.Start();
-
-            Cliente cliente = new Cliente();
-            DataTable clientes = cliente.Clientelist();
-            //display nombre y apellido
-            clientelement.DataSource = clientes;
-            clientelement.DisplayMember = "Nombre";
-            clientelement.ValueMember = "IdCliente";
-
-
-
-        }
-
 
         private void UpdateBarcodeResult(string result)
         {
@@ -92,7 +95,7 @@ namespace AVI
                 return;
             }
 
-            //revisa si en contenido hay un codigo de barra que sea el mismo
+            // Revisa si en contenido hay un código de barra que sea el mismo
             DataRow[] rows = Contenido.Select("Codigobarra = '" + result + "'");
             if (rows.Length > 0)
             {
@@ -100,18 +103,16 @@ namespace AVI
                 string input = Microsoft.VisualBasic.Interaction.InputBox("¿Cuántos productos desea agregar?", "Agregar producto", "1");
                 if (int.TryParse(input, out int cantidad) && cantidad > 0)
                 {
-                    // Agregar al DataGridView
                     decimal precioUnitario = Convert.ToDecimal(rows[0]["Precioventa"]);
-                    //comprobar si hay existencias
+                    // Comprobar si hay existencias
                     if (cantidad > Convert.ToInt32(cantidades.Select("IdProducto = " + rows[0]["IdProducto"].ToString())[0]["Existencias"]))
                     {
                         MessageBox.Show("No hay suficientes existencias para este producto.", "Existencias insuficientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    //actualizar existencias
+                    // Actualizar existencias
                     cantidades.Select("IdProducto = " + rows[0]["IdProducto"].ToString())[0]["Existencias"] = Convert.ToInt32(cantidades.Select("IdProducto = " + rows[0]["IdProducto"].ToString())[0]["Existencias"]) - cantidad;
-                    //actualizar datagrid
-
+                    // Actualizar DataGridView
                     decimal total = cantidad * precioUnitario;
                     dataGridView1.Rows.Add(rows[0]["IdProducto"].ToString(), rows[0]["Nombre"].ToString(), cantidad, precioUnitario.ToString(), total.ToString());
                     dataGridView1_CellValueChanged();
@@ -125,59 +126,52 @@ namespace AVI
 
         private void Generatedisplay(DataTable content)
         {
-            //contenido = idproducto y codigobarra
-
             flowLayoutPanel1.Controls.Clear();
 
             foreach (DataRow row in content.Rows)
             {
                 cantidades.Rows.Add(row["IdProducto"], row["Existencias"]);
-                RJButton button = new RJControls.RJButton();
-                button.BackColor = Color.Black;
-                button.FlatStyle = FlatStyle.Flat;
-                //border black
-                button.BorderSize = 1;
-                button.BorderColor = Color.FromArgb(255, 196, 0);
-                button.BorderRadius = 3;
-                button.TextColor = Color.White;
-                button.Font = new Font("Roboto", 10);
+                RJButton button = new RJControls.RJButton
+                {
+                    BackColor = Color.Black,
+                    FlatStyle = FlatStyle.Flat,
+                    BorderSize = 1,
+                    BorderColor = Color.FromArgb(255, 196, 0),
+                    BorderRadius = 3,
+                    TextColor = Color.White,
+                    Font = new Font("Roboto", 10),
+                    Cursor = Cursors.Hand,
+                    TabStop = true,
+                    ImageSize = new Size(100, 100),
+                    ImageAlign = ContentAlignment.TopCenter,
+                    TextAlign = ContentAlignment.BottomCenter,
+                    Text = row["Nombre"].ToString(),
+                    Size = new Size(130, 180)
+                };
 
-                button.Cursor = Cursors.Hand;
-                button.TabStop = true;
-
-
-                //img desde la base de datos
+                // Imagen desde la base de datos
                 string imagenPath = row["Imagen"]?.ToString() ?? string.Empty;
-                //comprobar si existe la imagen
                 if (!string.IsNullOrEmpty(imagenPath) && (imagenPath.EndsWith(".png") || imagenPath.EndsWith(".jpg")) && System.IO.File.Exists("Image/" + imagenPath))
                 {
                     button.SetImage(Image.FromFile("Image/" + imagenPath));
                 }
 
-                //image size 
-                button.ImageSize = new Size(100, 100);
-                button.ImageAlign = ContentAlignment.TopCenter;
-                button.TextAlign = ContentAlignment.BottomCenter;
-                button.Text = row["Nombre"].ToString();
-                button.Size = new Size(130, 180);
-                button.Click += new EventHandler((sender, e) =>
+                button.Click += (sender, e) =>
                 {
                     // Preguntar la cantidad
                     string input = Microsoft.VisualBasic.Interaction.InputBox("¿Cuántos productos desea agregar?", "Agregar producto", "1");
                     if (int.TryParse(input, out int cantidad) && cantidad > 0)
                     {
-                        // Agregar al DataGridView
                         decimal precioUnitario = Convert.ToDecimal(row["Precioventa"]);
-                        //comprobar si hay existencias
+                        // Comprobar si hay existencias
                         if (cantidad > Convert.ToInt32(cantidades.Select("IdProducto = " + row["IdProducto"].ToString())[0]["Existencias"]))
                         {
                             MessageBox.Show("No hay suficientes existencias para este producto.", "Existencias insuficientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
-                        //actualizar existencias
+                        // Actualizar existencias
                         cantidades.Select("IdProducto = " + row["IdProducto"].ToString())[0]["Existencias"] = Convert.ToInt32(cantidades.Select("IdProducto = " + row["IdProducto"].ToString())[0]["Existencias"]) - cantidad;
-                        //actualizar datagrid
-
+                        // Actualizar DataGridView
                         decimal total = cantidad * precioUnitario;
                         dataGridView1.Rows.Add(row["IdProducto"].ToString(), row["Nombre"].ToString(), cantidad, precioUnitario.ToString(), total.ToString());
                         dataGridView1_CellValueChanged();
@@ -186,7 +180,7 @@ namespace AVI
                     {
                         MessageBox.Show("Por favor, ingrese una cantidad válida.", "Cantidad inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                });
+                };
 
                 flowLayoutPanel1.Controls.Add(button);
             }
@@ -194,7 +188,7 @@ namespace AVI
 
         private void Agregar_Click(object sender, EventArgs e)
         {
-            //agrega a la base de datos los productos y la venta completa
+            // Agrega a la base de datos los productos y la venta completa
             if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("No se han agregado productos a la venta.", "Venta vacía", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -202,9 +196,6 @@ namespace AVI
             }
 
         }
-
-
-
 
         private void dataGridView1_CellValueChanged()
         {
@@ -220,18 +211,18 @@ namespace AVI
 
         private void clientenew_Click(object sender, EventArgs e)
         {
-            //new cliente
+            // Nuevo cliente
             new Cliente_add().ShowDialog();
-            //actualizar combobox
+            // Actualizar combobox
             clientelement.DataSource = new Cliente().Clientelist();
             clientelement.Refresh();
-
-
         }
 
-        private void Totaldelostotales_Click(object sender, EventArgs e)
-        {
+        private void Totaldelostotales_Click(object sender, EventArgs e) { }
 
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

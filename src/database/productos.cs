@@ -20,12 +20,12 @@ namespace AVI
             this.SQLcomando = "DELETE FROM Productos WHERE IdProducto = " + id;
             this.Ejecutar();
         }
-        public bool ProductoAdd(int id, string nombre,string descripcion, int marca, int categoria, decimal precio, string imagen, string codigobarra)
+        public bool ProductoAdd(string nombre,string descripcion, int marca, int categoria, decimal precio, string imagen, string codigobarra)
         {
             int stock = 0;
             nombre = nombre.Replace("'", "''");
             descripcion = descripcion.Replace("'", "''");
-            this.SQLcomando = $"INSERT INTO Productos (IdProducto, Marca, Categoria, Detalles, Precioventa, Existencias, Imagen, Codigobarra, Nombre) VALUES ({id}, {marca}, {categoria}, '{descripcion}', {precio}, {stock}, '{imagen}', '{codigobarra}', '{nombre}')";
+            this.SQLcomando = $"INSERT INTO Productos ( Marca, Categoria, Detalles, Precioventa, Existencias, Imagen, Codigobarra, Nombre) VALUES ({marca}, {categoria}, '{descripcion}', {precio}, {stock}, '{imagen}', '{codigobarra}', '{nombre}')";
             return this.Ejecutar();
         }
         public int Lastid()

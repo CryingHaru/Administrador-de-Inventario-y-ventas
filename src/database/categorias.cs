@@ -26,9 +26,9 @@ namespace AVI
             this.SQLcomando = $"UPDATE Categorias SET Nombre = '{nuevoNombre}' WHERE Idcategoria = {id}";
             return this.Ejecutar();
         }
-        public bool AgregarCategoria(int idCategoria, string nombre)
+        public bool AgregarCategoria( string nombre)
         {
-            this.SQLcomando = $"INSERT INTO Categorias (Idcategoria, Nombre) VALUES ({idCategoria}, '{nombre}')";
+            this.SQLcomando = $"INSERT INTO Categorias ( Nombre) VALUES ( '{nombre}')";
             return this.Ejecutar();
         }
         //obtener el ultimo id de la tabla

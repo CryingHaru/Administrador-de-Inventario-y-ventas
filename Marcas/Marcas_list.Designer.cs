@@ -85,7 +85,6 @@
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.Size = new Size(304, 371);
             dataGridView1.TabIndex = 1;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // rjButton3
             // 
@@ -193,7 +192,6 @@
             Titulo.Size = new Size(84, 29);
             Titulo.TabIndex = 12;
             Titulo.Text = "Marca";
-            Titulo.Click += Titulo_Click;
             // 
             // pictureBox1
             // 

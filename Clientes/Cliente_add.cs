@@ -67,17 +67,13 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
             string telefonoCliente = txtTelefonoCliente.Text;
             string duiCliente = txtDUICliente.Text;
             string direccionCliente = txtDireccionCliente.Text;
-
-            int ultimo = clientes.Lastid();
-            ultimo++;
-
             if (!string.IsNullOrEmpty(nombreCliente) &&
                 !string.IsNullOrEmpty(apellidoCliente) &&
                 !string.IsNullOrEmpty(telefonoCliente) &&
                 !string.IsNullOrEmpty(duiCliente) &&
                 !string.IsNullOrEmpty(direccionCliente))
             {
-                bool resultado = clientes.AgregarCliente(ultimo, nombreCliente, apellidoCliente, telefonoCliente, duiCliente, direccionCliente);
+                bool resultado = clientes.AgregarCliente(nombreCliente, apellidoCliente, telefonoCliente, duiCliente, direccionCliente);
 
                 if (resultado)
                 {

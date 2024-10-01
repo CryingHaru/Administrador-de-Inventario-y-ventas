@@ -61,13 +61,14 @@
             // Titulo
             // 
             Titulo.AutoSize = true;
-            Titulo.Font = new Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Titulo.Font = new Font("Speedee", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Titulo.ForeColor = Color.White;
             Titulo.Location = new Point(146, 26);
             Titulo.Margin = new Padding(2, 0, 2, 0);
             Titulo.Name = "Titulo";
-            Titulo.Size = new Size(118, 25);
+            Titulo.Size = new Size(134, 28);
             Titulo.TabIndex = 1;
-            Titulo.Text = "Productos";
+            Titulo.Text = "Nueva venta";
             // 
             // rjButton1
             // 
@@ -86,7 +87,7 @@
             rjButton1.Image = (Image)resources.GetObject("rjButton1.Image");
             rjButton1.ImageAlign = ContentAlignment.MiddleLeft;
             rjButton1.ImageSize = new Size(20, 20);
-            rjButton1.Location = new Point(859, 78);
+            rjButton1.Location = new Point(859, 467);
             rjButton1.Margin = new Padding(2);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(131, 42);
@@ -94,6 +95,7 @@
             rjButton1.Text = "Atras";
             rjButton1.TextColor = Color.White;
             rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
             // 
             // Agregar
             // 

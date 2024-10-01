@@ -26,9 +26,9 @@ namespace AVI
             this.SQLcomando = $"UPDATE Marca SET Nombre = '{nuevoNombre}' WHERE Idmarca = {idmarca}";
             return this.Ejecutar();
         }
-        public bool AgregarMarca(int Idmarca, string nombre)
+        public bool AgregarMarca(string nombre)
         {
-            this.SQLcomando = $"INSERT INTO Marca (Idmarca, Nombre) VALUES ({Idmarca}, '{nombre}')";
+            this.SQLcomando = $"INSERT INTO Marca (Nombre) VALUES ('{nombre}')";
             return this.Ejecutar();
         }
         //

@@ -33,11 +33,11 @@ namespace AVI
 
             return this.Ejecutar();
         }
-        public bool AgregarCliente(int idCliente, string nombre, string apellido, string telefono, string direccion, string dui)
+        public bool AgregarCliente(string nombre, string apellido, string telefono, string direccion, string dui)
         {
             this.SQLcomando = $@"
-            INSERT INTO Cliente (Idcliente, Nombre, Apellido, Telefono, Direccion, Dui)
-            VALUES ({idCliente}, '{nombre}', '{apellido}', '{telefono}', '{direccion}', '{dui}')";
+            INSERT INTO Cliente (Nombre, Apellido, Telefono, Direccion, Dui)
+            VALUES ( '{nombre}', '{apellido}', '{telefono}', '{direccion}', '{dui}')";
 
             return this.Ejecutar();
         }

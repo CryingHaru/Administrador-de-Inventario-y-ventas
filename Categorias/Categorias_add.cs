@@ -17,12 +17,9 @@
             AVI.Categorias categorias = new AVI.Categorias();
             string nombreCategoria = txtNombreCategoria.Text;
 
-            int ultimo = categorias.Lastid();
-            ultimo++;
-
             if (!string.IsNullOrEmpty(nombreCategoria))
             {
-                bool resultado = categorias.AgregarCategoria(ultimo, nombreCategoria);
+                bool resultado = categorias.AgregarCategoria(nombreCategoria);
 
                 if (resultado)
                 {

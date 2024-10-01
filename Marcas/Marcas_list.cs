@@ -1,13 +1,8 @@
 ﻿using Administrador_de_Inventario_y_ventas.Categorias;
 using AVI;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Administrador_de_Inventario_y_ventas.Marcas
@@ -31,6 +26,16 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
         {
             DataTable MarcaDataTable = Marca.MarcasList();
             dataGridView1.DataSource = MarcaDataTable;
+            ConfigureDataGridView();
+        }
+
+        private void ConfigureDataGridView()
+        {
+            // Desactivar estilos visuales de encabezados
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersVisible = false;
+
+            // Configurar colores y estilos
             dataGridView1.BackgroundColor = Color.Black;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(30, 30, 30);
             dataGridView1.DefaultCellStyle.BackColor = Color.Black;
@@ -43,8 +48,16 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.GridColor = Color.Gold;
             dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridView1.EnableHeadersVisualStyles = false;
+           
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ReadOnly = true;
+            if (dataGridView1.Columns.Count > 0)
+            {
+                dataGridView1.Columns[0].Visible = false;
+            }
         }
+
+
 
         private void rjButton3_Click(object sender, EventArgs e)
         {
@@ -58,6 +71,11 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
+        {
+            EditarMarca();
+        }
+
+        private void EditarMarca()
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -82,6 +100,11 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
         }
 
         private void rjButton2_Click(object sender, EventArgs e)
+        {
+            EliminarMarca();
+        }
+
+        private void EliminarMarca()
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -113,16 +136,6 @@ namespace Administrador_de_Inventario_y_ventas.Marcas
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             LoadMarcaData();
-        }
-
-        private void Titulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

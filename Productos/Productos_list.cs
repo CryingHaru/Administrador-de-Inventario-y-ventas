@@ -59,7 +59,7 @@ namespace AVI
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            new Form1().Show();
+            this.Close();
         }
 
         private void Categorias_Click(object sender, EventArgs e)
