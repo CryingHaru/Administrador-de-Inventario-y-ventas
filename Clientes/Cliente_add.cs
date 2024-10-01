@@ -65,15 +65,17 @@ namespace Administrador_de_Inventario_y_ventas.Clientes
             string nombreCliente = txtNombreCliente.Text;
             string apellidoCliente = txtApellidoCliente.Text;
             string telefonoCliente = txtTelefonoCliente.Text;
-            string duiCliente = txtDUICliente.Text;
             string direccionCliente = txtDireccionCliente.Text;
+            string duiCliente = txtDUICliente.Text;
+
             if (!string.IsNullOrEmpty(nombreCliente) &&
                 !string.IsNullOrEmpty(apellidoCliente) &&
                 !string.IsNullOrEmpty(telefonoCliente) &&
-                !string.IsNullOrEmpty(duiCliente) &&
-                !string.IsNullOrEmpty(direccionCliente))
+                !string.IsNullOrEmpty(direccionCliente) &&
+                !string.IsNullOrEmpty(duiCliente))
+
             {
-                bool resultado = clientes.AgregarCliente(nombreCliente, apellidoCliente, telefonoCliente, duiCliente, direccionCliente);
+                bool resultado = clientes.AgregarCliente(nombreCliente, apellidoCliente, telefonoCliente, direccionCliente, duiCliente);
 
                 if (resultado)
                 {
